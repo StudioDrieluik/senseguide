@@ -54,26 +54,6 @@ const MyApp = ({ Component, pageProps }) => {
 };
 
 MyApp.getInitialProps = async appContext => {
-  if (appContext.ctx.req) {
-    const url = process.env.hosts.fe + appContext.ctx.req.url;
-    const segments = url.split('/');
-    if (appContext?.ctx?.res?.statusCode === 404 && segments && segments[1] !== '_next') {
-      const res = await fetch(`${process.env.hosts.be}/api/v1/redirects/find`, {
-        method: 'POST',
-        body: JSON.stringify({
-          url,
-        }),
-      });
-      if (res.status === 200) {
-        const data = await res.json();
-        appContext.ctx.res.writeHead(data.type, {
-          Location: data.url,
-        });
-        appContext.ctx.res.end();
-      }
-    }
-  }
-
   const appProps = await App.getInitialProps(appContext);
   return { ...appProps };
 };

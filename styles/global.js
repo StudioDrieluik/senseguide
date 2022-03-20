@@ -6,9 +6,12 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-size: 62.5%;
     // Colors
-    --color-primary: #ffa500;
-    --color-primary-light: #ffc04d;
-    --color-secondary: #6a5acd;
+    --color-primary-100: #8a88d4;
+    --color-primary-300: #7472b5;
+    --color-primary-500: #5b5a8b;
+    --color-secondary-100: #4593c7;
+    --color-secondary-300: #3a7ba7;
+    --color-secondary-500: #2b5a7b;
     --color-white: #ffffff;
     --color-black: #000000;
     --color-bg: #ffffff;

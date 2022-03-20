@@ -68,15 +68,14 @@ export const cmsDataService = {
       })
     );
 
-    if ('entry' in data[0]) {
-      return addApolloState(apolloClient, {
-        props: {
-          initialApolloState: apolloClient.cache.extract(),
-          preview: preview || false,
-          ...queries[0].variables,
-        },
-      });
-    }
+    return addApolloState(apolloClient, {
+      props: {
+        initialApolloState: apolloClient.cache.extract(),
+        preview: preview || false,
+        ...queries[0].variables,
+      },
+    });
+
     return data[0];
   },
 };
