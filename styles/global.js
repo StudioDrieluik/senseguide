@@ -29,8 +29,8 @@ const GlobalStyle = createGlobalStyle`
     // Fonts
     --font-primary: "Google Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --font-secondary: "Google Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    --font-size-xs: 0.4rem;
-    --font-size-sm: 0.8rem;
+    --font-size-xs: 1.5rem;
+    --font-size-sm: 1.6rem;
     --font-size-base: 1.8rem;
     --font-size-md: 2rem;
     --font-size-lg: 2.6rem; // H4
@@ -39,7 +39,9 @@ const GlobalStyle = createGlobalStyle`
     --font-size-xxxl: 6.4rem; // H1
 
     // Layouts
-    --max-container-width: '1600px';
+    --max-container-width: 1600px;
+    --large-container-width: 996px;
+    --large-container-width: 789px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 

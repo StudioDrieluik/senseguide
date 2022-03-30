@@ -5,7 +5,7 @@ const config = {
       fb: null,
       twitter: null,
     },
-    email: 'hello@client.com',
+    email: 'info@senseguide.nl',
   },
   i18n: {
     locales: ['nl', 'en'],
