@@ -37,10 +37,26 @@ const MyApp = ({ Component, pageProps }) => {
             <style jsx>
               {`
                 @font-face {
-                  font-family: 'TestFont';
-                  src: url('/fonts/TestFont.woff') format('woff'),
-                    url('/fonts/TestFont.woff2') format('woff2');
-                  font-weight: normal;
+                  font-family: 'Google Sans';
+                  src: url('/fonts/GoogleSans-Regular.woff') format('woff'),
+                    url('/fonts/GoogleSans-Regular.woff2') format('woff2');
+                  font-weight: 400;
+                  font-style: normal;
+                  font-display: fallback;
+                }
+                @font-face {
+                  font-family: 'Google Sans';
+                  src: url('/fonts/GoogleSans-Medium.woff') format('woff'),
+                    url('/fonts/GoogleSans-Medium.woff2') format('woff2');
+                  font-weight: 500;
+                  font-style: normal;
+                  font-display: fallback;
+                }
+                @font-face {
+                  font-family: 'Google Sans';
+                  src: url('/fonts/GoogleSans-Bold.woff') format('woff'),
+                    url('/fonts/GoogleSans-Bold.woff2') format('woff2');
+                  font-weight: 700;
                   font-style: normal;
                   font-display: fallback;
                 }
