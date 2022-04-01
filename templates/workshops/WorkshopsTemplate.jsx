@@ -3,14 +3,15 @@ import { Layout } from '@/layouts/default';
 import { PageHead } from '@/components/PageHead';
 import { BlocksRender } from '@/components/blocks/BlocksRender';
 import { Hero } from '../../components/Hero/Hero';
+import Workshop from '../../components/Workshop/Workshop';
+import { Container } from '../../components/Container/Container.styles';
 
-export const WorkshopsTemplate = ({ data }) => {
+export const WorkshopsTemplate = ({ data, workshops }) => {
   const meta = {
     seoTitle: 'Workshops',
   };
 
   const { title, image, intro } = data;
-
   const heroContent = { title, image, intro };
 
   return (
@@ -18,10 +19,11 @@ export const WorkshopsTemplate = ({ data }) => {
       <PageHead meta={meta} />
       <Hero {...heroContent} breadcrumbs="dit zijn breadcrumbs"/>
 
-      {/* @TODO: Tonen van workshops */}
-      <section>
-        <h1>Workshops</h1>
-      </section>
+      <Container medium>
+        {workshops.map(({ node: workshop }) => (
+          <Workshop data={workshop} key={workshop._meta.uid} />
+        ))}
+      </Container>
     </Layout>
   );
 };

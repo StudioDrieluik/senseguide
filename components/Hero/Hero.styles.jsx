@@ -5,9 +5,14 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: start;
-  max-width: ${props => (props.image ? 'var(--max-container-width)' : '894px')};
-  margin: 8rem auto; // @TODO: If Header will be fixed
-  padding: 0 4rem; // @TODO: Needs to be a global padding for container?
+  max-width: ${props => (props.image ? 'var(--max-container-width)' : 'var(--medium-container-width)')};
+  max-width: ${props => props.workshop && 'var(--max-container-width)'};
+  margin: 6rem auto 4rem; // @TODO: If Header will be fixed
+  padding: var(--container-padding);
+
+  @media (${({ theme }) => theme.respondTo.tablet}) {
+    margin-bottom: 6rem;
+  }
 
   @media (${({ theme }) => theme.respondTo.desktop}) {
     flex-direction: row;
@@ -19,7 +24,7 @@ export const Wrapper = styled.div`
 export const ContentWrapper = styled.div`
   position: relative;
   width: 100%;
-  max-width: ${props => (props.image ? '58.4rem' : 'var(--medium-container-width)')};
+  max-width: ${props => (props.image ? '58.4rem' : 'var(--small-container-width)')};
   padding-top: 11.2rem;
 
   p {

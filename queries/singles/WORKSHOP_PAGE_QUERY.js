@@ -11,5 +11,19 @@ export const WORKSHOP_PAGE_QUERY = gql`
         }
       }
     }
+    allWorkshops(lang: $lang) {
+      edges {
+        node {
+          title
+          short_time
+          persons
+          location
+          intro
+          _meta {
+            uid
+          }
+        }
+      }
+    }
   }
 `;

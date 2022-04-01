@@ -48,11 +48,16 @@ const GlobalStyle = createGlobalStyle`
     }
 
     // Layouts
-    --max-container-width: 1600px;
-    --large-container-width: 996px;
-    --medium-container-width: 789px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    --max-container-width: 1600px;
+    --medium-container-width: 1092px; // 996px + padding
+    --small-container-width: 885px; // 789px + padding
+    --container-padding: 0 1.6rem;
+
+    @media (${({ theme }) => theme.respondTo.tablet}) {
+      --container-padding: 0 4.8rem;
+    }
 
     // Settings
     --border-radius: 0.8rem;
@@ -80,6 +85,7 @@ const GlobalStyle = createGlobalStyle`
     color: var(--color-text-dark);
     font-size: var(--font-size-base);
     overscroll-behavior-y: none;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
