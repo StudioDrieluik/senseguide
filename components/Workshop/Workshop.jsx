@@ -22,8 +22,7 @@ const Workshop = ({ data }) => (
       </ul>
       {data.intro?.[0] && <p>{data.intro[0].text}</p>}
     </ContentWrapper>
-    {/* @TODO: Create global button */}
-    <Link href="/">Bekijk workshop</Link>
+    <Link href={`/workshops/${data._meta.uid}`}>Bekijk workshop</Link>
   </Wrapper>
 );
 
