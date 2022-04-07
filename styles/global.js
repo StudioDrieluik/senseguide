@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
     --color-gray-300: #DADCE0;
     --color-gray-600: #80868B;
     --color-black: #202124;
-    --color-bg: #ffffff;
+    --color-bg: var(--color-gray-100);
     --color-text-dark: #202124;
     --color-text-light: #ffffff;
 
@@ -33,20 +33,35 @@ const GlobalStyle = createGlobalStyle`
     --font-size-sm: 1.6rem;
     --font-size-base: 1.8rem;
     --font-size-md: 2rem;
-    --font-size-lg: 2.6rem; // H4
-    --font-size-xl: 3.2rem; // H3
-    --font-size-xxl: 4rem; // H2
-    --font-size-xxxl: 6.4rem; // H1
+    --font-size-lg: 2.4rem; // H4
+    --font-size-xl: 2.8rem; // H3
+    --font-size-xxl: 3.2rem; // H2
+    --font-size-xxxl: 4.6rem; // H1
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+
+    @media (${({ theme }) => theme.respondTo.desktop}) {
+      --font-size-lg: 2.6rem;
+      --font-size-xl: 3.2rem;
+      --font-size-xxl: 4rem;
+      --font-size-xxxl: 6.4rem;
+    }
 
     // Layouts
-    --max-container-width: 1600px;
-    --large-container-width: 996px;
-    --large-container-width: 789px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    --max-container-width: 1600px;
+    --medium-container-width: 1092px; // 996px + padding
+    --small-container-width: 885px; // 789px + padding
+    --container-padding: 0 1.6rem;
+
+    @media (${({ theme }) => theme.respondTo.tablet}) {
+      --container-padding: 0 4.8rem;
+    }
 
     // Settings
     --border-radius: 0.8rem;
+    --component-spacing: 16rem;
   }
 
   main {
@@ -70,6 +85,7 @@ const GlobalStyle = createGlobalStyle`
     color: var(--color-text-dark);
     font-size: var(--font-size-base);
     overscroll-behavior-y: none;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {

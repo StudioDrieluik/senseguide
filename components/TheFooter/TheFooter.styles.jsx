@@ -3,10 +3,10 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   max-width: var(--max-container-width);
   margin: 0 auto;
-  padding: 6.4rem 4rem 3.2rem;
+  padding: 6.4rem 0 3.2rem;
 `;
 
-export const Container = styled.div`
+export const FooterContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
