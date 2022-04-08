@@ -13,8 +13,6 @@ export const WhoTemplate = ({ data, audience }) => {
     seoTitle: 'Voor wie',
   };
 
-  console.log(audience[0].node.tags.map((tag) => tag))
-
   return (
     <Layout>
       <PageHead meta={meta} />

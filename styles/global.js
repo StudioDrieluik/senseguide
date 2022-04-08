@@ -56,12 +56,18 @@ const GlobalStyle = createGlobalStyle`
     --container-padding: 0 1.6rem;
 
     @media (${({ theme }) => theme.respondTo.tablet}) {
+      --container-padding: 0 3.2rem;
+    }
+
+    @media (${({ theme }) => theme.respondTo.desktop}) {
       --container-padding: 0 4.8rem;
     }
 
     // Settings
     --border-radius: 0.8rem;
     --component-spacing: 16rem;
+    --transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); // @TODO: Nader te balen
+
   }
 
   main {
