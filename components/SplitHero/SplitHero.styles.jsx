@@ -7,11 +7,6 @@ export const Wrapper = styled.div`
   background: var(--color-primary-300);
   color: white;
 
-  h1 {
-    font-size: var(--font-size-xxxl);
-    margin: 0 0 2.4rem;
-  }
-
   img {
     object-fit: cover;
   }
@@ -28,5 +23,21 @@ export const Wrapper = styled.div`
       flex: 1;
       padding: 10rem 5vw;
     }
+  }
+`;
+
+export const Content = styled.div`
+  h1 {
+    font-size: var(--font-size-xxxl);
+    margin: 0 0 4rem;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+    font-weight: normal;
+  }
+
+  ul {
+    margin: 0 0 14rem;
   }
 `;

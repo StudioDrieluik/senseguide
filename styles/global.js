@@ -81,10 +81,8 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.55;
     font-family: var(--font-primary);
     background-color: var(--color-bg);
-    background-color: var(--color-bg);
     color: var(--color-text-dark);
     font-size: var(--font-size-base);
-    overscroll-behavior-y: none;
     overflow-x: hidden;
   }
 
