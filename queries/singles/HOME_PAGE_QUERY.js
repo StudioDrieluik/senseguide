@@ -37,6 +37,7 @@ export const HOME_PAGE_QUERY = gql`
           }
           intro_image
           intro_title
+          intro_text
           intro_cta_title
           intro_cta_link {
             _linkType

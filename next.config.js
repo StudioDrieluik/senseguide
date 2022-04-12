@@ -19,16 +19,6 @@ const nextConfig = () => {
     `🙋 Hey, I'm Lucy! I'm getting ready to run ${config.meta.title} for the ${settings} environment, Hang tight.. 🙋`
   );
 
-  const headers =
-    settings !== 'local'
-      ? [
-          {
-            key: 'Content-Security-Policy',
-            value: `frame-ancestors ${env.hosts.fe};`,
-          },
-        ]
-      : null;
-
   return {
     env,
     eslint: {
@@ -49,16 +39,6 @@ const nextConfig = () => {
         // These rewrites are checked after pages/public files are checked but before dynamic routes
         afterFiles: config.afterFilesRewrites,
       };
-    },
-    async headers() {
-      if (!headers) return [];
-      return [
-        {
-          // Apply these headers to all routes in your application.
-          source: '/(.*)',
-          headers,
-        },
-      ];
     },
   };
 };
