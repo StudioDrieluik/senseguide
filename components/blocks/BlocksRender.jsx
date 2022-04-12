@@ -13,7 +13,7 @@ const renderBlock = block => {
     case "quote":
       return <BlockQuote block={block.primary} key={nanoid()} />;
     case "video":
-      return <BlockVideo block={block} key={nanoid()} />;
+      return <BlockVideo block={block.primary} key={nanoid()} />;
     // case BLOCK_TYPES.TEXT_IMAGE_CTA:
     //   return <BlockTextImageCta key={block.id} block={block} />;
     default:

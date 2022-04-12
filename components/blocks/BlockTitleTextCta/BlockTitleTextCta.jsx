@@ -6,7 +6,7 @@ export const BlockTitleTextCta = ({ block }) => {
   console.log(block.title_text_cta_text_columns);
 
   return (
-    <Container medium={block?.title_text_cta_text_columns !== '2'}>
+    <Container small={block?.title_text_cta_text_columns !== '2'}>
       <Wrapper>
         {block?.title_text_cta_title && <h2>{block?.title_text_cta_title[0].text}</h2>}
 
