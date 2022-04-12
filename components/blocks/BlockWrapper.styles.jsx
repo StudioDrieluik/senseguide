@@ -2,9 +2,21 @@ import styled from 'styled-components';
 
 export const BlockWrapper = styled.div`
   width: 100%;
-  margin: 10rem 0 0;
+
+  // Component spacing
+  > * + * {
+    margin-top: 8rem;
+  }
 
   @media (${({ theme }) => theme.respondTo.tablet}) {
-    margin: 21.6rem 0 0;
+    > * + * {
+      margin-top: 10rem;
+    }
+  }
+
+  @media (${({ theme }) => theme.respondTo.desktop}) {
+    > * + * {
+      margin-top: 16rem;
+    }
   }
 `;

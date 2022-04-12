@@ -1,27 +1,25 @@
 import React from 'react';
 import { useQuery } from '@/hooks/useQuery';
-import { WORKSHOP_QUERY } from '@/queries/singles/WORKSHOP_QUERY';
+import { AUDIENCE_QUERY } from '@/queries/singles/AUDIENCE_QUERY';
 import { cmsDataService } from '@/services/cmsDataService';
-import { WorkshopTemplate } from '../../templates/workshop/WorkshopTemplate';
+import { ContentpageTemplate } from '../../templates/contentpage/ContentpageTemplate';
 
-const WorkshopDetail = ({uid}) => {
-  const { loading, error, data } = useQuery(WORKSHOP_QUERY, {
+const AudienceDetail = ({uid}) => {
+  const { loading, error, data } = useQuery(AUDIENCE_QUERY, {
     variables: { uid },
   });
 
   if (error) return <p>Error...</p>;
   if (!data && loading) return <p>Loading</p>;
 
-
-  return <WorkshopTemplate data={data?.allWorkshops?.edges?.[0].node} />;
-
+  return <ContentpageTemplate data={data?.allAudiences?.edges?.[0].node} />;
 }
 
 export async function getStaticProps(ctx) {
   // build queries
   const queries = [
     {
-      query: WORKSHOP_QUERY,
+      query: AUDIENCE_QUERY,
       variables: {
         uid: ctx.params.slug,
       },
@@ -44,4 +42,4 @@ export async function getStaticPaths() {
   };
 }
 
-export default WorkshopDetail;
+export default AudienceDetail;

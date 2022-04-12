@@ -3,16 +3,23 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  background: var(--color-primary-300);
+  margin-bottom: 4rem;
   color: white;
+  background: var(--color-primary-300);
+
 
   img {
     object-fit: cover;
   }
 
+  @media (${({ theme }) => theme.respondTo.tablet}) {
+    margin-bottom: 6.4rem;
+  }
+
   @media (${({ theme }) => theme.respondTo.desktop}) {
     height: 90vh;
     flex-direction: row;
+    margin-bottom: 16rem;
   }
 
   > *:first-child {

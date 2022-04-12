@@ -2,16 +2,13 @@
 import { useQuery } from '@/hooks/useQuery';
 import { WHO_PAGE_QUERY } from '@/queries/singles/WHO_PAGE_QUERY';
 import { cmsDataService } from '@/services/cmsDataService';
-import { BlocksRender } from '@/components/blocks/BlocksRender';
 import { WhoTemplate } from '../../templates/who/WhoTemplate';
 
-const WhoPage = ({ preview }) => {
+const WhoPage = () => {
   const { loading, error, data } = useQuery(WHO_PAGE_QUERY);
 
   if (error) return <p>Error...</p>;
   if (!data && loading) return <p>Loading</p>;
-
-  console.log(data)
 
   return <WhoTemplate data={data?.allVoor_wies?.edges?.[0].node} audience={data?.allAudiences?.edges} />
 };
