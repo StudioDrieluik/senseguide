@@ -2,8 +2,8 @@ import { Wrapper, FooterContainer, FooterTopLinks, FooterMenu, FooterCredits } f
 import { Container } from '../Container/Container.styles';
 
 export const TheFooter = () => (
-  <Container>
-    <Wrapper>
+  <Wrapper>
+    <Container>
       <FooterContainer>
         <img src="/logo.svg" width="210" height="32" loading="lazy" alt="Logo Senseguide" />
         <FooterTopLinks>
@@ -28,6 +28,6 @@ export const TheFooter = () => (
           <span>Realisatie: <a href="https://studiodrieluik.nl" target="_blank" rel="noreferrer">Studio Drieluik</a></span>
         </FooterCredits>
       </FooterContainer>
-    </Wrapper>
-  </Container>
+    </Container>
+  </Wrapper>
 );

@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-  max-width: var(--max-container-width);
-  margin: 0 auto;
+export const Wrapper = styled.footer`
   padding: 6.4rem 0 3.2rem;
 `;
 

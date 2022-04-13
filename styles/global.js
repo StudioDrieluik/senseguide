@@ -70,7 +70,18 @@ const GlobalStyle = createGlobalStyle`
 
   }
 
+  html, #__next {
+    height: 100%;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
   main {
+    flex: 1;
     padding: 0;
   }
 
@@ -82,7 +93,7 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     padding: 0;
     margin: 0;
-    min-height: 100vh;
+    height: 100%;
     width: 100%;
     line-height: 1.55;
     font-family: var(--font-primary);
