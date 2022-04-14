@@ -53,6 +53,17 @@ export const AUDIENCE_QUERY = gql`
                 video_id
               }
             }
+            ... on AudienceBodyAccordion {
+              type
+              primary {
+                accordion_title
+                accordion_text
+              }
+              fields {
+                accordion_item_title
+                accordion_item_text
+              }
+            }
             __typename
           }
         }

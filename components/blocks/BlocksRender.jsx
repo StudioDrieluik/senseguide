@@ -1,5 +1,6 @@
 
 import { nanoid } from 'nanoid';
+import { Accordion } from '../Accordion/Accordion';
 import { BlockQuote } from './BlockQuote/BlockQuote';
 import { BlockTitleTextCta } from './BlockTitleTextCta/BlockTitleTextCta';
 import { BlockVideo } from './BlockVideo/BlockVideo';
@@ -14,8 +15,8 @@ const renderBlock = block => {
       return <BlockQuote block={block.primary} key={nanoid()} />;
     case "video":
       return <BlockVideo block={block.primary} key={nanoid()} />;
-    // case BLOCK_TYPES.TEXT_IMAGE_CTA:
-    //   return <BlockTextImageCta key={block.id} block={block} />;
+    case "accordion":
+      return <Accordion block={block.primary} fields={block.fields} key={nanoid()} />
     default:
       break;
   }

@@ -66,7 +66,7 @@ const GlobalStyle = createGlobalStyle`
     // Settings
     --border-radius: 0.8rem;
     --component-spacing: 16rem;
-    --transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); // @TODO: Nader te balen
+    --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); // @TODO: Nader te balen
 
   }
 

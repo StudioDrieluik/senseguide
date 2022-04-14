@@ -20,7 +20,7 @@ export const Hero = ({ title, image, intro, isWorkshop }) => {
 
     {image?.url && <ImageWrapper>
       <ImageContainer>
-        <Image src={image.url} layout="fill" />
+        <Image src={image.url} layout="fill" priority />
       </ImageContainer>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 138"><path d="M58.59 1.233 4.136 31.877a8 8 0 0 0-4.077 6.972v59.759a8 8 0 0 0 4.028 6.944l54.455 31.15a8 8 0 0 0 8.012-.039l53.158-31.098a8 8 0 0 0 3.96-6.905V38.797a8 8 0 0 0-4.009-6.934L66.504 1.271a8 8 0 0 0-7.913-.038Z" fill="#7372B6" fillRule="evenodd"/></svg>
     </ImageWrapper>}
