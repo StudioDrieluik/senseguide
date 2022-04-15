@@ -64,6 +64,16 @@ export const AUDIENCE_QUERY = gql`
                 accordion_item_text
               }
             }
+            ... on AudienceBodyImages {
+              type
+              primary {
+                image_slider_sizing
+              }
+              fields {
+                image_slider_image
+                description
+              }
+            }
             __typename
           }
         }

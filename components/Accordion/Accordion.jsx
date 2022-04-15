@@ -1,7 +1,7 @@
-import { nanoid } from 'nanoid';
 import { useState } from 'react';
 import { Container } from '../Container/Container.styles';
 import { Panel, PanelContent, PanelGroup, PanelHeading, PanelIcon, PanelTitle } from './Accordion.styles';
+import { v4 as uuidv4 } from 'uuid';
 
 export const Accordion = ({ block, fields }) => {
   const [toggle, setToggle] = useState(null);
@@ -22,7 +22,7 @@ export const Accordion = ({ block, fields }) => {
       {fields && (
         <PanelGroup>
           {fields.map(({ accordion_item_title: title, accordion_item_text: content }) => {
-            // @TODO: Alternatief voor ID, nanoid fixt elke keer een nieuwe op click
+            // @TODO: Alternatief voor ID, uuid fixt elke keer een nieuwe op click
             const id = `${title[0].text}-id`;
 
             return (
@@ -33,7 +33,7 @@ export const Accordion = ({ block, fields }) => {
                 </PanelHeading>
                 <PanelContent aria-expanded={id === toggle}>
                   {content.map(({ text }) => (
-                    <p key={nanoid()}>{text}</p>
+                    <p key={uuidv4()}>{text}</p>
                   ))}
                 </PanelContent>
               </Panel>

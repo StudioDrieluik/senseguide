@@ -41,6 +41,7 @@ export const WorkshopTemplate = ({ data }) => {
             <button>Aanmelden</button>
           </Meta>
         </ContentWrapper>
+        {/* @TODO: FAQ toevoegen? */}
       </Container>
     </Layout>
   );

@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: start;
   gap: 2.4rem;
+  margin-bottom: 4.8rem;
 
   @media (${({ theme }) => theme.respondTo.tabletL}) {
     flex-direction: row;
@@ -13,6 +14,7 @@ export const Wrapper = styled.div`
 
   @media (${({ theme }) => theme.respondTo.desktop}) {
     gap: ${props => (props.compact ? '4.8rem' : '7.2rem')};
+    margin-bottom: ${props => (props.compact ? '4.8rem' : '6.4rem')};
   }
 
   a:hover {
