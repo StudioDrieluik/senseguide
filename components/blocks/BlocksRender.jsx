@@ -2,6 +2,7 @@
 import { Accordion } from '../Accordion/Accordion';
 import { BlockImage } from './BlockImage/BlockImage';
 import { BlockQuote } from './BlockQuote/BlockQuote';
+import { BlockStorySlider } from './BlockStorySlider/BlockStorySlider';
 import { BlockTitleTextCta } from './BlockTitleTextCta/BlockTitleTextCta';
 import { BlockVideo } from './BlockVideo/BlockVideo';
 
@@ -19,6 +20,8 @@ const renderBlock = (block, index) => {
       return <Accordion block={block.primary} fields={block.fields} key={index} />
     case "images":
       return <BlockImage block={block.primary} images={block.fields} key={index} />
+    case "story_slider":
+      return <BlockStorySlider block={block.primary} slides={block.fields} key={index} />
     default:
       break;
   }

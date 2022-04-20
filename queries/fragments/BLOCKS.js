@@ -60,4 +60,40 @@ export const BLOCKS = () =>
         description
       }
     }
+    ... on AudienceBodyStory_slider {
+      type
+      primary {
+        story_slider_title
+        story_slider_link {
+          _linkType
+          ... on _ExternalLink {
+            url
+            target
+          }
+          ... on _Document {
+            _meta {
+              id
+              uid
+              type
+            }
+          }
+        }
+        story_slider_link_title
+      }
+      fields {
+        story_slider_story {
+          _linkType
+          ... on _ExternalLink {
+            url
+            target
+          }
+          ... on _Document {
+            _meta {
+              uid
+              id
+            }
+          }
+        }
+      }
+    }
 `;

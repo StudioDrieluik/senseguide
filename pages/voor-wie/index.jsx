@@ -10,7 +10,7 @@ const WhoPage = () => {
   if (error) return <p>Error...</p>;
   if (!data && loading) return <p>Loading</p>;
 
-  return <WhoTemplate data={data?.allVoor_wies?.edges?.[0].node} audience={data?.allAudiences?.edges} />
+  return <WhoTemplate data={data?.allVoor_wies?.edges?.[0]?.node} audience={data?.allAudiences?.edges} />
 };
 
 export async function getStaticProps(ctx) {

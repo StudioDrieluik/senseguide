@@ -12,7 +12,7 @@ const AudienceDetail = ({uid}) => {
   if (error) return <p>Error...</p>;
   if (!data && loading) return <p>Loading</p>;
 
-  return <ContentpageTemplate data={data?.allAudiences?.edges?.[0].node} />;
+  return <ContentpageTemplate data={data?.allAudiences?.edges?.[0]?.node} />;
 }
 
 export async function getStaticProps(ctx) {

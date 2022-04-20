@@ -3,7 +3,6 @@ import Link from 'next/link'
 import React from 'react'
 import { ContentWrapper, ImageContainer, ImageWrapper, Tag, TagList, Wrapper } from './Story.styles';
 
-
 const Story = ({ data, compact }) => (
   <Wrapper compact={compact}>
     {data?.image?.url && <ImageWrapper>
@@ -21,9 +20,9 @@ const Story = ({ data, compact }) => (
           <h3>{data.title[0].text}</h3>
         </a>
       </Link>
-      {data?.tags && <TagList>
+      {data?.tags[0].tag && <TagList>
         {data.tags.map(({tag}, index) => (
-          <Tag key={index}>{tag[0].text}</Tag>
+          <Tag key={index}>{tag?.[0].text}</Tag>
         ))}
       </TagList>}
       {data.intro?.[0] && <p>{data.intro[0].text}</p>}

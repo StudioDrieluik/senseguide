@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const SliderContainer = styled.div`
   width: 100%;
+  max-width: var(--max-container-width);
+  margin: 0 auto;
   padding: var(--container-padding);
 
   @media (${({ theme }) => theme.respondTo.tablet}) {
@@ -48,19 +50,39 @@ export const Icon = styled.button`
   border: 2px solid var(--color-gray-200);
   border-radius: 50%;
   background: none;
+  opacity: 1;
+  transition: var(--transition);
   cursor: pointer;
 
   &:not(:last-child) {
     margin-right: 1.6rem;
   }
 
+  &:hover:not(.arrow--disabled) {
+    border-color: var(--color-primary-300);
+
+    svg {
+      color: var(--color-primary-300);
+    }
+  }
+
   svg {
     width: 2.8rem;
     height: 2.8rem;
+    transition: color var(--transition);
   }
 
   &.arrow--left svg {
     transform: rotate(180deg);
+  }
+
+  &.arrow--disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+
+    svg {
+      color: var(--color-gray-300);
+    }
   }
 
   @media (${({ theme }) => theme.respondTo.desktop}) {

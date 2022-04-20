@@ -35,7 +35,7 @@ export const ImageSlider = ({ width, images }) => {
           spacing: 16,
         },
       },
-      "(min-width: 1000px)": {
+      "(min-width: 1025px)": {
         slides: {
           origin: 'center',
           perView: `${isCompact ? 2.5 : 1.15}`,
@@ -106,7 +106,7 @@ function Arrow(props) {
   const disabeld = props.disabled ? ' arrow--disabled' : '';
   return (
     <Icon onClick={props.onClick} className={`arrow ${props.left ? 'arrow--left' : 'arrow--right'} ${disabeld}`}>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><g fill="none" fillRule="evenodd"> <path d="M0 0h28v28H0z" /> <g strokeLinecap="round" strokeLinejoin="round" stroke="#000" strokeWidth="1.75"> <path d="M4.375 14.004h19.25M15.75 6.125 23.625 14l-7.875 7.875" /></g></g></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><g fill="none" fillRule="evenodd"> <path d="M0 0h28v28H0z" /> <g strokeLinecap="round" strokeLinejoin="round" stroke="currentColor" strokeWidth="1.75"> <path d="M4.375 14.004h19.25M15.75 6.125 23.625 14l-7.875 7.875" /></g></g></svg>
     </Icon>
   );
 }
