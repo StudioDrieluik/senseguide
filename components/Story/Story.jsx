@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from 'uuid';
 import Image from 'next/image';
 import Link from 'next/link'
 import React from 'react'
@@ -23,8 +22,8 @@ const Story = ({ data, compact }) => (
         </a>
       </Link>
       {data?.tags && <TagList>
-        {data.tags.map(({tag}) => (
-          <Tag key={uuidv4()}>{tag[0].text}</Tag>
+        {data.tags.map(({tag}, index) => (
+          <Tag key={index}>{tag[0].text}</Tag>
         ))}
       </TagList>}
       {data.intro?.[0] && <p>{data.intro[0].text}</p>}

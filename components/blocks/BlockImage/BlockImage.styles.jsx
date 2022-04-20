@@ -9,6 +9,11 @@ export const ImageGridItem = styled.div`
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+
+  span {
+    display: inline-block;
+    margin-top: 1.2rem;
+  }
 `
 
 export const ImageWrapper = styled.div`

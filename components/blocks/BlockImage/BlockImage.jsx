@@ -11,7 +11,7 @@ export const BlockImage = ({ block, images }) => {
       <Container>
         <ImageGrid compact>
           {images.map(({ image_slider_image: image, description }, index) => (
-            <ImageGridItem>
+            <ImageGridItem key={index}>
               <ImageWrapper compact>
                 <ImageContainer>
                   <Image src={image.url} layout="fill" />
@@ -27,7 +27,6 @@ export const BlockImage = ({ block, images }) => {
 
   if (images.length === 1 && width === 'Full-width') {
     const { image_slider_image: image, description } = images[0];
-    console.log('yes');
     return (
       <Container>
         <ImageWrapper>

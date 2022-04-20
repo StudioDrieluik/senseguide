@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Container } from '../Container/Container.styles';
 import { Panel, PanelContent, PanelGroup, PanelHeading, PanelIcon, PanelTitle } from './Accordion.styles';
-import { v4 as uuidv4 } from 'uuid';
 
 export const Accordion = ({ block, fields }) => {
   const [toggle, setToggle] = useState(null);
@@ -32,8 +31,8 @@ export const Accordion = ({ block, fields }) => {
                   <PanelTitle>{title?.[0].text}</PanelTitle>
                 </PanelHeading>
                 <PanelContent aria-expanded={id === toggle}>
-                  {content.map(({ text }) => (
-                    <p key={uuidv4()}>{text}</p>
+                  {content.map(({ text }, index) => (
+                    <p key={index}>{text}</p>
                   ))}
                 </PanelContent>
               </Panel>

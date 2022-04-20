@@ -1,5 +1,44 @@
 import styled from "styled-components";
 
+export const SliderContainer = styled.div`
+  width: 100%;
+  padding: var(--container-padding);
+
+  @media (${({ theme }) => theme.respondTo.tablet}) {
+    padding: 0;
+  }
+`;
+
+export const Slide = styled.div`
+  span {
+    opacity: 0;
+    transition: opacity 0.5s 0.1s ease-in;
+  }
+
+  &.active {
+    span {
+      display: inline-block;
+      margin-top: 1.2rem;
+      opacity: 1;
+
+      .large & {
+        font-size: var(--font-size-lg);
+        font-weight: var(--font-weight-bold);
+      }
+    }
+  }
+`;
+
+export const SliderNavigation = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &.large {
+    margin-top: 3.2rem;
+  }
+`;
+
 export const Icon = styled.button`
   display: inline-flex;
   align-items: center;
