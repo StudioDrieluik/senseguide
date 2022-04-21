@@ -96,4 +96,19 @@ export const BLOCKS = () =>
         }
       }
     }
+    ... on AudienceBodyHighlighted_item {
+      type
+      primary{
+        highlighted_item_entry {
+          _linkType
+          ... on _Document {
+            _meta {
+              uid
+              id
+            }
+          }
+        }
+        highlighted_item_background_color
+      }
+    }
 `;
