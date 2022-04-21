@@ -1,5 +1,6 @@
 
 import { Accordion } from '../Accordion/Accordion';
+import { BlockContactCard } from './BlockContactCard/BlockContactCard';
 import { BlockHighlightedItem } from './BlockHighlightedItem/BlockHighlightedItem';
 import { BlockImage } from './BlockImage/BlockImage';
 import { BlockQuote } from './BlockQuote/BlockQuote';
@@ -25,6 +26,8 @@ const renderBlock = (block, index) => {
       return <BlockStorySlider block={block.primary} slides={block.fields} key={index} />
     case "highlighted_item":
       return <BlockHighlightedItem block={block.primary} key={index} />
+    case "contact_card":
+      return <BlockContactCard block={block.primary} key={index} />
     default:
       break;
   }

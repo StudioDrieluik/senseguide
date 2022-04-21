@@ -111,4 +111,22 @@ export const BLOCKS = () =>
         highlighted_item_background_color
       }
     }
+    ... on AudienceBodyContact_card {
+      type
+      primary {
+        contact_image
+        contact_title
+        contact_text
+        background
+        contact_person {
+          ... on Team {
+            first_name
+            last_name
+            email_address
+            phone
+            image
+          }
+        }
+      }
+    }
 `;
