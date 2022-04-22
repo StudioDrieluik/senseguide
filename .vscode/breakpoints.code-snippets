@@ -18,7 +18,7 @@
   "Media Query": {
 		"prefix": "theme",
 		"body": [
-			"@media (${({ theme }) => theme.respondTo.${1|mobile, tablet, tabletL, tabletXL, tabletAndMobile, desktop, desktopL, desktopXL, dekstopXXL, desktopXXXL|}}) {",
+			"@media (${({ theme }) => theme.respondTo.${1|mobile,tablet,tabletL,tabletXL,tabletAndMobile,desktop,desktopL,desktopXL,dekstopXXL,desktopXXXL|}}) {",
 			"	$0",
 			"}",
 		]

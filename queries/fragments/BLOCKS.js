@@ -129,4 +129,21 @@ export const BLOCKS = () =>
         }
       }
     }
+    ... on AudienceBodyImage__title__text___cta {
+      type
+      primary {
+        image_cta_image
+        image_cta_image_alignment
+        image_cta_item_title
+        image_cta_item_text
+        image_cta_cta_title
+        image_cta_cta_link {
+          _linkType
+          ... on _ExternalLink {
+            url
+            target
+          }
+        }
+      }
+    }
 `;
