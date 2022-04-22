@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
     border: 2px solid var(--color-gray-300);
   }
 
-  &.variant-white {
+  &.variant-purple {
     background: var(--color-primary-300);
     color: white;
   }
@@ -81,7 +81,7 @@ export const ContactLinks = styled.div`
         color: var(--color-primary-300);
       }
 
-      .variant-white & {
+      .variant-purple & {
         color: white;
 
         svg {
