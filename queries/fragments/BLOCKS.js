@@ -16,6 +16,7 @@ export const BLOCKS = type =>
           }
           ... on _Document {
             _meta {
+              type
               uid
               id
             }
@@ -62,8 +63,23 @@ export const BLOCKS = type =>
     }
     ... on ${type}BodyStory_slider {
       type
+      fields {
+        story_slider_story {
+          ... on Story {
+            title
+            image
+            category
+            _meta {
+              type
+              id
+              uid
+            }
+          }
+        }
+      }
       primary {
         story_slider_title
+        story_slider_link_title
         story_slider_link {
           _linkType
           ... on _ExternalLink {
@@ -72,13 +88,12 @@ export const BLOCKS = type =>
           }
           ... on _Document {
             _meta {
+              type
               id
               uid
-              type
             }
           }
         }
-        story_slider_link_title
       }
       fields {
         story_slider_story {
@@ -89,6 +104,7 @@ export const BLOCKS = type =>
           }
           ... on _Document {
             _meta {
+              type
               uid
               id
             }
@@ -103,6 +119,7 @@ export const BLOCKS = type =>
           _linkType
           ... on _Document {
             _meta {
+              type
               uid
               id
             }
