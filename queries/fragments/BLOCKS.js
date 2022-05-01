@@ -1,7 +1,7 @@
-export const BLOCKS = () =>
+export const BLOCKS = type =>
   `
     __typename
-    ... on AudienceBodyTitle__text___cta {
+    ... on ${type}BodyTitle__text___cta {
       type
       primary {
         title_text_cta_title
@@ -23,14 +23,14 @@ export const BLOCKS = () =>
         }
       }
     }
-    ... on AudienceBodyQuote {
+    ... on ${type}BodyQuote {
       type
       primary {
         text
         author
       }
     }
-    ... on AudienceBodyVideo {
+    ... on ${type}BodyVideo {
       type
       primary {
         video_title
@@ -39,7 +39,7 @@ export const BLOCKS = () =>
         video_id
       }
     }
-    ... on AudienceBodyAccordion {
+    ... on ${type}BodyAccordion {
       type
       primary {
         accordion_title
@@ -50,7 +50,7 @@ export const BLOCKS = () =>
         accordion_item_text
       }
     }
-    ... on AudienceBodyImages {
+    ... on ${type}BodyImages {
       type
       primary {
         image_slider_sizing
@@ -60,7 +60,7 @@ export const BLOCKS = () =>
         description
       }
     }
-    ... on AudienceBodyStory_slider {
+    ... on ${type}BodyStory_slider {
       type
       primary {
         story_slider_title
@@ -96,7 +96,7 @@ export const BLOCKS = () =>
         }
       }
     }
-    ... on AudienceBodyHighlighted_item {
+    ... on ${type}BodyHighlighted_item {
       type
       primary{
         highlighted_item_entry {
@@ -111,7 +111,7 @@ export const BLOCKS = () =>
         highlighted_item_background_color
       }
     }
-    ... on AudienceBodyContact_card {
+    ... on ${type}BodyContact_card {
       type
       primary {
         contact_image
@@ -129,7 +129,7 @@ export const BLOCKS = () =>
         }
       }
     }
-    ... on AudienceBodyImage__title__text___cta {
+    ... on ${type}BodyImage__title__text___cta {
       type
       primary {
         image_cta_image

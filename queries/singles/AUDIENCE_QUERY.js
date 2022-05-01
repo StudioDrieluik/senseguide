@@ -16,7 +16,7 @@ export const AUDIENCE_QUERY = gql`
             uid
           }
           body {
-            ${BLOCKS()}
+            ${BLOCKS('Audience')}
           }
         }
       }
