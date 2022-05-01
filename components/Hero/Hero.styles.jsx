@@ -7,11 +7,11 @@ export const Wrapper = styled.div`
   align-items: start;
   max-width: ${props => (props.image ? 'var(--max-container-width)' : 'var(--medium-container-width)')};
   max-width: ${props => props.workshop && 'var(--max-container-width)'};
-  margin: 6rem auto 4rem; // @TODO: If Header will be fixed
+  margin: 6.4rem auto 4.8rem; // @TODO: If Header will be fixed
   padding: var(--container-padding);
 
   @media (${({ theme }) => theme.respondTo.tablet}) {
-    margin-bottom: 6rem;
+    margin-bottom: 6.4rem;
   }
 
   @media (${({ theme }) => theme.respondTo.desktop}) {

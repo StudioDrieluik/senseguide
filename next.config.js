@@ -29,7 +29,7 @@ const nextConfig = () => {
       styledComponents: true,
     },
     images: {
-      domains: ['images.prismic.io'],
+      domains: ['images.prismic.io', 'picsum.photos'],
     },
 
     async rewrites() {

@@ -53,18 +53,36 @@ const GlobalStyle = createGlobalStyle`
     --max-container-width: 1600px;
     --medium-container-width: 1092px; // 996px + padding
     --small-container-width: 885px; // 789px + padding
-    --container-padding: 0 1.6rem;
+    --container-padding-horizontal: 1.6rem;
+    --container-padding: 0 var(--container-padding-horizontal);
 
     @media (${({ theme }) => theme.respondTo.tablet}) {
-      --container-padding: 0 4.8rem;
+      --container-padding-horizontal: 3.2rem;
+    }
+
+    @media (${({ theme }) => theme.respondTo.desktop}) {
+      --container-padding-horizontal: 4.8rem;
     }
 
     // Settings
     --border-radius: 0.8rem;
     --component-spacing: 16rem;
+    --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); // @TODO: Nader te balen
+
+  }
+
+  html, #__next {
+    height: 100%;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   main {
+    flex: 1;
     padding: 0;
   }
 
@@ -76,7 +94,7 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     padding: 0;
     margin: 0;
-    min-height: 100vh;
+    height: 100%;
     width: 100%;
     line-height: 1.55;
     font-family: var(--font-primary);
@@ -140,7 +158,7 @@ const GlobalStyle = createGlobalStyle`
     max-width: 100%
   }
 
-  input {
+  button, input {
     font-family: inherit;
   }
 

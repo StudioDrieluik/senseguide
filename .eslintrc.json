@@ -10,9 +10,8 @@
     "airbnb",
     "airbnb/hooks",
     "prettier",
-    "plugin:tailwindcss/recommended"
   ],
-  "plugins": ["react", "jsx-a11y", "tailwindcss"],
+  "plugins": ["react", "jsx-a11y"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
