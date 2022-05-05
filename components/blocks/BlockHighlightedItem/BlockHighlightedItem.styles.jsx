@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
+  min-height: 300px;
   flex-direction: column;
   border-radius: var(--border-radius);
   overflow: hidden;
@@ -19,7 +20,7 @@ export const Wrapper = styled.div`
     background: var(--color-primary-300);
     color: white;
   }
-`
+`;
 
 export const ImageContainer = styled.div`
   flex: 1 0 40%;
@@ -29,13 +30,23 @@ export const ImageContainer = styled.div`
   img {
     object-fit: cover;
   }
-`
+`;
 
 export const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   flex: 1 1 60%;
   padding: 2.4rem;
 
   @media (${({ theme }) => theme.respondTo.tabletL}) {
     padding: 4rem 4.8rem;
+  }
+
+  p {
+    flex-grow: 1;
+  }
+
+  .arrow-link {
+    margin-top: 2.4rem;
   }
 `;

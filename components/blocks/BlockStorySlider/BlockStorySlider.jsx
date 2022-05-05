@@ -61,7 +61,6 @@ export const BlockStorySlider = ({ block, slides }) => {
         {block?.story_slider_title && <h2>{block?.story_slider_title[0].text}</h2>}
 
         {/* TODO: Link nog toevoegen */}
-        {/* @Lothar van een interne link krijg ik wel het slug terug, maar niet de volledige url */}
         {/* @Rens, zie de nieuwe 'getUrlFromMeta' functie in utils, ook hieronder een voorbeeld van hoe toe te passen */}
       </Container>
       <SliderContainer>

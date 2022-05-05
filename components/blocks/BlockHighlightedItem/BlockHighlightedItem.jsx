@@ -1,24 +1,31 @@
 import Image from "next/image";
-import Link from "next/link";
+import { getUrlFromMeta } from "../../../utils/utils";
+import ArrowLink from "../../ArrowLink/ArrowLink";
 import { Container } from "../../Container/Container.styles";
 import { ContentContainer, ImageContainer, Wrapper } from "./BlockHighlightedItem.styles";
 
 export const BlockHighlightedItem = ({ block }) => {
   const color = block.highlighted_item_background_color.toLowerCase();
+  const href = getUrlFromMeta(block.highlighted_item_entry._meta);
+  const { image, title, intro } = block.highlighted_item_entry;
 
-  return (
-    <Container medium>
-      <Wrapper className={`variant-${color}`}>
-        <ImageContainer>
-          <Image src={`https://picsum.photos/378/284?img=${1}`} layout="fill" />
-        </ImageContainer>
-        <ContentContainer>
-          {/* TODO: Replace dummy content & global link */}
-          <h4>Uitgelicht item</h4>
-          <p>Asymmetrical hexagon migas kale chips, post-ironic tousled pitchfork. Tofu drinking vinegar sustainable, jean shorts bespoke butcher jianbing.</p>
-          <Link href="#">Ontdek project</Link>
-        </ContentContainer>
-      </Wrapper>
-    </Container>
-  );
+  if (href) {
+    return (
+      <Container medium>
+        <Wrapper className={`variant-${color}`}>
+          {image?.url && <ImageContainer>
+            <Image src={image?.url} layout="fill" />
+          </ImageContainer>}
+          <ContentContainer>
+            {title?.[0]?.text && <h4>{title?.[0]?.text}</h4>}
+            {intro?.[0]?.text && <p>{intro?.[0]?.text}</p>}
+            {/* @Lothar TODO: andere links dan stories ook toestaan? */}
+            {block.link_title && href && <ArrowLink href={href}>{block?.link_title?.[0]?.text}</ArrowLink>}
+          </ContentContainer>
+        </Wrapper>
+      </Container>
+    );
+  }
+
+  return false;
 };

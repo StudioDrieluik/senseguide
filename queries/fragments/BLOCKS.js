@@ -124,8 +124,20 @@ export const BLOCKS = type =>
               id
             }
           }
+          ... on Story {
+            title
+            intro
+            image
+            category
+            _meta {
+              type
+              id
+              uid
+            }
+          }
         }
         highlighted_item_background_color
+        link_title
       }
     }
     ... on ${type}BodyContact_card {
