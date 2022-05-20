@@ -19,7 +19,14 @@ export const Wrapper = styled.div`
 export const ContentWrapper = styled.div`
   flex: 1 1 60%;
 
+  [type='button'] {
+    margin-top: 1.6rem;
+  }
+
   @media (${({ theme }) => theme.respondTo.desktop}) {
+    [type='button'] {
+      margin-top: 3.2rem;
+    }
   }
 `;
 

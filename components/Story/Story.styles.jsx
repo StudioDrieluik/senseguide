@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -10,17 +10,37 @@ export const Wrapper = styled.div`
 
   @media (${({ theme }) => theme.respondTo.tabletL}) {
     flex-direction: row;
+    gap: ${props => (props.compact ? '3.2rem' : '4rem')};
   }
 
   @media (${({ theme }) => theme.respondTo.desktop}) {
     gap: ${props => (props.compact ? '4.8rem' : '7.2rem')};
-    margin-bottom: ${props => (props.compact ? '4.8rem' : '6.4rem')};
+    margin-bottom: ${props => (props.compact ? '4.8rem' : '7.2rem')};
   }
 
   a:hover {
     img {
       transform: scale(1.05);
     }
+  }
+`;
+
+export const ImageWrapper = styled.div`
+  flex-shrink: 0;
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 16 / 9;
+
+  @media (${({ theme }) => theme.respondTo.tabletL}) {
+    aspect-ratio: 4 / 3;
+    width: 35%;
+    flex-direction: row;
+  }
+
+  img {
+    object-fit: cover;
+    transition: var(--transition);
   }
 `;
 
@@ -32,27 +52,11 @@ export const ImageContainer = styled.div`
   overflow: hidden;
 `;
 
-export const ImageWrapper = styled.div`
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-
-  @media (${({ theme }) => theme.respondTo.tabletL}) {
-    aspect-ratio: 4 / 3;
-    flex-direction: row;
-  }
-
-  img {
-    object-fit: cover;
-    transition: var(--transition);
-  }
-`;
-
 export const ContentWrapper = styled.div`
   h3 {
     position: relative;
     display: inline-block;
-    font-size: ${props => (props.compact && 'var(--font-size-lg)')};
+    font-size: ${props => props.compact && 'var(--font-size-lg)'};
 
     /* @TODO: Create global animation for hover */
     &::after {
@@ -63,9 +67,12 @@ export const ContentWrapper = styled.div`
       left: 0;
       right: 0;
       background: currentColor;
-      opacity: 0;
       transition: var(--transition);
-      transform: translateY(-0.3rem);
+
+      @media (${({ theme }) => theme.respondTo.desktop}) {
+        opacity: 0;
+        transform: translateY(-0.3rem);
+      }
     }
 
     &:hover,
@@ -76,7 +83,19 @@ export const ContentWrapper = styled.div`
       }
     }
   }
-`
+
+  p {
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    @media (${({ theme }) => theme.respondTo.desktop}) {
+      -webkit-line-clamp: 5;
+    }
+  }
+`;
 
 export const TagList = styled.div`
   margin-top: -1rem;
@@ -85,11 +104,11 @@ export const TagList = styled.div`
   @media (${({ theme }) => theme.respondTo.desktop}) {
     margin-bottom: 2.4rem;
   }
-`
+`;
 
 export const Tag = styled.div`
   display: inline-block;
-  padding: 0.3rem 1.2rem;
+  padding: 0.2rem 1.2rem;
   color: var(--color-gray-600);
   font-size: 1.4rem;
   font-weight: var(--font-weight-medium);
@@ -98,10 +117,11 @@ export const Tag = styled.div`
 
   &:not(:last-of-type) {
     margin-right: 0.8rem;
+    margin-bottom: 0.6rem;
   }
 
   @media (${({ theme }) => theme.respondTo.desktop}) {
     padding: 0.4rem 1.6rem;
     font-size: var(--font-size-xs);
   }
-`
+`;

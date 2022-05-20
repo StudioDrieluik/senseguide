@@ -48,5 +48,9 @@ export const ContentContainer = styled.div`
 
   .arrow-link {
     margin-top: 2.4rem;
+
+    .variant-purple & a {
+      color: white;
+    }
   }
 `;

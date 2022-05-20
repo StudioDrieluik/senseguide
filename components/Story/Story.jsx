@@ -20,7 +20,7 @@ const Story = ({ data, compact }) => (
           <h3>{data.title[0].text}</h3>
         </a>
       </Link>
-      {data?.tags[0].tag && <TagList>
+      {data?.tags[0]?.tag && <TagList>
         {data.tags.map(({tag}, index) => (
           <Tag key={index}>{tag?.[0].text}</Tag>
         ))}

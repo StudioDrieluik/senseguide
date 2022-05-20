@@ -6,12 +6,15 @@ export const Link = styled.div`
     align-items: center;
     gap: 8px;
     font-weight: var(--font-weight-bold);
+    transition: color var(--transition);
 
     > * {
       flex-shrink: 0;
     }
 
     &:hover {
+      color: var(--color-primary-300);
+
       svg {
         transform: translateX(0.4rem); // @TODO better animation
       }

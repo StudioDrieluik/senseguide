@@ -41,15 +41,6 @@ export const Wrapper = styled.div`
     height: 2.4rem;
     margin-right: 1.2rem;
   }
-
-  a {
-    display: inline-block;
-    padding: 1rem 2.4rem;
-    border-radius: 4rem;
-    color: white;
-    background: var(--color-primary-300);
-    font-weight: var(--font-weight-medium);
-  }
 `
 
 export const ContentWrapper = styled.div`

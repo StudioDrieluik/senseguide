@@ -4,6 +4,7 @@ export const ContentWrapper = styled.div`
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  justify-content: space-between;
   gap: 3.2rem;
 
   @media (${({ theme }) => theme.respondTo.desktop}) {

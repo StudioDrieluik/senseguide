@@ -1,10 +1,10 @@
 // import useTranslation from 'next-translate/useTranslation';
 import { Layout } from '@/layouts/default';
 import { PageHead } from '@/components/PageHead';
-import { BlocksRender } from '@/components/blocks/BlocksRender';
 import { Container } from '../../components/Container/Container.styles';
 import { Hero } from '../../components/Hero/Hero';
 import { ContentWrapper, Intro, Meta } from './WorkshopTemplate.styles';
+import Button from '../../components/Button/Button';
 
 export const WorkshopTemplate = ({ data }) => {
   const { title, image, intro } = data;
@@ -37,8 +37,8 @@ export const WorkshopTemplate = ({ data }) => {
                 <span>{data.location[0].text}</span>
               </li>}
             </ul>
-            {/* @TODO: Global button */}
-            <button>Aanmelden</button>
+            {/* @TODO: Aanmelden */}
+            <Button href="#" variant="secondary">Aanmelden</Button>
           </Meta>
         </ContentWrapper>
         {/* @TODO: FAQ toevoegen? */}

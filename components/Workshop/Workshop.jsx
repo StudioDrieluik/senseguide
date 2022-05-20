@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import Button from '../Button/Button';
 import { ContentWrapper, Wrapper } from './Workshop.styles'
 
 const Workshop = ({ data }) => (
@@ -22,7 +23,7 @@ const Workshop = ({ data }) => (
       </ul>
       {data.intro?.[0] && <p>{data.intro[0].text}</p>}
     </ContentWrapper>
-    <Link href={`/workshops/${data._meta.uid}`}>Bekijk workshop</Link>
+    <Button href={`/workshops/${data._meta.uid}`} variant="secondary">Bekijk workshop</Button>
   </Wrapper>
 );
 

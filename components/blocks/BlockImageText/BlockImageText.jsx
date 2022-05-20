@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import Button from '../../Button/Button';
 import { Container } from '../../Container/Container.styles';
 import { ContentWrapper, ImageContainer, Wrapper } from './BlockImageText.styles';
 
@@ -12,8 +12,6 @@ export const BlockImageText = ({ block }) => {
     image_cta_cta_title: cta_title,
     image_cta_cta_link: link,
   } = block;
-
-  console.log(alignment);
 
   return (
     <Container>
@@ -28,12 +26,11 @@ export const BlockImageText = ({ block }) => {
           {text && <p>{text?.[0]?.text}</p>}
 
           {/* @TODO:
-          1. Global Button
-          2. Verschillende links */}
+          1. Verschillende links */}
           {link.url && cta_title && (
-            <Link href={link?.url} target={link?.target}>
+            <Button href={link?.url} target={link?.target} variant="primary">
               {cta_title?.[0]?.text}
-            </Link>
+            </Button>
           )}
         </ContentWrapper>
       </Wrapper>
