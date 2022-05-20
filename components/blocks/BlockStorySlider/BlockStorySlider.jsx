@@ -75,7 +75,7 @@ export const BlockStorySlider = ({ block, slides }) => {
                       <span>{slide.story_slider_story.category}</span>
                       <h4>{slide.story_slider_story.title?.[0]?.text}</h4>
                     </SlideContent>
-                    <Image src={slide.story_slider_story.image.url} layout="fill" />
+                    {slide.story_slider_story.image && <Image src={slide.story_slider_story.image?.url} layout="fill" />}
                   </a>
                 </Link>
               </Slide>

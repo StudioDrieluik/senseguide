@@ -4,10 +4,24 @@ export const Crumbs = styled.nav`
   display: none;
 
   @media (${({ theme }) => theme.respondTo.tablet}) {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.8rem;
+    display: block;
+
+    ol {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin: 0;
+      margin-bottom: 0.8rem;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
 
     a,
     span {

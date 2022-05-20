@@ -17,7 +17,7 @@ export const WorkshopsTemplate = ({ data, workshops }) => {
   return (
     <Layout>
       <PageHead meta={meta} />
-      <Hero {...heroContent} breadcrumbs="dit zijn breadcrumbs"/>
+      <Hero {...heroContent} />
 
       <Container medium>
         {workshops.map(({ node: workshop }) => (

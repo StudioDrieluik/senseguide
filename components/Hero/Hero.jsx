@@ -4,14 +4,10 @@ import { ContentWrapper, Hexagon, ImageContainer, ImageWrapper, Wrapper } from '
 import { Breadcrumbs } from '../Breadcrumbs/Breadcrumbs';
 
 export const Hero = ({ title, image, intro, isWorkshop }) => {
-  const hasParentPage = true; // @TODO: Check if page has parent
-  // const router = useRouter();
-
   return (
     <Wrapper image={image} workshop={isWorkshop}>
       <ContentWrapper>
-        {/* @TODO: Breadcrumbs */}
-        {hasParentPage && <Breadcrumbs parent="To-do" title={title} />}
+        <Breadcrumbs />
         {title?.[0] && <h1>{title[0].text}</h1>}
         {intro?.[0] && !isWorkshop && <p>{intro[0].text}</p>}
         <Hexagon>
