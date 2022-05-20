@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { ContentWrapper, Hexagon, ImageContainer, ImageWrapper, Wrapper } from './Hero.styles';
 import { Breadcrumbs } from '../Breadcrumbs/Breadcrumbs';
+import { useRouter } from 'next/router';
 
 export const Hero = ({ title, image, intro, isWorkshop }) => {
+  const router = useRouter();
+  const [hasParent, setHasParent] = useState(false);
+  useEffect(() => {
+    if (router) {
+      const linkPath = router.asPath.split('/');
+      linkPath.shift();
+
+      if (linkPath.length > 1) {
+        setHasParent(true);
+      }
+    }
+  }, [router]);
+
   return (
     <Wrapper image={image} workshop={isWorkshop}>
       <ContentWrapper>
-        <Breadcrumbs />
-        {(title || title?.[0]) && <h1>{title[0].text}</h1>}
+        {hasParent && <Breadcrumbs />}
+        {title && (title?.[0].text ? <h1>{title[0].text}</h1> : <h1>{title}</h1>)}
         {intro?.[0] && !isWorkshop && <p>{intro[0].text}</p>}
         <Hexagon>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 343 385">

@@ -6,9 +6,6 @@ import { Crumbs } from './Breadcrumbs.styles';
 const convertBreadcrumb = string => {
   return string
     .replace(/-/g, ' ')
-    .replace(/oe/g, 'ö')
-    .replace(/ae/g, 'ä')
-    .replace(/ue/g, 'ü')
 };
 
 export const Breadcrumbs = () => {
