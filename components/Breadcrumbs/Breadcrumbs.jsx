@@ -11,7 +11,7 @@ const convertBreadcrumb = string => {
     .replace(/ue/g, 'ü')
 };
 
-export const Breadcrumbs = ({ parent, title }) => {
+export const Breadcrumbs = () => {
   const router = useRouter();
   const [breadcrumbs, setBreadcrumbs] = useState(null);
 
@@ -47,7 +47,7 @@ export const Breadcrumbs = ({ parent, title }) => {
               </li>
             );
           } else {
-            return <li><span>{convertBreadcrumb(breadcrumb.breadcrumb)}</span></li>
+            return <li key={breadcrumb.href}><span>{convertBreadcrumb(breadcrumb.breadcrumb)}</span></li>
           }
         })}
       </ol>

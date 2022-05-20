@@ -8,7 +8,7 @@ export const Hero = ({ title, image, intro, isWorkshop }) => {
     <Wrapper image={image} workshop={isWorkshop}>
       <ContentWrapper>
         <Breadcrumbs />
-        {title?.[0] && <h1>{title[0].text}</h1>}
+        {(title || title?.[0]) && <h1>{title[0].text}</h1>}
         {intro?.[0] && !isWorkshop && <p>{intro[0].text}</p>}
         <Hexagon>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 343 385">

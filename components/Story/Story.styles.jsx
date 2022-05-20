@@ -53,34 +53,19 @@ export const ImageContainer = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
+  flex-grow: 1;
+
   h3 {
     position: relative;
     display: inline-block;
     font-size: ${props => props.compact && 'var(--font-size-lg)'};
-
-    /* @TODO: Create global animation for hover */
-    &::after {
-      content: '';
-      position: absolute;
-      height: 3px;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: currentColor;
-      transition: var(--transition);
-
-      @media (${({ theme }) => theme.respondTo.desktop}) {
-        opacity: 0;
-        transform: translateY(-0.3rem);
-      }
-    }
+    text-decoration: underline 0.15em rgba(255, 255, 255, 0);
+    transition: text-decoration-color var(--transition), color var(--transition);
 
     &:hover,
     &:focus {
-      &:after {
-        opacity: 1;
-        transform: translateY(0rem);
-      }
+      color: var(--color-primary-300);
+      text-decoration-color: var(--color-primary-300);
     }
   }
 
