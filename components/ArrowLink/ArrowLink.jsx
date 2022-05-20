@@ -3,7 +3,6 @@ import React from 'react'
 import { Link } from './ArrowLink.styles'
 
 export default function ArrowLink({href, children, ...props}) {
-  console.log(href, children)
   return (
     <Link className='arrow-link'>
       <NextLink href={href}>

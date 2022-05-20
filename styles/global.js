@@ -134,11 +134,14 @@ const GlobalStyle = createGlobalStyle`
 
     + p,
     + a,
-    + h2,
-    + h3,
-    + h4,
     + ul {
       margin-top: 1em;
+    }
+
+    + h2,
+    + h3,
+    + h4 {
+      margin-top: 2.4em;
     }
   }
 

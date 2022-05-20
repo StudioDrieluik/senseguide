@@ -1,20 +1,35 @@
-import { Container } from "../../Container/Container.styles";
-import { Columns } from "./BlockTitleTextCta.styles";
+import { Container } from '../../Container/Container.styles';
+import { Columns } from './BlockTitleTextCta.styles';
+import { RichText } from 'prismic-reactjs';
+import { htmlSerializer } from '@/utils/htmlSerializer';
+import Button from '../../Button/Button';
 
 export const BlockTitleTextCta = ({ block }) => {
+  const {
+    title_text_cta_text_columns: columns,
+    title_text_cta_title: title,
+    title_text_cta_text: text,
+    title_text_cta_cta_title: cta_title,
+    title_text_cta_cta_link: link,
+  } = block;
+
   return (
-    <Container small={block?.title_text_cta_text_columns !== '2'}>
-        {block?.title_text_cta_title && <h2>{block?.title_text_cta_title[0].text}</h2>}
+    <Container small={columns !== '2'}>
+      {title && <h2>{title?.[0].text}</h2>}
 
-        {block?.title_text_cta_text &&
-          <Columns columns={block?.title_text_cta_text_columns}>{block?.title_text_cta_text[0].text}</Columns>
-        }
+      {text && (
+        <Columns columns={columns}>
+          <RichText render={text} htmlSerializer={htmlSerializer} />
+        </Columns>
+      )}
 
-        {block?.title_text_cta_cta_title && block?.title_text_cta_cta_link?.url && (
-          // @TODO: Global button
-          <a type="button" href={block?.title_text_cta_cta_link?.url} target={block?.title_text_cta_cta_link?.target} >{block?.title_text_cta_cta_title[0].text}</a>
-        )}
-        {/* @Lothar TODO: cta_link for document werkt niet? */}
+      {cta_title && link?.url && (
+        // @TODO: Global button
+        <Button href={link?.url} target={link?.target}>
+          {cta_title[0].text}
+        </Button>
+      )}
+      {/* @Lothar TODO: cta_link for document werkt niet? */}
     </Container>
   );
 };
