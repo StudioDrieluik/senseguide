@@ -1,4 +1,5 @@
-import Link from 'next/link'
+import { RichText } from 'prismic-reactjs';
+import { htmlSerializer } from '@/utils/htmlSerializer';
 import React from 'react'
 import Button from '../Button/Button';
 import { ContentWrapper, Wrapper } from './Workshop.styles'
@@ -21,7 +22,7 @@ const Workshop = ({ data }) => (
           <span>{data.location[0].text}</span>
         </li>}
       </ul>
-      {data.intro?.[0] && <p>{data.intro[0].text}</p>}
+      {data.intro?.[0] && <RichText render={data.intro} htmlSerializer={htmlSerializer} />}
     </ContentWrapper>
     <Button href={`/workshops/${data._meta.uid}`} variant="secondary">Bekijk workshop</Button>
   </Wrapper>

@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Container } from '../Container/Container.styles';
+import { RichText } from 'prismic-reactjs';
+import { htmlSerializer } from '@/utils/htmlSerializer';
 import {
   Panel,
   PanelContent,
@@ -23,7 +25,9 @@ export const Accordion = ({ block, fields }) => {
   return (
     <Container>
       {block?.accordion_title && <h2>{block?.accordion_title[0].text}</h2>}
-      {block?.accordion_text && <p>{block?.accordion_text[0].text}</p>}
+      {block?.accordion_text && (
+        <RichText render={block?.accordion_text} htmlSerializer={htmlSerializer} />
+      )}
 
       {fields && (
         <PanelGroup>
@@ -53,9 +57,7 @@ export const Accordion = ({ block, fields }) => {
                   <PanelTitle>{title?.[0].text}</PanelTitle>
                 </PanelHeading>
                 <PanelContent aria-expanded={id === toggle}>
-                  {content.map(({ text }, index) => (
-                    <p key={index}>{text}</p>
-                  ))}
+                  <RichText render={content} htmlSerializer={htmlSerializer} />
                 </PanelContent>
               </Panel>
             );

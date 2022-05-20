@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { RichText } from 'prismic-reactjs';
+import { htmlSerializer } from '@/utils/htmlSerializer';
 import { Container } from "../../Container/Container.styles";
 import { ContactLinks, ContentWrapper, ImageWrapper, Wrapper } from "./BlockContactCard.styles";
 
@@ -14,7 +16,7 @@ export const BlockContactCard = ({ block }) => {
         </ImageWrapper>}
         <ContentWrapper>
           {block.contact_title && <h4>{block?.contact_title?.[0]?.text}</h4>}
-          {block.contact_text && <p>{block?.contact_text?.[0]?.text}</p>}
+          {block.contact_text && <RichText render={block.contact_text} htmlSerializer={htmlSerializer} />}
           {(phone || email_address) &&
             <ContactLinks>
               {phone && (
