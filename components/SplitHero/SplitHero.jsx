@@ -10,7 +10,6 @@ export const SplitHero = ({
   hero_links,
   hero_title,
 }) => {
-  console.log({ hero_cta_link, hero_links });
   return (
     <Wrapper>
       <div>

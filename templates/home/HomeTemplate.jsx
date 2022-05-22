@@ -24,8 +24,6 @@ export const HomeTemplate = ({ data }) => {
     hero_title,
   };
 
-  console.log(data);
-
   return (
     <Layout>
       <PageHead meta={meta} />
