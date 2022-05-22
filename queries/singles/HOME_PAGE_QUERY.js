@@ -9,27 +9,16 @@ export const HOME_PAGE_QUERY = gql`
           hero_image
           hero_links {
             title
-            hero_link {
-              _linkType
-              ... on _ExternalLink {
-                url
-              }
-              ... on _Document {
-                _meta {
-                  uid
-                  id
-                }
-              }
-            }
           }
           hero_cta_title
-          hero_cta_link {
+          hero_cta_link_url {
             _linkType
             ... on _ExternalLink {
               url
             }
             ... on _Document {
               _meta {
+                type
                 uid
                 id
               }
@@ -46,6 +35,7 @@ export const HOME_PAGE_QUERY = gql`
             }
             ... on _Document {
               _meta {
+                type
                 uid
                 id
               }
@@ -69,6 +59,8 @@ export const HOME_PAGE_QUERY = gql`
                 title
                 image
                 _meta {
+                  type
+                  id
                   uid
                 }
               }
