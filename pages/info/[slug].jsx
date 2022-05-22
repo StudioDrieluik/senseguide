@@ -1,25 +1,25 @@
 import React from 'react';
 import { useQuery } from '@/hooks/useQuery';
-import { STORY_QUERY } from '@/queries/singles/STORY_QUERY';
+import { INFO_QUERY } from '@/queries/singles/INFO_QUERY';
 import { cmsDataService } from '@/services/cmsDataService';
 import { ContentpageTemplate } from '@/templates/contentpage/ContentpageTemplate';
 
-const StoryDetail = ({ uid }) => {
-  const { loading, error, data } = useQuery(STORY_QUERY, {
+const InfoDetail = ({ uid }) => {
+  const { loading, error, data } = useQuery(INFO_QUERY, {
     variables: { uid },
   });
 
   if (error) return <p>Error...</p>;
   if (!data && loading) return <p>Loading</p>;
 
-  return <ContentpageTemplate data={data?.allStorys?.edges?.[0]?.node} />;
+  return <ContentpageTemplate data={data?.allInfo_pages?.edges?.[0]?.node} />;
 };
 
 export async function getStaticProps(ctx) {
   // build queries
   const queries = [
     {
-      query: STORY_QUERY,
+      query: INFO_QUERY,
       variables: {
         uid: ctx.params.slug,
       },
@@ -42,4 +42,4 @@ export async function getStaticPaths() {
   };
 }
 
-export default StoryDetail;
+export default InfoDetail;
