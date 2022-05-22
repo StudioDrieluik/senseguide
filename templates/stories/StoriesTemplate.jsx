@@ -18,8 +18,8 @@ export const StoriesTemplate = ({ data, stories }) => {
       <Hero title="Senseguide verhalen" />
 
       <Container medium>
-        {stories.map(({node: group}) => (
-          <Story key={group._meta.uid} data={group}/>
+        {stories.map(({ node: group }) => (
+          <Story key={group._meta.uid} data={group} />
         ))}
       </Container>
     </Layout>
