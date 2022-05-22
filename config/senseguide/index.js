@@ -8,7 +8,7 @@ const config = {
     email: 'info@senseguide.nl',
   },
   i18n: {
-    locales: ['nl', 'en'],
+    locales: ['nl'],
     defaultLocale: 'nl',
   },
   sites: [
