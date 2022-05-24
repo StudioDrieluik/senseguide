@@ -17,12 +17,10 @@ export const ContentpageTemplate = ({ data }) => {
   return (
     <Layout>
       <PageHead meta={meta} />
-      <Hero {...heroContent}/>
+      <Hero {...heroContent} />
 
       {/* @TODO: Slices */}
-      <BlockWrapper>
-        {data.body && <BlocksRender blocks={data.body} />}
-      </BlockWrapper>
+      <BlockWrapper>{data.body && <BlocksRender blocks={data.body} />}</BlockWrapper>
     </Layout>
   );
 };
