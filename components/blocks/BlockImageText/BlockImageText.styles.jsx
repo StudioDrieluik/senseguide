@@ -48,3 +48,16 @@ export const ImageContainer = styled.div`
     object-fit: cover;
   }
 `;
+
+export const ButtonGroup = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+
+  *:not(:last-of-type) {
+    margin-right: 1.6rem;
+
+    @media (${({ theme }) => theme.respondTo.tabletL}) {
+      margin-right: 2.4rem;
+    }
+  }
+`;

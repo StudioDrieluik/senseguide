@@ -1,6 +1,7 @@
 
 import { Accordion } from '../Accordion/Accordion';
 import { BlockContactCard } from './BlockContactCard/BlockContactCard';
+import { BlockTeamMember } from './BlockTeamMember/BlockTeamMember';
 import { BlockHighlightedItem } from './BlockHighlightedItem/BlockHighlightedItem';
 import { BlockImage } from './BlockImage/BlockImage';
 import { BlockImageText } from './BlockImageText/BlockImageText';
@@ -29,6 +30,8 @@ const renderBlock = (block, index) => {
       return <BlockHighlightedItem block={block.primary} key={index} />
     case "contact_card":
       return <BlockContactCard block={block.primary} key={index} />
+    case "team_member":
+      return <BlockTeamMember block={block.primary} key={index} />
     case "image__title__text___cta":
       return <BlockImageText block={block.primary} key={index} />
     default:

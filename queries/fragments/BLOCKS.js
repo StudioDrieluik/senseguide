@@ -158,6 +158,22 @@ export const BLOCKS = type =>
         }
       }
     }
+    ... on ${type}BodyTeam_member {
+      type
+      primary {
+        position_image
+        text
+        person {
+          ... on Team {
+            first_name
+            last_name
+            email_address
+            linkedin
+            image
+          }
+        }
+      }
+    }
     ... on ${type}BodyImage__title__text___cta {
       type
       primary {
