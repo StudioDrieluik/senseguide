@@ -12,23 +12,25 @@ import {
 } from './Story.styles';
 
 const Story = ({ data, compact }) => {
-  const href = getUrlFromMeta(data?._meta?.uid);
+  const href = getUrlFromMeta(data?._meta);
 
   return (
     <Wrapper compact={compact}>
       <ImageWrapper compact={compact}>
         <ImageContainer>
-          <Link href={href} passHref>
-            {data?.image?.url ? (
-              <Image src={data?.image.url} layout="fill" />
-            ) : (
-              <span>Placeholder voor geen afbeelding</span>
-            )}
+          <Link href={href}>
+            <a>
+              {data?.image?.url ? (
+                <Image src={data?.image.url} layout="fill" />
+              ) : (
+                <span>Placeholder voor geen afbeelding</span>
+              )}
+            </a>
           </Link>
         </ImageContainer>
       </ImageWrapper>
       <ContentWrapper compact={compact}>
-        <Link href={href} passHref>
+        <Link href={href}>
           <a>
             <h3>
               <span>{data.title[0].text}</span>
@@ -39,7 +41,7 @@ const Story = ({ data, compact }) => {
           {data?.tags?.[0]?.tag &&
             data.tags.map(({ tag }, index) => <Tag key={index}>{tag?.[0].text}</Tag>)}
           {data?.category && <Tag>{data.category}</Tag>}
-          {data?.category === 'Nieuws' && <time datetime={data?.date}>{data?.date}</time>}
+          {data?.category === 'Nieuws' && <time dateTime={data?.date}>{data?.date}</time>}
         </TagList>
         {data.intro?.[0] && <p>{data.intro[0].text}</p>}
       </ContentWrapper>

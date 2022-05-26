@@ -2,10 +2,7 @@ import { gql } from '@apollo/client';
 
 export const STORIES_PAGE_QUERY = gql`
   query ($lang: String! = "nl-nl") {
-    allStorys(
-      sortBy: date_DESC
-      lang: $lang
-    ) {
+    allStorys(sortBy: date_DESC, lang: $lang) {
       edges {
         node {
           date
@@ -14,6 +11,7 @@ export const STORIES_PAGE_QUERY = gql`
           image
           category
           _meta {
+            type
             uid
           }
         }
