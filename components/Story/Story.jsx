@@ -20,7 +20,7 @@ const Story = ({ data, compact }) => {
 
   return (
     <Wrapper compact={compact}>
-      <ImageWrapper>
+      <ImageWrapper compact={compact}>
         <ImageContainer>
           <Link href={`${preHref}${data._meta.uid}`} passHref>
             {data?.image?.url ? (
@@ -39,13 +39,15 @@ const Story = ({ data, compact }) => {
             </h3>
           </a>
         </Link>
-        {data?.tags?.[0]?.tag && (
           <TagList>
-            {data.tags.map(({ tag }, index) => (
+            {data?.tags?.[0]?.tag && data.tags.map(({ tag }, index) => (
               <Tag key={index}>{tag?.[0].text}</Tag>
             ))}
+            {data?.category && (
+              <Tag>{data.category}</Tag>
+              )}
+            {data?.category === 'Nieuws' && <time datetime={data?.date}>{data?.date}</time>}
           </TagList>
-        )}
         {data.intro?.[0] && <p>{data.intro[0].text}</p>}
       </ContentWrapper>
     </Wrapper>

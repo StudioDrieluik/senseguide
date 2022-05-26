@@ -8,6 +8,8 @@ import Story from '../../components/Story/Story';
 export const StoriesTemplate = ({ data, stories }) => {
   // const heroContent = { title, image, intro };
 
+  console.log(data);
+
   const meta = {
     seoTitle: 'Verhalen',
   };
@@ -19,7 +21,7 @@ export const StoriesTemplate = ({ data, stories }) => {
 
       <Container medium>
         {stories.map(({ node: group }) => (
-          <Story key={group._meta.uid} data={group} />
+          <Story compact key={group._meta.uid} data={group} />
         ))}
       </Container>
     </Layout>

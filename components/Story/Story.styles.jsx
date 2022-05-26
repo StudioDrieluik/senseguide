@@ -8,8 +8,12 @@ export const Wrapper = styled.div`
   gap: 2.4rem;
   margin-bottom: 4.8rem;
 
+  @media (${({ theme }) => theme.respondTo.tablet}) {
+    flex-direction: ${props => (props.compact && 'row')};
+  }
+
   @media (${({ theme }) => theme.respondTo.tabletL}) {
-    flex-direction: row;
+    flex-direction: ${props => (props.compact ? 'columm' : 'row')};
     gap: ${props => (props.compact ? '3.2rem' : '4rem')};
   }
 
@@ -29,35 +33,45 @@ export const ImageWrapper = styled.div`
   flex-shrink: 0;
   position: relative;
   width: 100%;
-  max-width: 380px;
   aspect-ratio: 16 / 9;
+
+  @media (${({ theme }) => theme.respondTo.tablet}) {
+    aspect-ratio: ${props => (props.compact && '10 / 8')};
+    width: ${props => (props.compact && '30%')};
+  }
 
   @media (${({ theme }) => theme.respondTo.tabletL}) {
     aspect-ratio: 4 / 3;
     width: 35%;
-    flex-direction: row;
   }
 
   img {
     object-fit: cover;
     transition: var(--transition);
   }
-`;
+  `;
 
 export const ImageContainer = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
   border-radius: var(--border-radius);
+  background: var(--color-gray-300);
   overflow: hidden;
 `;
 
 export const ContentWrapper = styled.div`
+  width: 100%;
   flex-grow: 1;
+
+  a {
+    display: inline-block;
+  }
 
   h3 {
     position: relative;
     display: inline-block;
+    margin-bottom: 1.2rem;
     font-size: ${props => props.compact && 'var(--font-size-lg)'};
     text-decoration: underline 0.15em rgba(255, 255, 255, 0);
     transition: text-decoration-color var(--transition), color var(--transition);
@@ -67,11 +81,15 @@ export const ContentWrapper = styled.div`
       color: var(--color-primary-300);
       text-decoration-color: var(--color-primary-300);
     }
+
+    @media (${({ theme }) => theme.respondTo.desktop}) {
+      margin-bottom: 2.4rem;
+    }
   }
 
   p {
     display: -webkit-box;
-    -webkit-line-clamp: 7;
+    -webkit-line-clamp: ${props => props.compact ? '3' : '4'};
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -83,11 +101,21 @@ export const ContentWrapper = styled.div`
 `;
 
 export const TagList = styled.div`
-  margin-top: -1rem;
   margin-bottom: 1.6rem;
 
   @media (${({ theme }) => theme.respondTo.desktop}) {
+    margin-top: -1rem;
     margin-bottom: 2.4rem;
+  }
+
+  &:empty {
+    display: none;
+  }
+
+  time {
+    margin-left: 1.6rem;
+    color: var(--color-gray-600);
+    font-weight: var(--font-weight-medium);
   }
 `;
 
