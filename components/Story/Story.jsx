@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-
 import {
   ContentWrapper,
   ImageContainer,
@@ -12,21 +11,28 @@ import {
 } from './Story.styles';
 
 const Story = ({ data, compact }) => {
+  let preHref;
+  if (data.__typename === 'Story') {
+    preHref = '/verhalen/';
+  } else if (data.__typename === 'Audience') {
+    preHref = '/voor-wie/';
+  }
+
   return (
     <Wrapper compact={compact}>
-      {data?.image?.url && (
-        <ImageWrapper>
-          <ImageContainer>
-            <Link href={`/verhalen/${data._meta.uid}`} passHref>
-              <a>
-                <Image src={data?.image.url} layout="fill" />
-              </a>
-            </Link>
-          </ImageContainer>
-        </ImageWrapper>
-      )}
+      <ImageWrapper>
+        <ImageContainer>
+          <Link href={`${preHref}${data._meta.uid}`} passHref>
+            {data?.image?.url ? (
+              <Image src={data?.image.url} layout="fill" />
+            ) : (
+              <span>Placeholder voor geen afbeelding</span>
+            )}
+          </Link>
+        </ImageContainer>
+      </ImageWrapper>
       <ContentWrapper compact={compact}>
-        <Link href={`/verhalen/${data._meta.uid}`} passHref>
+        <Link href={`${preHref}${data._meta.uid}`} passHref>
           <a>
             <h3>
               <span>{data.title[0].text}</span>

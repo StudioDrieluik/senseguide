@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Link = styled.div`
+  flex-shrink: 0;
+
   a {
     display: inline-block;
     padding: 1.2rem 2.4rem;
