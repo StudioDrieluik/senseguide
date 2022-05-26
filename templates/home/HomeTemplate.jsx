@@ -12,12 +12,12 @@ export const HomeTemplate = ({ data }) => {
     seoTitle: 'Home',
   };
 
-  const { hero_cta_link, hero_cta_title, hero_image, hero_links, hero_title } = data;
+  const { hero_cta_link_url, hero_cta_title, hero_image, hero_links, hero_title } = data;
   const { intro_cta_link, intro_cta_title, intro_image, intro_links, intro_title, intro_text } =
     data;
 
   const heroContent = {
-    hero_cta_link,
+    hero_cta_link_url,
     hero_cta_title,
     hero_image,
     hero_links,
@@ -36,7 +36,7 @@ export const HomeTemplate = ({ data }) => {
             text={intro_text}
             image={intro_image}
             ctaTitle={intro_cta_title?.[0]?.text}
-            ctaLink={intro_cta_link?.[0]?.text}
+            ctaLink={intro_cta_link}
           />
         </Container>
       </BlockWrapper>

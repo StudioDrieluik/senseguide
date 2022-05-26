@@ -10,6 +10,7 @@ export const ABOUT_US_QUERY = gql`
           image
           intro
           _meta {
+            type
             uid
           }
           body {
