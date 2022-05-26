@@ -1,3 +1,5 @@
+import { TYPE_META } from './TYPE_META';
+
 export const BLOCKS = type =>
   `
     __typename
@@ -9,18 +11,7 @@ export const BLOCKS = type =>
         title_text_cta_text_columns
         title_text_cta_cta_title
         title_text_cta_cta_link {
-          _linkType
-          ... on _ExternalLink {
-            url
-            target
-          }
-          ... on _Document {
-            _meta {
-              type
-              uid
-              id
-            }
-          }
+          ${TYPE_META()}
         }
       }
     }
@@ -81,34 +72,12 @@ export const BLOCKS = type =>
         story_slider_title
         story_slider_link_title
         story_slider_link {
-          _linkType
-          ... on _ExternalLink {
-            url
-            target
-          }
-          ... on _Document {
-            _meta {
-              type
-              id
-              uid
-            }
-          }
+          ${TYPE_META()}
         }
       }
       fields {
         story_slider_story {
-          _linkType
-          ... on _ExternalLink {
-            url
-            target
-          }
-          ... on _Document {
-            _meta {
-              type
-              uid
-              id
-            }
-          }
+          ${TYPE_META()}
         }
       }
     }
@@ -167,11 +136,7 @@ export const BLOCKS = type =>
         image_cta_item_text
         image_cta_cta_title
         image_cta_cta_link {
-          _linkType
-          ... on _ExternalLink {
-            url
-            target
-          }
+          ${TYPE_META()}
         }
       }
     }

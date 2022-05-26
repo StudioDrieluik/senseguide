@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   width: 100%;
   gap: 2.4rem;
+  font-size: var(--font-size-md);
 
   @media (${({ theme }) => theme.respondTo.tablet}) {
     flex-direction: row;
@@ -13,7 +14,10 @@ export const Wrapper = styled.div`
   }
 
   p {
-    font-size: var(--font-size-md);
+    + a {
+      display: inline-block;
+      margin: 2.4rem 0 0;
+    }
   }
 `;
 

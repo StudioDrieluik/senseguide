@@ -3,6 +3,7 @@ import { Columns } from './BlockTitleTextCta.styles';
 import { RichText } from 'prismic-reactjs';
 import { htmlSerializer } from '@/utils/htmlSerializer';
 import Button from '../../Button/Button';
+import { getUrlFromMeta } from '../../../utils/utils';
 
 export const BlockTitleTextCta = ({ block }) => {
   const {
@@ -23,13 +24,11 @@ export const BlockTitleTextCta = ({ block }) => {
         </Columns>
       )}
 
-      {cta_title && link?.url && (
-        // @TODO: Global button
-        <Button href={link?.url} target={link?.target}>
+      {cta_title && (link?.url || link?._meta?.uid) && (
+        <Button href={link?.url || getUrlFromMeta(link?._meta)} target={link?.url && '_blank'}>
           {cta_title[0].text}
         </Button>
       )}
-      {/* @Lothar TODO: cta_link for document werkt niet? */}
     </Container>
   );
 };
