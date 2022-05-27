@@ -52,6 +52,18 @@ export const Content = styled.div`
   h3 {
     font-size: 2.4rem;
     font-weight: normal;
+    text-decoration: underline 0.1em rgba(255, 255, 255, 0);
+    transition: text-decoration-color var(--transition), color var(--transition);
+
+    &:hover,
+    &:focus {
+      text-decoration-color: white;
+    }
+
+    @media (${({ theme }) => theme.respondTo.desktop}) {
+      font-size: 2.8rem;
+      margin-bottom: 3.2rem;
+    }
   }
 
   ul {

@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
+import Link from 'next/link';
+import ArrowLink from '../ArrowLink/ArrowLink';
 import { getUrlFromMeta } from '../../utils/utils';
 import { Wrapper, Content } from './SplitHero.styles';
 
@@ -36,9 +37,9 @@ export const SplitHero = ({
           })}
         </ul>
         {heroCtaLink && hero_cta_title && (
-          <Link href={heroCtaLink}>
+          <ArrowLink large href={heroCtaLink}>
             <a>{hero_cta_title?.[0]?.text}</a>
-          </Link>
+          </ArrowLink>
         )}
       </Content>
     </Wrapper>
