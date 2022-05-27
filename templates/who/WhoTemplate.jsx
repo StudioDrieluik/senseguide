@@ -16,11 +16,11 @@ export const WhoTemplate = ({ data, audience }) => {
   return (
     <Layout>
       <PageHead meta={meta} />
-      <Hero {...heroContent}/>
+      <Hero {...heroContent} />
 
       <Container medium>
-        {audience.map(({node: group}) => (
-          <Story key={group._meta.uid} data={group}/>
+        {audience.map(({ node: group }) => (
+          <Story key={group._meta.uid} data={group} />
         ))}
       </Container>
     </Layout>

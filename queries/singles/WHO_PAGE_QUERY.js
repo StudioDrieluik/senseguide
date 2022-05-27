@@ -21,6 +21,7 @@ export const WHO_PAGE_QUERY = gql`
           }
           _meta {
             uid
+            type
           }
         }
       }
