@@ -59,14 +59,12 @@ export const BlockStorySlider = ({ block, slides }) => {
     <div>
       <Container>
         {block?.story_slider_title && <h2>{block?.story_slider_title[0].text}</h2>}
-
-        {/* TODO: Link nog toevoegen */}
-        {/* @Rens, zie de nieuwe 'getUrlFromMeta' functie in utils, ook hieronder een voorbeeld van hoe toe te passen */}
       </Container>
       <SliderContainer>
         <div ref={sliderRef} className={`keen-slider`}>
           {slides.map((slide, index) => {
-            const href = getUrlFromMeta(slide.story_slider_story._meta);
+            if (!slide?.story_slider_story) return;
+            const href = getUrlFromMeta(slide?.story_slider_story?._meta);
             return (
               <Slide className={`keen-slider__slide`} key={index}>
                 <Link href={href}>
@@ -75,7 +73,9 @@ export const BlockStorySlider = ({ block, slides }) => {
                       <span>{slide.story_slider_story.category}</span>
                       <h4>{slide.story_slider_story.title?.[0]?.text}</h4>
                     </SlideContent>
-                    {slide.story_slider_story.image && <Image src={slide.story_slider_story.image?.url} layout="fill" />}
+                    {slide.story_slider_story.image && (
+                      <Image src={slide.story_slider_story.image?.url} layout="fill" />
+                    )}
                   </a>
                 </Link>
               </Slide>
