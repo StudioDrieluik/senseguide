@@ -20,6 +20,7 @@ const renderBlock = (block, index) => {
     case 'accordion':
       return <Accordion block={block.primary} fields={block.fields} key={index} />;
     case 'images':
+    case 'image_slider':
       return <BlockImage block={block.primary} images={block.fields} key={index} />;
     case 'story_slider':
       return <BlockStorySlider block={block.primary} slides={block.fields} key={index} />;

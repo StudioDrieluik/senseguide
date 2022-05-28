@@ -52,6 +52,16 @@ export const BLOCKS = type =>
         description
       }
     }
+    ... on ${type}BodyImage_slider {
+      type
+      primary {
+        image_slider_sizing
+      }
+      fields {
+        image_slider_image
+        description: text
+      }
+    }
     ... on ${type}BodyStory_slider {
       type
       fields {
