@@ -32,7 +32,13 @@ export const HOME_PAGE_QUERY = gql`
           testimonials {
             ... on HomepageTestimonials {
               testimonial {
-                _linkType
+              	... on Testimonial {
+                  position
+									title
+                  text
+                  position
+                  logo
+                }
               }
             }
           }

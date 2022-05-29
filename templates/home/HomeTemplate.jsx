@@ -1,11 +1,12 @@
 // import useTranslation from 'next-translate/useTranslation';
 import { Layout } from '@/layouts/default';
 import { PageHead } from '@/components/PageHead';
-import { BlocksRender } from '@/components/blocks/BlocksRender';
+
 import { SplitHero } from '@/components/SplitHero/SplitHero';
 import { TextImageCta } from '@/components/TextImageCta/TextImageCta';
 import { Container } from '@/components/Container/Container.styles';
 import { BlockWrapper } from '../../components/blocks/BlockWrapper.styles';
+import { TestimonialsSlider } from '../../components/TestimonialsSlider/TestimonialsSlider';
 
 export const HomeTemplate = ({ data }) => {
   const meta = {
@@ -39,6 +40,8 @@ export const HomeTemplate = ({ data }) => {
             ctaLink={intro_cta_link}
           />
         </Container>
+
+        {data?.testimonials && <TestimonialsSlider slides={data.testimonials} />}
       </BlockWrapper>
       {/* {data.slices && <BlocksRender blocks={data.slices} />} */}
     </Layout>
