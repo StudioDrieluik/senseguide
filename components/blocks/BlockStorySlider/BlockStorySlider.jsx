@@ -13,7 +13,7 @@ import { Container } from '../../Container/Container.styles';
 import Link from 'next/link';
 import { getUrlFromMeta } from '../../../utils/utils';
 
-export const BlockStorySlider = ({ block, slides }) => {
+export const BlockStorySlider = ({ title, slides }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider({
@@ -57,9 +57,11 @@ export const BlockStorySlider = ({ block, slides }) => {
 
   return (
     <div>
-      <Container>
-        {block?.story_slider_title && <h2>{block?.story_slider_title[0].text}</h2>}
-      </Container>
+      {title && (
+        <Container>
+          <h2>{title}</h2>
+        </Container>
+      )}
       <SliderContainer>
         <div ref={sliderRef} className={`keen-slider`}>
           {slides.map((slide, index) => {
@@ -93,7 +95,11 @@ export const BlockStorySlider = ({ block, slides }) => {
             />
             <Arrow
               onClick={e => e.stopPropagation() || instanceRef.current?.next()}
-              disabled={currentSlide === instanceRef.current.track.details.slides.length - 1}
+              disabled={
+                currentSlide ===
+                instanceRef.current?.track?.details?.slides.length -
+                  Math.round(instanceRef.current?.options?.slides?.perView)
+              }
             />
           </SliderNavigation>
         </Container>

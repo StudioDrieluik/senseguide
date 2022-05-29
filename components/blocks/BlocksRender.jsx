@@ -23,7 +23,13 @@ const renderBlock = (block, index) => {
     case 'image_slider':
       return <BlockImage block={block.primary} images={block.fields} key={index} />;
     case 'story_slider':
-      return <BlockStorySlider block={block.primary} slides={block.fields} key={index} />;
+      return (
+        <BlockStorySlider
+          title={block.primary?.story_slider_title?.[0]?.text}
+          slides={block.fields}
+          key={index}
+        />
+      );
     case 'highlighted_item':
       return <BlockHighlightedItem block={block.primary} key={index} />;
     case 'contact_card':

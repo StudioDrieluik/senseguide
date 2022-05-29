@@ -6,5 +6,5 @@ export const TheHeader = () => {
   const { t } = useTranslation();
   const menu = t('common:menu', {}, { returnObjects: true });
 
-  return <Wrapper>HEADER </Wrapper>;
+  return <Wrapper> </Wrapper>;
 };

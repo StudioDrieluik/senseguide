@@ -5,8 +5,9 @@ import { PageHead } from '@/components/PageHead';
 import { SplitHero } from '@/components/SplitHero/SplitHero';
 import { TextImageCta } from '@/components/TextImageCta/TextImageCta';
 import { Container } from '@/components/Container/Container.styles';
-import { BlockWrapper } from '../../components/blocks/BlockWrapper.styles';
-import { TestimonialsSlider } from '../../components/TestimonialsSlider/TestimonialsSlider';
+import { BlockWrapper } from '@/components/blocks/BlockWrapper.styles';
+import { TestimonialsSlider } from '@/components/TestimonialsSlider/TestimonialsSlider';
+import { BlockStorySlider } from '@/components/blocks/BlockStorySlider/BlockStorySlider';
 
 export const HomeTemplate = ({ data }) => {
   const meta = {
@@ -42,6 +43,8 @@ export const HomeTemplate = ({ data }) => {
         </Container>
 
         {data?.testimonials && <TestimonialsSlider slides={data.testimonials} />}
+
+        <BlockStorySlider title="Senseguide verhalen" slides={data.stories} />
       </BlockWrapper>
       {/* {data.slices && <BlocksRender blocks={data.slices} />} */}
     </Layout>

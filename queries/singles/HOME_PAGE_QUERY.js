@@ -48,10 +48,12 @@ export const HOME_PAGE_QUERY = gql`
           }
           stories_title
           stories {
-            story {
+            story_slider_story: story {
               ... on Story {
                 title
+                intro
                 image
+                category
                 _meta {
                   type
                   id
