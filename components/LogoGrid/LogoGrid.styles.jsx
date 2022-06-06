@@ -22,7 +22,11 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  width: 40rem;
+  width: 100%;
+
+  @media (${({ theme }) => theme.respondTo.tablet}) {
+    width: 40rem;
+  }
 `;
 
 export const LogosWrapper = styled.div`
