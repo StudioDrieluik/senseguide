@@ -10,11 +10,11 @@ export const Wrapper = styled.div`
   @media (${({ theme }) => theme.respondTo.tablet}) {
     flex-direction: row;
     justify-content: space-between;
-    gap: 15rem;
+    gap: 7rem;
   }
 
   p {
-    + * {
+    + a {
       display: inline-block;
       margin: 2.4rem 0 0;
     }
@@ -22,11 +22,25 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  flex: 1;
+  width: 40rem;
 `;
 
-export const ImageWrapper = styled.div`
-  img {
-    object-fit: cover;
+export const LogosWrapper = styled.div`
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  @media (${({ theme }) => theme.respondTo.tablet}) {
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 0.5fr));
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+
+    img {
+      object-fit: contain;
+    }
   }
 `;

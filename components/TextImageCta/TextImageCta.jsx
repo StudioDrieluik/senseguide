@@ -5,6 +5,7 @@ import { htmlSerializer } from '@/utils/htmlSerializer';
 import { Wrapper, Content, ImageWrapper } from './TextImageCta.styles';
 import { getUrlFromMeta } from '../../utils/utils';
 import Link from 'next/link';
+import ArrowLink from '../ArrowLink/ArrowLink';
 
 export const TextImageCta = ({ title, text, image, ctaTitle, ctaLink }) => {
   const href = getUrlFromMeta(ctaLink?._meta);
@@ -13,7 +14,7 @@ export const TextImageCta = ({ title, text, image, ctaTitle, ctaLink }) => {
       <Content>
         <h2>{title}</h2>
         <RichText render={text} htmlSerializer={htmlSerializer} />
-        {href && <Link href={href}>{ctaTitle}</Link>}
+        {href && <ArrowLink href={href}>{ctaTitle}</ArrowLink>}
       </Content>
       {image && (
         <ImageWrapper>

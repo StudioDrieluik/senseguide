@@ -8,6 +8,7 @@ import { Container } from '@/components/Container/Container.styles';
 import { BlockWrapper } from '@/components/blocks/BlockWrapper.styles';
 import { TestimonialsSlider } from '@/components/TestimonialsSlider/TestimonialsSlider';
 import { BlockStorySlider } from '@/components/blocks/BlockStorySlider/BlockStorySlider';
+import LogoGrid from '../../components/LogoGrid/LogoGrid';
 
 export const HomeTemplate = ({ data }) => {
   const meta = {
@@ -44,9 +45,17 @@ export const HomeTemplate = ({ data }) => {
 
         {data?.testimonials && <TestimonialsSlider slides={data.testimonials} />}
 
+        {data.clients_logos && (
+          <LogoGrid
+            logos={data.clients_logos}
+            title={data.clients_title?.[0]?.text}
+            ctaTitle="Onze projecten"
+            ctaURL="/verhalen"
+          />
+        )}
+
         <BlockStorySlider title="Senseguide verhalen" slides={data.stories} />
       </BlockWrapper>
-      {/* {data.slices && <BlocksRender blocks={data.slices} />} */}
     </Layout>
   );
 };
