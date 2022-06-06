@@ -29,7 +29,7 @@ export async function getStaticProps(ctx) {
 
   return {
     ...pageProps,
-    revalidate: 20,
+    revalidate: 1,
   };
 }
 

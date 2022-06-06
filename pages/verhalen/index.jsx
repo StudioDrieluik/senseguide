@@ -10,7 +10,7 @@ const StoriesPage = () => {
   if (error) return <p>Error...</p>;
   if (!data && loading) return <p>Loading</p>;
 
-  return <StoriesTemplate stories={data?.allStorys?.edges} />
+  return <StoriesTemplate stories={data?.allStorys?.edges} />;
 };
 
 export async function getStaticProps(ctx) {
@@ -26,7 +26,7 @@ export async function getStaticProps(ctx) {
 
   return {
     ...pageProps,
-    revalidate: 20,
+    revalidate: 1,
   };
 }
 

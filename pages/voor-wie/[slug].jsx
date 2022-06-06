@@ -4,7 +4,7 @@ import { AUDIENCE_QUERY } from '@/queries/singles/AUDIENCE_QUERY';
 import { cmsDataService } from '@/services/cmsDataService';
 import { ContentpageTemplate } from '../../templates/contentpage/ContentpageTemplate';
 
-const AudienceDetail = ({uid}) => {
+const AudienceDetail = ({ uid }) => {
   const { loading, error, data } = useQuery(AUDIENCE_QUERY, {
     variables: { uid },
   });
@@ -13,7 +13,7 @@ const AudienceDetail = ({uid}) => {
   if (!data && loading) return <p>Loading</p>;
 
   return <ContentpageTemplate data={data?.allAudiences?.edges?.[0]?.node} />;
-}
+};
 
 export async function getStaticProps(ctx) {
   // build queries
@@ -31,14 +31,14 @@ export async function getStaticProps(ctx) {
 
   return {
     ...pageProps,
-    revalidate: 20,
+    revalidate: 1,
   };
 }
 
 export async function getStaticPaths() {
   return {
     paths: [],
-    fallback: "blocking",
+    fallback: 'blocking',
   };
 }
 

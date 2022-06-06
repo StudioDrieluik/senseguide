@@ -13,7 +13,12 @@ const WorkshopsPage = ({ preview }) => {
   if (error) return <p>Error...</p>;
   if (!data && loading) return <p>Loading</p>;
 
-  return <WorkshopsTemplate data={data?.allWorkshopss?.edges?.[0].node} workshops={data?.allWorkshops?.edges}/>;
+  return (
+    <WorkshopsTemplate
+      data={data?.allWorkshopss?.edges?.[0].node}
+      workshops={data?.allWorkshops?.edges}
+    />
+  );
 };
 
 export async function getStaticProps(ctx) {
@@ -29,7 +34,7 @@ export async function getStaticProps(ctx) {
 
   return {
     ...pageProps,
-    revalidate: 20,
+    revalidate: 1,
   };
 }
 

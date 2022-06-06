@@ -4,7 +4,7 @@ import { WORKSHOP_QUERY } from '@/queries/singles/WORKSHOP_QUERY';
 import { cmsDataService } from '@/services/cmsDataService';
 import { WorkshopTemplate } from '../../templates/workshop/WorkshopTemplate';
 
-const WorkshopDetail = ({uid}) => {
+const WorkshopDetail = ({ uid }) => {
   const { loading, error, data } = useQuery(WORKSHOP_QUERY, {
     variables: { uid },
   });
@@ -12,10 +12,8 @@ const WorkshopDetail = ({uid}) => {
   if (error) return <p>Error...</p>;
   if (!data && loading) return <p>Loading</p>;
 
-
   return <WorkshopTemplate data={data?.allWorkshops?.edges?.[0].node} />;
-
-}
+};
 
 export async function getStaticProps(ctx) {
   // build queries
@@ -33,14 +31,14 @@ export async function getStaticProps(ctx) {
 
   return {
     ...pageProps,
-    revalidate: 20,
+    revalidate: 1,
   };
 }
 
 export async function getStaticPaths() {
   return {
     paths: [],
-    fallback: "blocking",
+    fallback: 'blocking',
   };
 }
 
