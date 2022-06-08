@@ -7,7 +7,6 @@ export const Wrapper = styled.div`
   color: white;
   background: var(--color-primary-300);
 
-
   img {
     object-fit: cover;
   }
@@ -38,7 +37,7 @@ export const Wrapper = styled.div`
     padding: 2.4rem 1.6rem;
 
     @media (${({ theme }) => theme.respondTo.desktop}) {
-      padding: 10rem 5vw;
+      padding: 15rem 5vw 10rem;
     }
   }
 `;
