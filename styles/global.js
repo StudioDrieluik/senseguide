@@ -156,7 +156,7 @@ const GlobalStyle = createGlobalStyle`
 
   ul {
     list-style: none;
-    padding: 0;
+    padding-left: 0;
     margin: 0;
   }
 

@@ -2,9 +2,9 @@ import NextLink from 'next/link'
 import React from 'react'
 import { Link } from './ArrowLink.styles'
 
-export default function ArrowLink({href, children, large, ...props}) {
+export default function ArrowLink({href, children, large, white, ...props}) {
   return (
-    <Link className='arrow-link' large={large}>
+    <Link className='arrow-link' large={large} white={white}>
       <NextLink href={href}>
         <a {...props}>
           <span>{children}</span>

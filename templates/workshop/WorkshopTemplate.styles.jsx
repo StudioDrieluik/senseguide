@@ -24,6 +24,22 @@ export const ContentBlocks = styled.div`
     margin-left: 0;
   }
 
+  a {
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color var(--transition);
+
+    &:hover,
+    &:focus {
+      color: var(--color-primary-500);
+    }
+  }
+
+  ul {
+    list-style: initial;
+    margin-left: 1.6rem;
+  }
+
    // Component spacing
    > * + * {
     margin-top: 4rem;

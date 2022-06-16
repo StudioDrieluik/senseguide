@@ -5,7 +5,6 @@ import { Container } from '../../components/Container/Container.styles';
 import { Hero } from '../../components/Hero/Hero';
 import { ContentBlocks, ContentWrapper, Intro, Meta } from './WorkshopTemplate.styles';
 import Button from '../../components/Button/Button';
-import { BlockWrapper } from '../../components/blocks/BlockWrapper.styles';
 import { BlocksRender } from '../../components/blocks/BlocksRender';
 
 export const WorkshopTemplate = ({ data }) => {

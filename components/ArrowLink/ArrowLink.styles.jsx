@@ -14,7 +14,7 @@ export const Link = styled.div`
     }
 
     &:hover {
-      color: var(--color-primary-300);
+      font-size: ${props => props.large ? 'white' : 'var(--color-primary-300)'};
 
       svg {
         transform: translateX(0.4rem); // @TODO better animation

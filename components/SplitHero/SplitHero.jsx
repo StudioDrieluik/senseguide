@@ -37,7 +37,7 @@ export const SplitHero = ({
           })}
         </ul>
         {heroCtaLink && hero_cta_title && (
-          <ArrowLink large href={heroCtaLink}>
+          <ArrowLink large white href={heroCtaLink}>
             {hero_cta_title?.[0]?.text}
           </ArrowLink>
         )}
