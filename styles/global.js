@@ -141,7 +141,11 @@ const GlobalStyle = createGlobalStyle`
     + h2,
     + h3,
     + h4 {
-      margin-top: 2.4em;
+      margin-top: 1.6em;
+
+      @media (${({ theme }) => theme.respondTo.desktop}) {
+        margin-top: 2.4em;
+      }
     }
   }
 

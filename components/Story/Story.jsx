@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { getUrlFromMeta } from '../../utils/utils';
+import HeadingLink from '../HeadingLink/HeadingLink';
 import {
   ContentWrapper,
   ImageContainer,
@@ -30,13 +31,9 @@ const Story = ({ data, compact }) => {
         </ImageContainer>
       </ImageWrapper>
       <ContentWrapper compact={compact}>
-        <Link href={href}>
-          <a>
-            <h3>
-              <span>{data.title[0].text}</span>
-            </h3>
-          </a>
-        </Link>
+        <HeadingLink href={href}>
+          <h3>{data.title[0].text}</h3>
+        </HeadingLink>
         <TagList>
           {data?.tags?.[0]?.tag &&
             data.tags.map(({ tag }, index) => <Tag key={index}>{tag?.[0].text}</Tag>)}

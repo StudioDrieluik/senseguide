@@ -17,6 +17,7 @@ export const WORKSHOP_PAGE_QUERY = gql`
           title
           short_time
           persons
+          price
           location
           intro
           _meta {

@@ -5,22 +5,49 @@ export const ContentWrapper = styled.div`
   align-items: flex-start;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
   gap: 3.2rem;
 
   @media (${({ theme }) => theme.respondTo.desktop}) {
     flex-direction: row;
-    gap: 4rem;
+    gap: 4.8rem;
   }
 
-  @media (${({ theme }) => theme.respondTo.desktopXL}) {
-    margin-left: 10.2rem;
+  @media (${({ theme }) => theme.respondTo.desktopXXL}) {
+    padding-left: 10.2rem;
   }
 `;
 
+export const ContentBlocks = styled.div`
+  * {
+    padding: 0;
+    margin-left: 0;
+  }
+
+   // Component spacing
+   > * + * {
+    margin-top: 4rem;
+  }
+
+  @media (${({ theme }) => theme.respondTo.tablet}) {
+    > * + * {
+      margin-top: 6.4rem;
+    }
+  }
+
+  @media (${({ theme }) => theme.respondTo.desktop}) {
+    > * + * {
+      margin-top: 8rem;
+    }
+  }
+`
+
 export const Intro = styled.p`
+  margin-bottom: 2.4rem;
   font-size: var(--font-size-md);
 
   @media (${({ theme }) => theme.respondTo.desktop}) {
+    margin-bottom: 4rem;
     font-size: 2.2rem;
   }
 `;
@@ -58,6 +85,10 @@ export const Meta = styled.div`
 
     span {
       font-size: 2.2rem;
+    }
+
+    p {
+      font-size: 1.5rem;
     }
   }
 `

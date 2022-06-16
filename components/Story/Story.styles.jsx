@@ -69,18 +69,8 @@ export const ContentWrapper = styled.div`
   }
 
   h3 {
-    position: relative;
-    display: inline-block;
     margin-bottom: 1.2rem;
     font-size: ${props => props.compact && 'var(--font-size-lg)'};
-    text-decoration: underline 0.15em rgba(255, 255, 255, 0);
-    transition: text-decoration-color var(--transition), color var(--transition);
-
-    &:hover,
-    &:focus {
-      color: var(--color-primary-300);
-      text-decoration-color: var(--color-primary-300);
-    }
 
     @media (${({ theme }) => theme.respondTo.desktop}) {
       margin-bottom: 2.4rem;
