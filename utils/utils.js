@@ -6,6 +6,8 @@ export const getUrlFromMeta = meta => {
       return `/verhalen/${meta.uid}`;
     case 'audience':
       return `/voor-wie/${meta.uid}`;
+    case 'dienst':
+      return `/diensten/${meta.uid}`;
     case 'info_page':
       return `/info/${meta.uid}`;
     case 'workshop':

@@ -2,6 +2,7 @@ const types = [
   '_Document',
   'Workshop',
   'Diensten',
+  'Dienst',
   'Audience',
   'Contact',
   'Voor_wie',
