@@ -22,7 +22,8 @@ export const TheFooter = () => (
         <FooterMenu>
           <span>Copyright 2022 Senseguide</span>
           {/* @TODO: Load dynamically  */}
-          <a href="#"><span>Algemene voorwaarden</span></a>
+          <a href="/info/algemene-voorwaarden-senseguide"><span>Algemene voorwaarden</span></a>
+          <a href="/info/privacystatement"><span>Privacystatement</span></a>
         </FooterMenu>
         <FooterCredits>
           <span>Realisatie: <a href="https://studiodrieluik.nl" target="_blank" rel="noreferrer">Studio Drieluik</a></span>
