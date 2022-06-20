@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 export const STORIES_PAGE_QUERY = gql`
   query ($lang: String! = "nl-nl") {
-    allStorys(sortBy: date_DESC, lang: $lang) {
+    allStorys(sortBy: date_DESC, lang: $lang, first: 99) {
       edges {
         node {
           date

@@ -11,7 +11,7 @@ export const WORKSHOP_PAGE_QUERY = gql`
         }
       }
     }
-    allWorkshops(lang: $lang) {
+    allWorkshops(lang: $lang, first: 99) {
       edges {
         node {
           title

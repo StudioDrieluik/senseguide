@@ -10,7 +10,7 @@ export const SERVICES_PAGE_QUERY = gql`
         }
       }
     }
-    allDiensts {
+    allDiensts(lang: $lang, first: 99) {
       edges {
         node {
           title

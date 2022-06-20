@@ -10,7 +10,7 @@ export const WHO_PAGE_QUERY = gql`
         }
       }
     }
-    allAudiences(lang: $lang) {
+    allAudiences(lang: $lang, first: 99) {
       edges {
         node {
           title
