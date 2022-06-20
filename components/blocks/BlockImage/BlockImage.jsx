@@ -17,7 +17,7 @@ export const BlockImage = ({ block, images }) => {
                   <Image src={image.url} layout="fill" />
                 </ImageContainer>
               </ImageWrapper>
-              <span>{description[0].text}</span>
+              {description?.[0]?.text && <span>{description[0].text}</span>}
             </ImageGridItem>
           ))}
         </ImageGrid>
@@ -35,7 +35,7 @@ export const BlockImage = ({ block, images }) => {
             <Image src={image.url} layout="fill" />
           </ImageContainer>
         </ImageWrapper>
-        <span>{description[0].text}</span>
+        {description?.[0]?.text && <span>{description[0].text}</span>}
       </Container>
     );
   }

@@ -9,6 +9,7 @@ import { useApollo } from '@/lib/apollo/apolloClient';
 import 'lazysizes';
 import 'lazysizes/plugins/attrchange/ls.attrchange';
 import 'lazysizes/plugins/blur-up/ls.blur-up';
+import StickyCta from '../components/StickyCta/StickyCta';
 
 const MyApp = ({ Component, pageProps }) => {
   const apolloClient = useApollo(pageProps);
@@ -34,6 +35,7 @@ const MyApp = ({ Component, pageProps }) => {
         <ThemeProvider theme={theme}>
           <RecoilRoot>
             <Component {...pageProps} />
+            <StickyCta />
             <style jsx>
               {`
                 @font-face {
