@@ -43,12 +43,6 @@ export default class MyDocument extends Document {
           <link rel="manifest" href="/manifest.json" crossOrigin="use-credentials" />
         </Head>
         <body>
-          <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-              <input type="text" name="name" />
-              <input type="tel" name="phone" />
-              <input type="email" name="email" />
-              <textarea name="question"></textarea>
-          </form>
           {process.env.gtm && (
             <noscript>
               <iframe

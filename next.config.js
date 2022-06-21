@@ -38,6 +38,8 @@ const nextConfig = () => {
         beforeFiles: config.beforeFilesRewrites,
         // These rewrites are checked after pages/public files are checked but before dynamic routes
         afterFiles: config.afterFilesRewrites,
+        source: "/public/needeforcontactform.html",
+        destination: "/pages/api/needeforcontactform.js",
       };
     },
   };
