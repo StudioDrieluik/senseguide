@@ -25,7 +25,7 @@ export default function ContactForm() {
     e.preventDefault();
     let myForm = ref.current;
     let formData = new FormData(myForm);
-    fetch('/images/favicon/favicon.png', {
+    fetch('/neededforcontactform.html', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formData).toString(),
