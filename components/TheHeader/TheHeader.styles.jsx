@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const Wrapper = styled.header`
   position: absolute;
@@ -21,7 +22,7 @@ export const Wrapper = styled.header`
     width: 14rem;
     height: auto;
 
-    @media (${({ theme }) => theme.respondTo.desktop}) {
+    @media (${({ theme }) => theme.respondTo.tabletL}) {
       width: 20rem;
     }
   }
@@ -45,14 +46,17 @@ export const LanguageSwitch = styled.nav`
   gap: 1rem;
 `;
 
-export const Hamburger = styled.button`
-  display: inline-block;
+export const Hamburger = styled(motion.button)`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
   appearance: none;
   border: none;
   box-shadow: none;
   background: white;
-  height: 3.2rem;
-  width: 8.7rem;
+  height: 3.4rem;
+  width: 9rem;
   color: var(--color-text-dark);
   font-family: inherit;
   font-weight: bold;
@@ -61,9 +65,21 @@ export const Hamburger = styled.button`
   z-index: 999999;
   cursor: pointer;
 
-  @media (${({ theme }) => theme.respondTo.desktop}) {
+  svg {
+    position: relative;
+    top: 1.5px;
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  @media (${({ theme }) => theme.respondTo.tabletL}) {
     height: 4rem;
     width: 11rem;
     font-size: 17px;
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+    }
   }
 `;

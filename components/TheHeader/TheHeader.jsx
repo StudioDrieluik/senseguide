@@ -1,12 +1,14 @@
 import useTranslation from 'next-translate/useTranslation';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Logo } from '../Logo';
 import { MenuOverlay } from '../MenuOverlay/MenuOverlay';
+import { MenuToggle } from '../MenuToggle/MenuToggle';
 import { Menu, Wrapper, LanguageSwitch, Hamburger } from './TheHeader.styles';
 
 const pagesWithWhiteLogo = ['/'];
+const englishPages = ['/en'];
 
 export const TheHeader = () => {
   const { t } = useTranslation();
@@ -14,6 +16,7 @@ export const TheHeader = () => {
   const menu = t('common:menu', {}, { returnObjects: true });
   const router = useRouter();
   const withWhiteLogo = pagesWithWhiteLogo.includes(router.pathname);
+  const isEnglish = englishPages.includes(router.pathname);
   let variant;
 
   switch (true) {
@@ -24,6 +27,8 @@ export const TheHeader = () => {
       variant = null;
       break;
   }
+
+  console.log(isEnglish)
 
   const handleKeyDown = useCallback(event => {
     if (event.key === 'Escape') {
@@ -38,6 +43,13 @@ export const TheHeader = () => {
       document.removeEventListener('keydown', handleKeyDown, false);
     };
   }, []);
+
+  useEffect(() => {
+    const body = document.querySelector('body');
+    menuIsOpen ? (body.style.overflowY = 'hidden') : (body.style.overflowY = 'initial');
+
+    return () => (document.querySelector('body').style.overflowY = 'initial');
+  }, [menuIsOpen]);
 
   return (
     <Wrapper variant={variant}>
@@ -54,7 +66,12 @@ export const TheHeader = () => {
           <a href="/">NL</a>
           <a href="/en">EN</a>
         </LanguageSwitch>
-        <Hamburger onClick={() => setMenuIsOpen(!menuIsOpen)}>
+        <Hamburger
+          initial={false}
+          animate={menuIsOpen ? 'open' : 'closed'}
+          onClick={() => setMenuIsOpen(!menuIsOpen)}
+        >
+          <MenuToggle />
           {menuIsOpen ? 'Sluit' : 'Menu'}
         </Hamburger>
       </Menu>
