@@ -13,26 +13,26 @@ export default function ContactForm() {
   console.log(success)
 
   return (
-    <Form action="/contact?success=true" method="POST" name="contact" netlify netlify-honeypot="bot-field">
+    <Form method="post" name="contact" netlify netlify-honeypot="bot-field">
       <h3>Contactformulier</h3>
       <input type="hidden" name="form-name" value="contact" />
       <FormFieldGroup>
         <FormField>
           <Label htmlFor="name">Naam</Label>
-          <Input type="text" name="name" id="name" />
+          <Input type="text" name="name" id="name" required/>
         </FormField>
         <FormField>
           <Label htmlFor="phone">Telefoonnummer</Label>
-          <Input type="tel" name="phone" id="phone" />
+          <Input type="tel" name="phone" id="phone"/>
         </FormField>
       </FormFieldGroup>
       <FormField>
         <Label htmlFor="email">E-mailadres</Label>
-        <Input type="email" name="email" id="email"/>
+        <Input type="email" name="email" id="email" required/>
       </FormField>
       <FormField>
         <Label htmlFor="question">Vraag of opmerking</Label>
-        <TextArea name="question" id="question" rows="8"></TextArea>
+        <TextArea name="question" id="question" rows="8" required></TextArea>
       </FormField>
       <p className="hidden">
         <label>
