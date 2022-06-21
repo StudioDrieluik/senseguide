@@ -165,7 +165,9 @@ const GlobalStyle = createGlobalStyle`
     max-width: 100%
   }
 
-  button, input {
+  button,
+  input,
+  textarea {
     font-family: inherit;
   }
 

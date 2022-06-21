@@ -47,7 +47,7 @@ export const Input = styled.input`
   display: block;
   width: 100%;
   padding: 1.6rem 2.4rem;
-  background-color: $color-input-bg;
+  font-size: var(--font-size-base);
   border: 2px solid var(--color-gray-300);
   border-radius: 0.4rem;
   transition: var(--transition);
@@ -65,6 +65,7 @@ export const TextArea = styled.textarea`
   width: 100%;
   max-width: 100%;
   padding: 1.6rem 2.4rem;
+  font-size: var(--font-size-base);
   border: 2px solid var(--color-gray-300);
   border-radius: 0.4rem;
   transition: var(--transition);

@@ -15,7 +15,6 @@ export default function ContactForm() {
   return (
     <Form action="/contact?success=true" method="POST" name="contact" netlify netlify-honeypot="bot-field">
       <h3>Contactformulier</h3>
-      <input type="hidden" name="form-name" value="contact" />
       <FormFieldGroup>
         <FormField>
           <Label htmlFor="name">Naam</Label>
