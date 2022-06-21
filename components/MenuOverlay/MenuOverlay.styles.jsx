@@ -41,19 +41,18 @@ export const Menu = styled.nav`
   text-align: center;
 
   @media (${({ theme }) => theme.respondTo.desktop}) {
+    margin-top: 0;
     width: auto;
     text-align: left;
   }
 `;
 
-export const MenuList = styled(motion.ul)`
-
-`
+export const MenuList = styled(motion.ul)``;
 
 export const MenuItem = styled(motion.li)`
   position: relative;
   margin-bottom: 2.4rem;
-  font-size: 2.6rem;
+  font-size: calc(2rem + 2vw);
 
   a {
     position: relative;
@@ -73,14 +72,16 @@ export const MenuItem = styled(motion.li)`
   }
 `;
 
-export const LanguageSwitch = styled(motion.nav)`
-  display: flex;
-  justify-content: center;
+export const LanguageWrapper = styled(motion.div)`
   margin-top: auto;
-  gap: 1.6rem;
+
+  > div {
+    gap: 1.6rem;
+  }
 
   a {
     font-size: var(--font-size-md);
+    opacity: 0.6;
   }
 
   @media (${({ theme }) => theme.respondTo.desktop}) {

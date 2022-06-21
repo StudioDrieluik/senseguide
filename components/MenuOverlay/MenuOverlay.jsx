@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { LanguageSwitch, Menu, MenuItem, MenuList, PageDarkOverlay, Wrapper } from './MenuOverlay.styles';
+import { LanguageWrapper, Menu, MenuItem, MenuList, PageDarkOverlay, Wrapper } from './MenuOverlay.styles';
+import LanguageSwitch from '../LanguageSwitch/LanguageSwitch';
 
 export const MenuOverlay = ({ menuIsOpen, setMenuIsOpen }) => {
   const variants = {
@@ -50,14 +51,14 @@ export const MenuOverlay = ({ menuIsOpen, setMenuIsOpen }) => {
             <MenuItem variants={items}><Link href="/contact"><a>Contact</a></Link></MenuItem>
           </MenuList>
         </Menu>
-        <LanguageSwitch
+        <LanguageWrapper
+          onClick={() => setMenuIsOpen(!menuIsOpen)}
           initial={{ opacity: 0 }}
           animate={{ opacity: menuIsOpen ? 1 : 0 }}
-          transition={{ ease: [0.16, 1, 0.3, 1], duration: 1.2, delay: menuIsOpen ? 1 : 0  }}
+          transition={{ ease: [0.16, 1, 0.3, 1], duration: 1.2, delay: menuIsOpen ? 1 : 0 }}
         >
-          <a href="/">NL</a>
-          <a href="/en">EN</a>
-        </LanguageSwitch>
+          <LanguageSwitch></LanguageSwitch>
+        </LanguageWrapper>
       </Wrapper>
       <PageDarkOverlay
         initial={{ opacity: 0, pointerEvents: 'none' }}

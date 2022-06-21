@@ -6,10 +6,6 @@ import { Hero } from '../../components/Hero/Hero';
 import Story from '../../components/Story/Story';
 
 export const StoriesTemplate = ({ data, stories }) => {
-  // const heroContent = { title, image, intro };
-
-  console.log(data);
-
   const meta = {
     seoTitle: 'Verhalen',
   };
