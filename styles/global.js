@@ -171,6 +171,14 @@ const GlobalStyle = createGlobalStyle`
     font-family: inherit;
   }
 
+  .hidden {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
 `;
 
 export default GlobalStyle;

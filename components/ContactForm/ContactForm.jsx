@@ -15,6 +15,7 @@ export default function ContactForm() {
   return (
     <Form action="/contact?success=true" method="POST" name="contact" netlify netlify-honeypot="bot-field">
       <h3>Contactformulier</h3>
+      <input type="hidden" name="form-name" value="contact" />
       <FormFieldGroup>
         <FormField>
           <Label htmlFor="name">Naam</Label>
@@ -33,6 +34,11 @@ export default function ContactForm() {
         <Label htmlFor="question">Vraag of opmerking</Label>
         <TextArea name="question" id="question" rows="8"></TextArea>
       </FormField>
+      <p className="hidden">
+        <label>
+          Don’t fill this out if you’re human: <input name="bot-field" />
+        </label>
+      </p>
       <SubmitButton type="submit">Versturen</SubmitButton>
 
       {success && (
