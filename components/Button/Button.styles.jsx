@@ -3,13 +3,14 @@ import styled from 'styled-components';
 export const Link = styled.div`
   flex-shrink: 0;
 
-  a {
+  a[type="button"] {
     display: inline-block;
     padding: 1.2rem 2.4rem;
     color: var(--color-secondary-300);
     font-weight: var(--font-weight-bold);
     border: 1px solid var(--color-secondary-300);
     border-radius: 2.6rem;
+    text-decoration: none;
     transition: all var(--transition);
 
     &:hover {
