@@ -1,7 +1,6 @@
 // import useTranslation from 'next-translate/useTranslation';
 import { Layout } from '@/layouts/default';
 import { PageHead } from '@/components/PageHead';
-import { Container } from '../../components/Container/Container.styles';
 import { Hero } from '../../components/Hero/Hero';
 import { BlocksRender } from '../../components/blocks/BlocksRender';
 import { BlockWrapper } from '../../components/blocks/BlockWrapper.styles';
