@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Form = styled.div`
+export const Form = styled.form`
   padding: 3.2rem 2.4rem;
   background: white;
   border-radius: var(--border-radius);
