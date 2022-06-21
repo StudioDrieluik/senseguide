@@ -25,15 +25,7 @@ export default function ContactForm() {
     e.preventDefault();
     let myForm = ref.current;
     let formData = new FormData(myForm);
-    fetch('/api/neededforcontactform', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData).toString(),
-    })
-      .then(() => console.log('Form successfully submitted'))
-      .catch(error => alert(error));
-
-    fetch('/api/form', {
+    fetch('/images/favicon/favicon.png', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formData).toString(),
@@ -47,11 +39,10 @@ export default function ContactForm() {
   return (
     <Form
       ref={ref}
-      method="post"
       name="contact"
       netlify
       data-netlify="true"
-      // netlify-honeypot="bot-field"
+      netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
     >
       <h3>Contactformulier</h3>
