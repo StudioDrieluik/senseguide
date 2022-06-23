@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -21,7 +22,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const ContentWrapper = styled.div`
+export const ContentWrapper = styled(motion.div)`
   position: relative;
   width: 100%;
   max-width: ${props => (props.image ? '58.4rem' : 'var(--small-container-width)')};
@@ -44,14 +45,15 @@ export const ContentWrapper = styled.div`
   }
 `;
 
-export const Hexagon = styled.div`
+export const Hexagon = styled(motion.div)`
+  position: absolute;
+  top: 2.4rem;
+  left: -25%;
+  z-index: -1;
+
   svg {
-    position: absolute;
-    top: 2.4rem;
-    left: -25%;
     width: 38.8rem;
     height: 38.8rem;
-    z-index: -1;
   }
 `;
 

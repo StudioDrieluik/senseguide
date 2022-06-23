@@ -41,8 +41,6 @@ export default function ContactForm() {
       });
   };
 
-  console.log(success);
-
   return (
     <Form
       ref={ref}

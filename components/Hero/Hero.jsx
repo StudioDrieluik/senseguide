@@ -24,7 +24,11 @@ export const Hero = ({ title, image, intro, isWorkshop }) => {
         {hasParent && <Breadcrumbs />}
         {title && (title?.[0].text ? <h1>{title[0].text}</h1> : <h1>{title}</h1>)}
         {intro?.[0] && !isWorkshop && <p>{intro[0].text}</p>}
-        <Hexagon>
+        <Hexagon
+          initial={{ x: '-50%', opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ ease: [0.16, 1, 0.3, 1], duration: 1.5, delay: 0.5 }}
+        >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 343 385">
             <path
               d="M169.413 1.233 4.69 93.928A8 8 0 0 0 .613 100.9v181.631a8 8 0 0 0 4.028 6.944l164.723 94.227a8 8 0 0 0 8.012-.039l160.98-94.175a8 8 0 0 0 3.96-6.905V100.85a8 8 0 0 0-4.01-6.934L177.327 1.27a8 8 0 0 0-7.914-.038Z"
