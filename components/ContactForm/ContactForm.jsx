@@ -1,37 +1,44 @@
 import React, { useEffect, useState } from 'react';
 import { useRef } from 'react';
+import Loader from '../Loader/Loader';
 import {
   Form,
   FormField,
   FormFieldGroup,
   Input,
   Label,
+  Message,
   SubmitButton,
-  SuccessMessage,
   TextArea,
 } from './ContactForm.styles';
 
 export default function ContactForm() {
   const ref = useRef();
+  const [isLoading, setIsLoadig] = useState(false);
   const [success, setSuccess] = useState(false);
-
-  useEffect(() => {
-    if (window.location.search.includes('success=true')) {
-      setSuccess(true);
-    }
-  }, []);
+  const [error, setError] = useState(false);
 
   const handleSubmit = e => {
     e.preventDefault();
     let myForm = ref.current;
     let formData = new FormData(myForm);
+    setIsLoadig(true);
     fetch('/neededforcontactform.html', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formData).toString(),
     })
-      .then(() => console.log('Form successfully submitted'))
-      .catch(error => alert(error));
+      .then(() => {
+        setTimeout(() => {
+          console.log('Form successfully submitted');
+          setSuccess(true);
+          setIsLoadig(false);
+        }, 1000);
+      })
+      .catch(error => {
+        setError(true);
+        alert(error);
+      });
   };
 
   console.log(success);
@@ -70,15 +77,24 @@ export default function ContactForm() {
           Don’t fill this out if you’re human: <input name="bot-field" />
         </label>
       </p>
-      <SubmitButton type="submit">Versturen</SubmitButton>
+      <SubmitButton type="submit" disabled={isLoading}>
+        <Loader isLoading={isLoading} />
+        Versturen
+      </SubmitButton>
 
-      {success && (
-        <SuccessMessage>
+      {(success || error) && (
+        <Message
+          className={success ? 'success' : 'error'}
+          initial={{ y: '20%', opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ ease: [0.16, 1, 0.3, 1], duration: 1 }}
+        >
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
             <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"></path>
           </svg>
-          Het formulier is succesvol verzonden
-        </SuccessMessage>
+          {success && 'Het formulier is succesvol verzonden'}
+          {error && 'Excuses, er is iets fout gegaan. Probeer het later opnieuw.'}
+        </Message>
       )}
     </Form>
   );

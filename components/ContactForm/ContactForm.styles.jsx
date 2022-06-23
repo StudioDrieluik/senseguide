@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const Form = styled.form`
   padding: 3.2rem 2.4rem;
@@ -72,9 +73,12 @@ export const TextArea = styled.textarea`
 `;
 
 export const SubmitButton = styled.button`
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
   padding: 1.2rem 2.4rem;
   color: white;
+  font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
   border: 1px solid var(--color-primary-300);
   border-radius: 2.6rem;
@@ -92,18 +96,33 @@ export const SubmitButton = styled.button`
     font-size: var(--font-size-base);
     color: inherit;
   }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
 `;
 
-export const SuccessMessage = styled.div`
+export const Message = styled(motion.div)`
   display: flex;
   align-items: center;
   margin: 2.4rem 0 0;
   padding: 1.2rem 1.6rem;
-  color: #2f9089;
-  background: #e6fffa;
+  border-left: 4px solid;
   font-weight: var(--font-weight-medium);
-  border-left: 4px solid #2f9089;
   border-radius: 0.4rem;
+
+  &.error {
+    background: #fff5f5;
+    border-color: #c53030;
+    color: #c53030;
+  }
+
+  &.success {
+    background: #e6fffa;
+    color: #2f9089;
+    border-color: #2f9089;
+  }
 
   svg {
     width: 2rem;
@@ -111,3 +130,5 @@ export const SuccessMessage = styled.div`
     margin-right: 1.2rem;
   }
 `;
+
+
