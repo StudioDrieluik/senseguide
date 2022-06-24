@@ -6,26 +6,19 @@ import { useState } from 'react';
 import { StoriesTemplate } from '../../templates/stories/StoriesTemplate';
 
 const StoriesPage = ({  }) => {
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const { loading, error, data } = useQuery(STORIES_PAGE_QUERY, {
-    variables: { selectedCategory },
-  });
+  const { loading, error, data } = useQuery(STORIES_PAGE_QUERY);
 
   if (error) return <p>Error...</p>;
   if (!data && loading) return <p>Loading</p>;
 
-  return <StoriesTemplate stories={data?.allStorys?.edges} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />;
+  return <StoriesTemplate stories={data?.allStorys?.edges} />;
 };
 
 export async function getStaticProps(ctx) {
   // build queries
   const queries = [
     {
-      query: STORIES_PAGE_QUERY,
-      variables: {
-        // @TODO: Lothar wellicht moeten we hier de params `?type=category` ophalen?
-        selectedCategory: null
-      }
+      query: STORIES_PAGE_QUERY
     },
   ];
 

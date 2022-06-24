@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -13,7 +14,9 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Content = styled.div`
+export const Content = styled(motion.div)`
+  min-height: 100vh;
+
   @media (${({ theme }) => theme.respondTo.desktop}) {
     width: 75%;
   }
