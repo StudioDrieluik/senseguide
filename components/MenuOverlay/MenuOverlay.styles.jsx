@@ -17,6 +17,10 @@ export const Wrapper = styled(motion.header)`
   z-index: 999;
   overflow: auto;
 
+  @supports(height: 100dvh) {
+    height: 100dvh;
+  }
+
   @media (${({ theme }) => theme.respondTo.desktop}) {
     min-width: 70rem;
     width: 40vw;

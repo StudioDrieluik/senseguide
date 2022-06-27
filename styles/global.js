@@ -96,7 +96,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     height: 100%;
     width: 100%;
-    line-height: 1.55;
+    line-height: 1.6;
     font-family: var(--font-primary);
     background-color: var(--color-bg);
     color: var(--color-text-dark);
@@ -128,13 +128,14 @@ const GlobalStyle = createGlobalStyle`
     font-size: var(--font-size-lg);
   }
 
-  p, ul {
+  p, ul, ol {
     margin: 0;
     padding: 0;
 
     + p,
     + a,
-    + ul {
+    + ul,
+    + ol {
       margin-top: 1em;
     }
 
@@ -152,6 +153,10 @@ const GlobalStyle = createGlobalStyle`
   a {
     color: inherit;
     text-decoration: none;
+  }
+
+  ol {
+    padding-left: 1em;
   }
 
   ul {

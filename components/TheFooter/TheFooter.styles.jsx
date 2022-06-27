@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.footer`
   margin-top: 8rem;
-  padding: 6.4rem 0 3.2rem;
+  padding: 6.4rem 0 7.2rem;
 
   @media (${({ theme }) => theme.respondTo.desktop}) {
     margin-top: 17.2rem;
