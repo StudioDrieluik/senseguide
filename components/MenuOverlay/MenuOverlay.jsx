@@ -42,13 +42,13 @@ export const MenuOverlay = ({ menuIsOpen, setMenuIsOpen }) => {
             animate={menuIsOpen ? "open" : "closed"}
             variants={variants}
           >
-            <MenuItem variants={items}><Link href="/diensten"><a>Diensten</a></Link></MenuItem>
-            <MenuItem variants={items}><Link href="/voor-wie"><a>Voor wie</a></Link></MenuItem>
-            <MenuItem variants={items}><Link href="/verhalen"><a>Verhalen</a></Link></MenuItem>
-            <MenuItem variants={items}><Link href="/verhalen?type=project"><a>Projecten</a></Link></MenuItem>
-            <MenuItem variants={items}><Link href="/workshops"><a>Workshops</a></Link></MenuItem>
-            <MenuItem variants={items}><Link href="/over-ons"><a>Over ons</a></Link></MenuItem>
-            <MenuItem variants={items}><Link href="/contact"><a>Contact</a></Link></MenuItem>
+            <MenuItem onClick={() => setMenuIsOpen(!menuIsOpen)} variants={items}><Link href="/diensten"><a>Diensten</a></Link></MenuItem>
+            <MenuItem onClick={() => setMenuIsOpen(!menuIsOpen)} variants={items}><Link href="/voor-wie"><a>Voor wie</a></Link></MenuItem>
+            <MenuItem onClick={() => setMenuIsOpen(!menuIsOpen)} variants={items}><Link href="/verhalen"><a>Verhalen</a></Link></MenuItem>
+            <MenuItem onClick={() => setMenuIsOpen(!menuIsOpen)} variants={items}><Link href="/verhalen?type=project"><a>Projecten</a></Link></MenuItem>
+            <MenuItem onClick={() => setMenuIsOpen(!menuIsOpen)} variants={items}><Link href="/workshops"><a>Workshops</a></Link></MenuItem>
+            <MenuItem onClick={() => setMenuIsOpen(!menuIsOpen)} variants={items}><Link href="/over-ons"><a>Over ons</a></Link></MenuItem>
+            <MenuItem onClick={() => setMenuIsOpen(!menuIsOpen)} variants={items}><Link href="/contact"><a>Contact</a></Link></MenuItem>
           </MenuList>
         </Menu>
         <LanguageWrapper
