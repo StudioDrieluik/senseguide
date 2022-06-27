@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { ContentWrapper, Hexagon, ImageContainer, ImageWrapper, Wrapper } from './Hero.styles';
+import { ContentWrapper, Hexagon, ImageContainer, ImageWrapper, LittleHexagon, Wrapper } from './Hero.styles';
 import { Breadcrumbs } from '../Breadcrumbs/Breadcrumbs';
 import { useRouter } from 'next/router';
 
 export const Hero = ({ title, image, intro, isWorkshop }) => {
   const router = useRouter();
   const [hasParent, setHasParent] = useState(false);
+
   useEffect(() => {
     if (router) {
       const linkPath = router.asPath.split('/');
@@ -44,13 +45,19 @@ export const Hero = ({ title, image, intro, isWorkshop }) => {
           <ImageContainer>
             <Image src={image.url} layout="fill" priority />
           </ImageContainer>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 138">
-            <path
-              d="M58.59 1.233 4.136 31.877a8 8 0 0 0-4.077 6.972v59.759a8 8 0 0 0 4.028 6.944l54.455 31.15a8 8 0 0 0 8.012-.039l53.158-31.098a8 8 0 0 0 3.96-6.905V38.797a8 8 0 0 0-4.009-6.934L66.504 1.271a8 8 0 0 0-7.913-.038Z"
-              fill="#7372B6"
-              fillRule="evenodd"
-            />
-          </svg>
+          <LittleHexagon
+            initial={{ x: 30, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ ease: [0.16, 1, 0.3, 1], duration: 1.5, delay: 1.5 }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 138">
+              <path
+                d="M58.59 1.233 4.136 31.877a8 8 0 0 0-4.077 6.972v59.759a8 8 0 0 0 4.028 6.944l54.455 31.15a8 8 0 0 0 8.012-.039l53.158-31.098a8 8 0 0 0 3.96-6.905V38.797a8 8 0 0 0-4.009-6.934L66.504 1.271a8 8 0 0 0-7.913-.038Z"
+                fill="#7372B6"
+                fillRule="evenodd"
+              />
+            </svg>
+          </LittleHexagon>
         </ImageWrapper>
       )}
     </Wrapper>

@@ -69,6 +69,13 @@ const GlobalStyle = createGlobalStyle`
     --component-spacing: 16rem;
     --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); // @TODO: Nader te balen
 
+    // Z-index
+    --z-menu-overlay: 10;
+    --z-header: 20;
+    --z-header-button: 21;
+    --z-contactform-background: 30;
+    --z-contactform-overlay: 31;
+    --z-contactform-overlay-wrapper: 32;
   }
 
   html, #__next {
@@ -153,6 +160,17 @@ const GlobalStyle = createGlobalStyle`
   a {
     color: inherit;
     text-decoration: none;
+  }
+
+  p a {
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color var(--transition);
+
+    &:hover,
+    &:focus {
+      color: var(--color-primary-500);
+    }
   }
 
   ol {

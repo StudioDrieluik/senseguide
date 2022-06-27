@@ -67,6 +67,17 @@ export const ImageWrapper = styled.div`
     object-fit: cover;
   }
 
+
+  @media (${({ theme }) => theme.respondTo.desktop}) {
+    min-width: 40rem;
+    max-width: 52rem;
+    max-height: 64rem;
+    margin-top: 0;
+    aspect-ratio: 13 / 16;
+  }
+`;
+
+export const LittleHexagon = styled(motion.div)`
   svg {
     position: absolute;
     bottom: -3.5rem;
@@ -85,12 +96,6 @@ export const ImageWrapper = styled.div`
   }
 
   @media (${({ theme }) => theme.respondTo.desktop}) {
-    min-width: 40rem;
-    max-width: 52rem;
-    max-height: 64rem;
-    margin-top: 0;
-    aspect-ratio: 13 / 16;
-
     svg {
       bottom: 2.4rem;
       right: -6.2rem;
@@ -98,6 +103,7 @@ export const ImageWrapper = styled.div`
       height: 14rem;
     }
   }
+
 `;
 
 export const ImageContainer = styled.div`

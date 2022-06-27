@@ -9,7 +9,7 @@ export const Wrapper = styled.header`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  z-index: 999;
+  z-index: var(--z-header);
   color: ${({ variant }) => variant || 'inherit'};
   font-weight: bold;
   padding: 1.6rem;
@@ -62,7 +62,7 @@ export const Hamburger = styled(motion.button)`
   font-weight: bold;
   border-radius: 2rem;
   font-size: 15px;
-  z-index: 999999;
+  z-index: var(--z-header-button);
   cursor: pointer;
 
   svg {

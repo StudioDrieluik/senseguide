@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useRef } from 'react';
 import Loader from '../Loader/Loader';
 import {
+  ContentWrapper,
   Form,
   FormField,
   FormFieldGroup,
@@ -12,7 +13,7 @@ import {
   TextArea,
 } from './ContactForm.styles';
 
-export default function ContactForm() {
+export default function ContactForm({ introText, overlay }) {
   const ref = useRef();
   const [isLoading, setIsLoadig] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -49,8 +50,10 @@ export default function ContactForm() {
       data-netlify="true"
       netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
+      className={overlay ? 'is-overlay' : ''}
     >
       <h3>Contactformulier</h3>
+      {introText && <ContentWrapper>Vul onderstaand formulier in en we nemen zo spoedig mogelijk contact op. Of bel ons op <a href="tel:+31631902336">+31 6 3190 2336</a></ContentWrapper>}
       <input type="hidden" name="form-name" value="contact" />
       <FormFieldGroup>
         <FormField>

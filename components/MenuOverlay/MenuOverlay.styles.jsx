@@ -14,11 +14,11 @@ export const Wrapper = styled(motion.header)`
   color: var(--color-text-light);
   font-weight: bold;
   padding: 4.8rem 3.2rem;
-  z-index: 999;
+  z-index: var(--z-menu-overlay);
   overflow: auto;
 
   @supports(height: 100dvh) {
-    height: 100dvh;
+    height: 100dvh; // https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/
   }
 
   @media (${({ theme }) => theme.respondTo.desktop}) {

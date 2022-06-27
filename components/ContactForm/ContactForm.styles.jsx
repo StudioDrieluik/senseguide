@@ -6,16 +6,29 @@ export const Form = styled.form`
   background: white;
   border-radius: var(--border-radius);
 
+  &.is-overlay {
+    @media (${({ theme }) => theme.respondTo.desktop}) {
+      text-align: center;
+    }
+  }
+
   @media (${({ theme }) => theme.respondTo.desktop}) {
     padding: 3.2rem;
-    width: 70%;
-    max-width: 80rem;
-    margin-top: -4.8rem;
+
+    :not(.is-overlay) {
+      margin-top: -4.8rem;
+      width: 70%;
+      max-width: 80rem;
+    }
   }
 
   @media (${({ theme }) => theme.respondTo.desktopXL}) {
     padding: 4.8rem 6.4rem;
   }
+`;
+
+export const ContentWrapper = styled.p`
+  margin-bottom: 3.2rem;
 `;
 
 export const FormFieldGroup = styled.div`
@@ -40,6 +53,7 @@ export const FormField = styled.div`
 
 export const Label = styled.p`
   display: block;
+  text-align: left;
   margin-bottom: 0.8rem;
   font-weight: var(--font-weight-medium);
 `;
@@ -130,5 +144,3 @@ export const Message = styled(motion.div)`
     margin-right: 1.2rem;
   }
 `;
-
-
