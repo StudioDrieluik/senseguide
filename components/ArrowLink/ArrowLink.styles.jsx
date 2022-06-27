@@ -5,6 +5,7 @@ export const Link = styled.div`
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    width: 100%;
     font-size: ${props => props.large && '20px'};
     font-weight: ${props => props.large ? 'var(--font-weight-medium)' : 'var(--font-weight-bold)'};
     transition: color var(--transition);

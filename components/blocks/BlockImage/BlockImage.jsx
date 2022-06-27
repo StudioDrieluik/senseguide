@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Container } from '../../Container/Container.styles';
-import { ImageContainer, ImageGrid, ImageGridItem, ImageWrapper } from './BlockImage.styles';
+import { ImageContainer, ImageGrid, ImageGridItem, ImageWrapper, RatioImageWrapper } from './BlockImage.styles';
 import { ImageSlider } from '../../ImageSlider.jsx/ImageSlider';
 
 export const BlockImage = ({ block, images }) => {
@@ -26,15 +26,26 @@ export const BlockImage = ({ block, images }) => {
   }
 
   if (images.length === 1 && width === 'Full-width') {
-    const { image_slider_image: image, description } = images[0];
+    const { image_slider_image: image, description, ratio } = images[0];
     return (
       <Container>
-        <ImageWrapper>
-          <ImageContainer>
-            {/* @TODO: Guess contain will be a better choice */}
-            <Image src={image.url} layout="fill" />
-          </ImageContainer>
-        </ImageWrapper>
+        {ratio && (
+          <RatioImageWrapper>
+            <Image
+              src={image.url}
+              width={image.dimensions.width}
+              height={image.dimensions.height}
+            />
+          </RatioImageWrapper>
+        )}
+        {!ratio && (
+          <ImageWrapper>
+            <ImageContainer>
+              {/* @TODO: Guess contain will be a better choice */}
+              <Image src={image.url} layout="fill" />
+            </ImageContainer>
+          </ImageWrapper>
+        )}
         {description?.[0]?.text && <span>{description[0].text}</span>}
       </Container>
     );

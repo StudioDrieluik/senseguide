@@ -50,6 +50,7 @@ export const BLOCKS = type =>
       fields {
         image_slider_image
         description
+        ratio
       }
     }
     ... on ${type}BodyImage_slider {

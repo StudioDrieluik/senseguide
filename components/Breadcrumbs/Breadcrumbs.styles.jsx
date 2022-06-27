@@ -9,6 +9,7 @@ export const Crumbs = styled.nav`
     ol {
       position: relative;
       display: flex;
+      flex-wrap: nowrap;
       align-items: center;
       margin: 0;
       margin-bottom: 0.8rem;
@@ -17,9 +18,15 @@ export const Crumbs = styled.nav`
 
     li {
       list-style: none;
+      display: contents;
+      flex-wrap: nowrap;
+      align-items: center;
 
-      &::first-letter {
-        text-transform: uppercase;
+
+      &:last-child span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
 
@@ -28,6 +35,10 @@ export const Crumbs = styled.nav`
       color: var(--color-gray-600);
       font-size: var(--font-size-sm);
       font-weight: var(--font-weight-medium);
+
+      &::first-letter {
+        text-transform: uppercase;
+      }
     }
 
     a:hover {

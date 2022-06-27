@@ -37,6 +37,7 @@ export const ContentContainer = styled.div`
   flex-direction: column;
   flex: 1 1 60%;
   padding: 2.4rem;
+  overflow: auto;
 
   @media (${({ theme }) => theme.respondTo.tabletL}) {
     padding: 4rem 4.8rem;
