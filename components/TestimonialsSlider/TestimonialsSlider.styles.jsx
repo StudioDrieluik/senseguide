@@ -63,8 +63,20 @@ export const SlideContent = styled.div`
     text-overflow: ellipsis;
     overflow: hidden;
     margin: 0 0 2.4rem;
-    font-size: var(--font-size-md);
-    font-weight: var(--font-weight-bold);
+    line-height: 1.4;
+    font-weight: var(--font-weight-medium);
+
+    @media (${({ theme }) => theme.respondTo.tabletXL}) {
+      font-size: 2.2rem;
+    }
+
+    &::before {
+      content: "“";
+    }
+
+    &::after {
+      content: "”";
+    }
   }
 
   h4 {
@@ -72,9 +84,14 @@ export const SlideContent = styled.div`
     line-height: 1.2;
   }
 
-  span {
+  strong {
     display: block;
     font-weight: bold;
+  }
+
+  span {
+    display: block;
+    line-height: 1.3;
   }
 `;
 

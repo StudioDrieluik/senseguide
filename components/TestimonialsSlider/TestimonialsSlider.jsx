@@ -60,8 +60,8 @@ export const TestimonialsSlider = ({ slides }) => {
                 <SlideContent>
                   <p>{slide?.text?.[0]?.text}</p>
                   <div>
-                    <span>{slide?.title?.[0]?.text}</span>
-                    {slide?.position?.[0]?.text}
+                    <strong>{slide?.title?.[0]?.text}</strong>
+                    <span>{slide?.position?.[0]?.text}</span>
                   </div>
                 </SlideContent>
               </Slide>

@@ -38,6 +38,10 @@ export const LogosWrapper = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(18rem, 0.5fr));
   }
 
+  @media (${({ theme }) => theme.respondTo.desktopXL}) {
+    margin-top: 6.4rem;
+  }
+
   div {
     display: flex;
     justify-content: center;

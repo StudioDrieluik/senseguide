@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
     --font-size-lg: 2.4rem; // H4
     --font-size-xl: 2.8rem; // H3
     --font-size-xxl: 3.2rem; // H2
-    --font-size-xxxl: 4.6rem; // H1
+    --font-size-xxxl: 4.2rem; // H1
     --font-weight-medium: 500;
     --font-weight-bold: 700;
 

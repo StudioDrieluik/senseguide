@@ -8,17 +8,17 @@ export const Wrapper = styled.div`
   align-items: start;
   max-width: ${props => (props.image ? 'var(--max-container-width)' : 'var(--medium-container-width)')};
   max-width: ${props => props.workshop && 'var(--max-container-width)'};
-  margin: 6.4rem auto 4.8rem; // @TODO: If Header will be fixed
+  margin: 6.4rem auto 7.2rem;
   padding: var(--container-padding);
 
   @media (${({ theme }) => theme.respondTo.tablet}) {
-    margin-bottom: 6.4rem;
+    margin-bottom: 12rem;
   }
 
   @media (${({ theme }) => theme.respondTo.desktop}) {
     flex-direction: row;
-    margin-top: 14.4rem; // @TODO: If Header will be fixed
-    margin-bottom: 13.6rem;
+    margin-top: 14.4rem;
+    margin-bottom: 14.4rem;
   }
 `;
 
@@ -26,13 +26,14 @@ export const ContentWrapper = styled(motion.div)`
   position: relative;
   width: 100%;
   max-width: ${props => (props.image ? '58.4rem' : 'var(--small-container-width)')};
-  padding-top: 11.2rem;
+  padding-top: 8rem;
 
   p {
     font-size: var(--font-size-md);
   }
 
   @media (${({ theme }) => theme.respondTo.desktop}) {
+    padding-top: 11.2rem;
     margin-right: 4.8rem;
 
     h1 {

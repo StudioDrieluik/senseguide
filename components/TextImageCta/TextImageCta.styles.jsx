@@ -5,12 +5,12 @@ export const Wrapper = styled.div`
   flex-direction: column;
   width: 100%;
   gap: 2.4rem;
-  font-size: var(--font-size-md);
 
   @media (${({ theme }) => theme.respondTo.tabletXL}) {
     flex-direction: row;
     justify-content: space-between;
     gap: 8rem;
+    font-size: var(--font-size-md);
   }
 
   @media (${({ theme }) => theme.respondTo.desktop}) {

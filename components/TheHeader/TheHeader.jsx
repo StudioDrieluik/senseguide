@@ -64,6 +64,7 @@ export const TheHeader = () => {
     return () => {
       document.removeEventListener('keydown', handleKeyDown, false);
       document.addEventListener('scroll', handleScroll);
+      document.querySelector('body').classList.remove(scrollDown);
     };
   }, []);
 
