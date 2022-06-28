@@ -4,15 +4,19 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  path {
-    fill: ${({ variant }) => variant || null};
-    stroke: ${({ variant }) => variant || null};
+
+  &:not(.in-color) {
+    path {
+      transition: var(--transition);
+      fill: ${({ variant }) => variant || null};
+      stroke: ${({ variant }) => variant || null};
+    }
   }
 `;
 
 export const Logo = ({ variant }) => {
   return (
-    <Wrapper variant={variant}>
+    <Wrapper className='logo' variant={variant}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 61">
         <g fillRule="nonzero" fill="none">
           <path fill="#5C4690" d="m340.4 18.7 7.8-4.5V5.3l-7.8 4.4z" />

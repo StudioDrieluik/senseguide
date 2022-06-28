@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const Wrapper = styled.header`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
@@ -13,6 +13,17 @@ export const Wrapper = styled.header`
   color: ${({ variant }) => variant || 'inherit'};
   font-weight: bold;
   padding: 1.6rem;
+  transition: var(--transition);
+
+  .scroll-down & {
+    transform: translate3d(0, -100%, 0);
+  }
+
+  .scroll-up & {
+    transform: none;
+    color: inherit;
+    background: var(--color-gray-100);
+  }
 
   @media (${({ theme }) => theme.respondTo.desktop}) {
     padding: 3.2rem 6.4rem;

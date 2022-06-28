@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   gap: 2.4rem;
   font-size: var(--font-size-md);
 
-  @media (${({ theme }) => theme.respondTo.tablet}) {
+  @media (${({ theme }) => theme.respondTo.desktop}) {
     flex-direction: row;
     justify-content: space-between;
     gap: 7rem;
@@ -33,15 +33,20 @@ export const LogosWrapper = styled.div`
   flex: 1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
   @media (${({ theme }) => theme.respondTo.tablet}) {
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 0.5fr));
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 0.5fr));
   }
 
   div {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    padding: 1.6rem;
+
+    @media (${({ theme }) => theme.respondTo.tablet}) {
+      padding: 2rem;
+    }
 
     img {
       object-fit: contain;

@@ -12,7 +12,10 @@ const pagesWithWhiteLogo = ['/'];
 export const TheHeader = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const router = useRouter();
+  const scrollUp = "scroll-up";
+  const scrollDown = "scroll-down";
   const withWhiteLogo = pagesWithWhiteLogo.includes(router.pathname);
+  let lastScroll = 0;
   let variant;
 
   switch (true) {
@@ -30,11 +33,37 @@ export const TheHeader = () => {
     }
   }, []);
 
+  const handleScroll = useCallback(() => {
+    const body = document.body;
+    const logo = document.querySelector('.logo');
+    const currentScroll = window.scrollY;
+
+    if (currentScroll <= 200) {
+      body.classList.remove(scrollUp);
+      logo.classList.remove('in-color');
+      return;
+    }
+
+    if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
+      // Down
+      body.classList.remove(scrollUp);
+      body.classList.add(scrollDown);
+    } else if (currentScroll < lastScroll && body.classList.contains(scrollDown)) {
+      // Up
+      body.classList.remove(scrollDown);
+      body.classList.add(scrollUp);
+      logo.classList.add('in-color');
+    }
+    lastScroll = currentScroll;
+  })
+
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown, false);
+    document.addEventListener('scroll', handleScroll);
 
     return () => {
       document.removeEventListener('keydown', handleKeyDown, false);
+      document.addEventListener('scroll', handleScroll);
     };
   }, []);
 

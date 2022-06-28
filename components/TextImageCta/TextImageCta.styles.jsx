@@ -7,9 +7,13 @@ export const Wrapper = styled.div`
   gap: 2.4rem;
   font-size: var(--font-size-md);
 
-  @media (${({ theme }) => theme.respondTo.tablet}) {
+  @media (${({ theme }) => theme.respondTo.tabletXL}) {
     flex-direction: row;
     justify-content: space-between;
+    gap: 8rem;
+  }
+
+  @media (${({ theme }) => theme.respondTo.desktop}) {
     gap: 15rem;
   }
 
@@ -22,7 +26,8 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  flex: 1;
+  flex: 1 0 55%;
+  max-width: 70rem;
 `;
 
 export const ImageWrapper = styled.div`
