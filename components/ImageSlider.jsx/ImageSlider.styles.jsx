@@ -6,6 +6,11 @@ export const SliderContainer = styled.div`
   margin: 0 auto;
   padding: var(--container-padding);
 
+  .is-workshop & {
+    width: auto;
+    max-width: none;
+  }
+
   @media (${({ theme }) => theme.respondTo.tablet}) {
     padding: 0;
   }
@@ -37,7 +42,7 @@ export const SliderNavigation = styled.div`
   align-items: center;
 
   &.large {
-    margin-top: 3.2rem;
+    margin-top: 1.6rem;
   }
 `;
 

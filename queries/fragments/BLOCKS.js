@@ -46,6 +46,7 @@ export const BLOCKS = type =>
       type
       primary {
         image_slider_sizing
+        title1
       }
       fields {
         image_slider_image

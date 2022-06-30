@@ -6,12 +6,13 @@ import { Container } from '../Container/Container.styles';
 import { Dots, Icon, Slide, SliderContainer, SliderNavigation } from './ImageSlider.styles';
 import { ImageContainer, ImageWrapper } from '../blocks/BlockImage/BlockImage.styles';
 
-export const ImageSlider = ({ width, images }) => {
+export const ImageSlider = ({ width, title, images }) => {
   // @Lothar TODO: Ergens dient de container van de navigatie gelijk te zijn aan de breedte van de slide
   // Jij een handige manier om dit op te lossen?
   const isCompact = width === 'Half-width';
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
+
 
   const [sliderRef, instanceRef] = useKeenSlider({
     slideChanged(slider) {
@@ -20,7 +21,7 @@ export const ImageSlider = ({ width, images }) => {
     created() {
       setLoaded(true);
     },
-    loop: true,
+    loop: `${images.length > 2 ? 'true' : 'false'}`,
     initial: 0,
     slides: {
       origin: 'center',
@@ -54,6 +55,7 @@ export const ImageSlider = ({ width, images }) => {
 
   return (
     <div>
+      {title?.[0]?.text && <h3>{title?.[0]?.text}</h3>}
       <SliderContainer>
         <div ref={sliderRef} className={`keen-slider ${isCompact ? 'compact' : 'large'}`}>
           {images.map(({ image_slider_image: image, description }, index) => (
@@ -63,7 +65,7 @@ export const ImageSlider = ({ width, images }) => {
                   <Image src={image.url} layout="fill" />
                 </ImageContainer>
               </ImageWrapper>
-              <span>{description[0].text}</span>
+              {description?.[0].text && <span>{description?.[0].text}</span>}
             </Slide>
           ))}
         </div>

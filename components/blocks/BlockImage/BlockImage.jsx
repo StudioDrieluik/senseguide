@@ -4,11 +4,13 @@ import { ImageContainer, ImageGrid, ImageGridItem, ImageWrapper, RatioImageWrapp
 import { ImageSlider } from '../../ImageSlider.jsx/ImageSlider';
 
 export const BlockImage = ({ block, images }) => {
-  const { image_slider_sizing: width } = block;
+  const { image_slider_sizing: width, title1: title } = block;
+  console.log(title)
 
   if (images.length <= 2 && width === 'Half-width') {
     return (
       <Container>
+        {title?.[0]?.text && <h3>{title?.[0]?.text}</h3>}
         <ImageGrid compact>
           {images.map(({ image_slider_image: image, description }, index) => (
             <ImageGridItem key={index}>
@@ -29,6 +31,7 @@ export const BlockImage = ({ block, images }) => {
     const { image_slider_image: image, description, ratio } = images[0];
     return (
       <Container>
+        {title?.[0]?.text && <h3>{title?.[0]?.text}</h3>}
         {ratio && (
           <RatioImageWrapper>
             <Image
@@ -41,7 +44,6 @@ export const BlockImage = ({ block, images }) => {
         {!ratio && (
           <ImageWrapper>
             <ImageContainer>
-              {/* @TODO: Guess contain will be a better choice */}
               <Image src={image.url} layout="fill" />
             </ImageContainer>
           </ImageWrapper>
@@ -51,5 +53,5 @@ export const BlockImage = ({ block, images }) => {
     );
   }
 
-  return <ImageSlider width={width} images={images} />;
+  return <ImageSlider width={width} title={title} images={images} />;
 };

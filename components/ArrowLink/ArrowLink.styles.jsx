@@ -9,6 +9,7 @@ export const Link = styled.div`
     font-size: ${props => props.large && '20px'};
     font-weight: ${props => props.large ? 'var(--font-weight-medium)' : 'var(--font-weight-bold)'};
     transition: color var(--transition);
+    text-decoration: none;
 
     > * {
       flex-shrink: 0;
@@ -25,6 +26,7 @@ export const Link = styled.div`
 
   span {
     text-decoration: underline;
+    text-underline-offset: 1px;
   }
 
   svg {

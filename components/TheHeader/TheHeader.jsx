@@ -38,7 +38,7 @@ export const TheHeader = () => {
     const logo = document.querySelector('.logo');
     const currentScroll = window.scrollY;
 
-    if (currentScroll <= 200) {
+    if (currentScroll <= 50) {
       body.classList.remove(scrollUp);
       logo.classList.remove('in-color');
       return;

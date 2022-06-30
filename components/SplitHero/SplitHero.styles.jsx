@@ -86,6 +86,7 @@ export const Content = styled.div`
     @media (${({ theme }) => theme.respondTo.desktop}) {
       margin-top: 2.4rem;
       padding-bottom: 2.4rem;
+      border: 0;
     }
 
     &:hover,

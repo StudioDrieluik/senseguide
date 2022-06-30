@@ -5,8 +5,7 @@ export const ContentWrapper = styled.div`
   align-items: flex-start;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
-  gap: 3.2rem;
+  gap: 4rem;
 
   @media (${({ theme }) => theme.respondTo.desktop}) {
     flex-direction: row;
@@ -19,6 +18,17 @@ export const ContentWrapper = styled.div`
 `;
 
 export const ContentBlocks = styled.div`
+  width: 100%;
+
+  @media (${({ theme }) => theme.respondTo.desktop}) {
+    max-width: 55vw;
+  }
+
+  @media (${({ theme }) => theme.respondTo.desktopXL}) {
+    max-width: 84rem;
+  }
+
+
   * {
     padding: 0;
     margin-left: 0;
@@ -70,8 +80,8 @@ export const Intro = styled.p`
 
 export const Meta = styled.div`
   order: -1;
-  min-width: 37rem;
-  padding: 2.4rem;
+  margin-top: -4rem;
+  padding: 3.2rem;
   background: var(--color-primary-50);
   border-radius: var(--border-radius);
 
@@ -91,20 +101,43 @@ export const Meta = styled.div`
     font-weight: var(--font-weight-bold);
   }
 
+  p {
+    font-size: 1.5rem;
+  }
+
+  @media (${({ theme }) => theme.respondTo.tabletL}) {
+    width: 100%;
+    padding: 3.2rem;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.6rem;
+    }
+
+    li {
+      width: calc(50% - 1.6rem);
+    }
+
+  }
+
   @media (${({ theme }) => theme.respondTo.desktop}) {
+    width: 37rem;
     order: 1;
-    padding: 4rem;
+    margin-top: 0;
+
+    ul {
+      display: block;
+    }
 
     li {
       margin-bottom: 3.2rem;
+      width: 100%;
     }
 
     span {
       font-size: 2.2rem;
     }
 
-    p {
-      font-size: 1.5rem;
-    }
   }
 `

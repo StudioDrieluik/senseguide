@@ -22,7 +22,7 @@ export const WorkshopTemplate = ({ data }) => {
 
       <Container>
         <ContentWrapper>
-          <ContentBlocks>
+          <ContentBlocks className="is-workshop">
             {intro?.[0] && <Intro>{intro[0].text}</Intro>}
             {data.body && <BlocksRender blocks={data.body} />}
           </ContentBlocks>
@@ -40,9 +40,9 @@ export const WorkshopTemplate = ({ data }) => {
                 <h4>Locatie</h4>
                 <span>{data.location[0].text}</span>
               </li>}
-              {data?.price && <li>
+              {data?.price?.[0].text && <li>
                 <h4>Prijs</h4>
-                <span>€ {data?.price}</span>
+                <span>€ {data?.price?.[0].text}</span>
                 {data.price_information?.[0] && <p>{data.price_information[0].text}</p>}
               </li>}
             </ul>
