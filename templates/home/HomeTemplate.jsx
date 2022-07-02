@@ -14,13 +14,13 @@ import { useRouter } from 'next/router';
 
 export const HomeTemplate = ({ data }) => {
   const router = useRouter();
+  const { hero_cta_link_url, hero_cta_title, hero_image, hero_links, hero_title } = data;
+  const { intro_cta_link, intro_cta_title, intro_image, intro_title, intro_text } = data;
+
   const meta = {
     seoTitle: 'Home',
+    ogImage: hero_image.url,
   };
-
-  const { hero_cta_link_url, hero_cta_title, hero_image, hero_links, hero_title } = data;
-  const { intro_cta_link, intro_cta_title, intro_image, intro_links, intro_title, intro_text } =
-    data;
 
   const heroContent = {
     hero_cta_link_url,

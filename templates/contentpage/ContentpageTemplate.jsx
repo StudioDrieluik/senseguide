@@ -11,6 +11,7 @@ export const ContentpageTemplate = ({ data }) => {
 
   const meta = {
     seoTitle: `${title?.[0].text}`,
+    ogImage: image.url,
   };
 
   return (
