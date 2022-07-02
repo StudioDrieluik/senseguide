@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const SliderContainer = styled.div`
   width: 100%;
@@ -17,9 +17,14 @@ export const SliderContainer = styled.div`
 `;
 
 export const Slide = styled.div`
+  transition: opacity 0.5s 0.1s ease-in;
   span {
     opacity: 0;
     transition: opacity 0.5s 0.1s ease-in;
+  }
+
+  &.last {
+    opacity: 0.3;
   }
 
   &.active {
@@ -94,7 +99,7 @@ export const Icon = styled.button`
     width: 4.8rem;
     height: 4.8rem;
   }
-`
+`;
 
 export const Dots = styled.div`
   display: inline-flex;
@@ -112,4 +117,4 @@ export const Dots = styled.div`
       background: var(--color-primary-200);
     }
   }
-`
+`;

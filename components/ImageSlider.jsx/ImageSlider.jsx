@@ -13,7 +13,6 @@ export const ImageSlider = ({ width, title, images }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
 
-
   const [sliderRef, instanceRef] = useKeenSlider({
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel);
@@ -29,21 +28,21 @@ export const ImageSlider = ({ width, title, images }) => {
       spacing: 16,
     },
     breakpoints: {
-      "(min-width: 480px)": {
+      '(min-width: 480px)': {
         slides: {
           origin: 'center',
           perView: `${isCompact ? 1.15 : 1.15}`,
           spacing: 16,
         },
       },
-      "(min-width: 1025px)": {
+      '(min-width: 1025px)': {
         slides: {
           origin: 'center',
           perView: `${isCompact ? 2.5 : 1.15}`,
           spacing: 32,
         },
       },
-      "(min-width: 1860px)": {
+      '(min-width: 1860px)': {
         slides: {
           origin: 'center',
           perView: `${isCompact ? 2.75 : 1.5}`,
@@ -53,13 +52,20 @@ export const ImageSlider = ({ width, title, images }) => {
     },
   });
 
+  const fadeOutLastSlide = isCompact && currentSlide === 0;
+
   return (
     <div>
       {title?.[0]?.text && <h3>{title?.[0]?.text}</h3>}
       <SliderContainer>
         <div ref={sliderRef} className={`keen-slider ${isCompact ? 'compact' : 'large'}`}>
           {images.map(({ image_slider_image: image, description }, index) => (
-            <Slide className={`keen-slider__slide ${currentSlide === index ? "active" : ""}`} key={index}>
+            <Slide
+              className={`keen-slider__slide ${currentSlide === index ? 'active' : ''} ${
+                fadeOutLastSlide && index === images.length - 1 ? 'last' : ''
+              }`}
+              key={index}
+            >
               <ImageWrapper>
                 <ImageContainer>
                   <Image src={image.url} layout="fill" />
@@ -107,8 +113,20 @@ export const ImageSlider = ({ width, title, images }) => {
 function Arrow(props) {
   const disabeld = props.disabled ? ' arrow--disabled' : '';
   return (
-    <Icon onClick={props.onClick} className={`arrow ${props.left ? 'arrow--left' : 'arrow--right'} ${disabeld}`}>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><g fill="none" fillRule="evenodd"> <path d="M0 0h28v28H0z" /> <g strokeLinecap="round" strokeLinejoin="round" stroke="currentColor" strokeWidth="1.75"> <path d="M4.375 14.004h19.25M15.75 6.125 23.625 14l-7.875 7.875" /></g></g></svg>
+    <Icon
+      onClick={props.onClick}
+      className={`arrow ${props.left ? 'arrow--left' : 'arrow--right'} ${disabeld}`}
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
+        <g fill="none" fillRule="evenodd">
+          {' '}
+          <path d="M0 0h28v28H0z" />{' '}
+          <g strokeLinecap="round" strokeLinejoin="round" stroke="currentColor" strokeWidth="1.75">
+            {' '}
+            <path d="M4.375 14.004h19.25M15.75 6.125 23.625 14l-7.875 7.875" />
+          </g>
+        </g>
+      </svg>
     </Icon>
   );
 }
