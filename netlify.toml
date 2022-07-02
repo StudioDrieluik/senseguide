@@ -3,3 +3,359 @@ package = '@netlify/plugin-sitemap'
 
   [plugins.inputs]
   buildDir = "public"
+
+[[redirects]]
+  from = "/projecten/een-slimme-productintroductie/"
+  to = "/verhalen/introductie-slimme-meter"
+
+[[redirects]]
+  from = "/projecten/andere-kijk-op-klanttevredenheid/"
+  to = "/verhalen/"
+
+[[redirects]]
+  from = "/projecten/ontwikkelen-met-archetypen/"
+  to = "/verhalen/"
+
+[[redirects]]
+  from = "/projecten/bescherming-vitale-infrastructuur/"
+  to = "/verhalen/"
+
+[[redirects]]
+  from = "/projecten/reputatieschade-bestrijden/"
+  to = "/verhalen/"
+
+[[redirects]]
+  from = "/projecten/belevingsonderzoek-waterverbruik/"
+  to = "/verhalen/narratief-onderzoek-duurzaam-waterverbruik"
+
+[[redirects]]
+  from = "/projecten/exploratieve-verkenning-beleving-vog/"
+  to = "/verhalen/jongeren-vog"
+
+[[redirects]]
+  from = "/projecten/een-duurzame-leefomgeving-heeft-vele-gezichten/"
+  to = "/verhalen/duurzame-leefomgeving"
+
+[[redirects]]
+  from = "/projecten/flourishing-community-index/"
+  to = "/verhalen/flourishing-community-index"
+
+[[redirects]]
+  from = "/projecten/educatie-meisjes-niger/"
+  to = "/verhalen/educatie-meisjes-niger"
+
+[[redirects]]
+  from = "/projecten/preventieve-jeugdbescherming-in-gedrang/"
+  to = "/verhalen/preventieve-jeugdbescherming-monitoring"
+
+[[redirects]]
+  from = "/projecten/sociale-basis-tilburg-in-coronatijd-veerkrachtig-en-kwetsbaar-tegelijk/"
+  to = "/verhalen/sociale-basis-tilburg"
+
+[[redirects]]
+  from = "/projecten/werkzame-begeleiding-van-statushouders/"
+  to = "/verhalen/begeleiding-statushouders-werk"
+
+[[redirects]]
+  from = "/projecten/mindsetverandering-autogebruik/"
+  to = "/verhalen/mentaliteitsverandering-autogebruik"
+
+[[redirects]]
+  from = "/projecten/eenzaamheid-in-almere/"
+  to = "/verhalen/eenzaamheid-almere"
+
+[[redirects]]
+  from = "/projecten/maatschappelijke-impact-wmo-voorzieningen/"
+  to = "/verhalen/maatschappelijke-impact-wmo-voorzieningen"
+
+[[redirects]]
+  from = "/projecten/preventieve-jeugdbescherming-in-gedrang-deel-2/"
+  to = "/verhalen/preventieve-jeugdbescherming-narratief-onderzoek"
+
+[[redirects]]
+  from = "/projecten/beschermd-thuis-veenendaal/"
+  to = "/verhalen/beschermd-thuis-veenendaal"
+
+[[redirects]]
+  from = "/projecten/community-resilience-msimbazi-riviergebied/"
+  to = "/verhalen/effecten-klimaatverandering-leefbaarheid"
+
+[[redirects]]
+  from = "/projecten/bedoeling-en-praktijk-jeugdzorg/"
+  to = "/verhalen/bedoeling-praktijk-jeugdzorg"
+
+[[redirects]]
+  from = "/projecten/voedselzekerheid/"
+  to = "/verhalen/narratief-onderzoek-voedselzekerheid"
+
+[[redirects]]
+  from = "/verandering-impact-monitoren/"
+  to = "/voor-wie/lerende-organisatie"
+
+[[redirects]]
+  from = "/cognitive-edge/"
+  to = "/"
+
+[[redirects]]
+  from = "/nieuws/"
+  to = "/verhalen/"
+
+[[redirects]]
+  from = "/algemene-voorwaarden/"
+  to = "/algemene-voorwaarden"
+
+[[redirects]]
+  from = "/meer-inzichten-halen-uit-data-en-mensen/"
+  to = "/verhalen/complexiteit-omarmen-met-sensemaking"
+
+[[redirects]]
+  from = "/kwantitatief-kwalitatief-onderzoek/"
+  to = "/verhalen/complexiteit-omarmen-met-sensemaking"
+
+[[redirects]]
+  from = "/cynefin/"
+  to = "/info/cynefin"
+
+[[redirects]]
+  from = "/privacy/"
+  to = "/privacystatement"
+
+[[redirects]]
+  from = "/vooruitkijken-en-verantwoorden-met-verhalen/"
+  to = "/over-ons"
+
+[[redirects]]
+  from = "/sensemaker-narratief-onderzoek/"
+  to = "/narratief-onderzoek-sensemaking"
+
+[[redirects]]
+  from = "/sensemaker-360-feedback/"
+  to = "/verhalen/narratief-360-graden-feedback"
+
+[[redirects]]
+  from = "/contact/"
+  to = "/contact"
+
+[[redirects]]
+  from = "/verandermanagement-waarom-verzamelen-verhalen-sleutel-tot-succes-is/"
+  to = "/voor-wie//verhalen/grip-op-verandermanagement-met-verhalen"
+
+[[redirects]]
+  from = "/narratief-clientervaringsonderzoek-wmo/"
+  to = "/verhalen/narratief-clientervaringsonderzoek"
+
+[[redirects]]
+  from = "/narratieve-monitoring-evaluatie-leren-ngos/"
+  to = "/voor-wie/ontwikkelingswerk"
+
+[[redirects]]
+  from = "/verhalend-leren-veranderen-360feedback/"
+  to = "/voor-wie/lerende-organisatie"
+
+[[redirects]]
+  from = "/projecten/"
+  to = "/verhalen"
+
+[[redirects]]
+  from = "/narratief-verkennen-en-verantwoorden/"
+  to = "/voor-wie/sociaal-domein"
+
+[[redirects]]
+  from = "/sensemaking-workshops/"
+  to = "/workshops/"
+
+[[redirects]]
+  from = "/diensten/"
+  to = "/diensten"
+
+[[redirects]]
+  from = "/diensten/datavisualisatie/"
+  to = "/diensten"
+
+[[redirects]]
+  from = "/diensten/machine-tekst-analyse/"
+  to = "/diensten"
+
+[[redirects]]
+  from = "/diensten/sensemaking-procesbegeleiding/"
+  to = "/diensten"
+
+[[redirects]]
+  from = "/diensten/sensemaking-workshops/"
+  to = "/diensten"
+
+[[redirects]]
+  from = "/diensten/cynefin-workshops/"
+  to = "/diensten"
+
+[[redirects]]
+  from = "/diensten/sensemaker/"
+  to = "/diensten"
+
+[[redirects]]
+  from = "/nieuws/zicht-houden-op-de-organisatie-in-het-tijdperk-van-het-algoritme/"
+  to = "/verhalen/zicht-houden-op-de-organisatie-in-tijdperk-van-algoritme"
+
+[[redirects]]
+  from = "/nieuws/derde-plaats-voor-senseguide-in-veiligheid-innovatie-competitie-2016/"
+  to = "/verhalen/podiumplaats-senseguide-in-veiligheid-innovatie-competitie"
+
+[[redirects]]
+  from = "/nieuws/klimaatakkoord-zonder-medewerking-van-de-burger-kan-de-transitie-niet-slagen/"
+  to = "/verhalen/klimaatakkoord-burgermedewerking-transitie"
+
+[[redirects]]
+  from = "/nieuws/veerkracht-tijden-klimaatverandering/"
+  to = "/verhalen/veerkracht-in-tijden-van-klimaatverandering"
+
+[[redirects]]
+  from = "/nieuws/eenzaamheid-almere-samen-vrijwilligerscentrale-brachten-we-twee-weken-beeld/"
+  to = "/verhalen/eenzaamheid-almere"
+
+[[redirects]]
+  from = "/nieuws/cordaid-fci-powered-by-sensemaker-wint-uk-evaluation-society-award/"
+  to = "/verhalen/cordaid-fci-powered-by-sensemaker-wint-uk-evaluation"
+
+[[redirects]]
+  from = "/nieuws/verhalenvirus-meets-coronavirus-ervaringen-storytelling-experts-2020/"
+  to = "/verhalen/verhalenvirus-meets-coronavirus-ervaringen-van-storytelling-experts"
+
+[[redirects]]
+  from = "/nieuws/preventieve-jeugdbescherming-amsterdam-ervaringen-gezinnen-en-gezinsmanagers/"
+  to = "/verhalen/preventieve-jeugdbescherming-monitoring"
+
+[[redirects]]
+  from = "/nieuws/dag-tegen-kinderarbeid/"
+  to = "/verhalen/werelddag-tegen-kinderarbeid"
+
+[[redirects]]
+  from = "/nieuws/anders-verantwoorden-moet-echt-anders/"
+  to = "/verhalen/anders-verantwoorden-moet-echt-anders"
+
+[[redirects]]
+  from = "/nieuws/waarom-we-cultuur-niet-meer-cultuur-noemen/"
+  to = "/voor-wie/lerende-organisatie"
+
+[[redirects]]
+  from = "/nieuws/5-redenen-om-koffiemachineverhalen-organisatie-op-halen/"
+  to = "/verhalen/5-redenen-om-koffiemachineverhalen-in-je-organisatie"
+
+[[redirects]]
+  from = "/nieuws/onderzoek-naar-behoefte-voorzieningen-jongeren-assen/"
+  to = "/verhalen/onderzoek-naar-behoefte-voorzieningen-jongeren-in-assen"
+
+[[redirects]]
+  from = "/nieuws/een-zachte-landing-van-beschermd-thuis/"
+  to = "/verhalen/een-zachte-landing-voor-beschermd-thuis-in-veenendaal"
+
+[[redirects]]
+  from = "/nieuws/podcast-onderzoek-woonzorgvisie/"
+  to = "/verhalen/podcast-onderzoek-voor-woonzorgvisie"
+
+[[redirects]]
+  from = "/nieuws/webinar-beschermd-thuis/"
+  to = "/verhalen/webinar-beschermd-thuis"
+
+[[redirects]]
+  from = "/workshop/team-sensemaking/"
+  to = "/workshop/team-sensemaking"
+
+[[redirects]]
+  from = "/workshop/workshop-effectief-leiderschap-cynefin/"
+  to = "/workshop/cynefin-framework-workshop"
+
+[[redirects]]
+  from = "/workshop/masterclass-gedragsverandering-verhalen/"
+  to = "/workshops"
+
+[[redirects]]
+  from = "/workshop/workshop-terug-naar-de-toekomst/"
+  to = "/workshop/futurebackwards"
+
+[[redirects]]
+  from = "/workshop/training-kunst-waarnemen/"
+  to = "/workshops"
+
+[[redirects]]
+  from = "/projecten/personen/davevanmourik/"
+  to = "/over-ons"
+
+[[redirects]]
+  from = "/projecten/personen/gijs/"
+  to = "/over-ons"
+
+[[redirects]]
+  from = "/projecten/personen/gijswimdehaas/"
+  to = "/over-ons"
+
+[[redirects]]
+  from = "/en/sensemaker-narrative-monitoring/"
+  to = "/en/info/our-approach"
+
+[[redirects]]
+  from = "/en/senseguide-big-narrative-sensemaking/"
+  to = "/en/info/our-approach"
+
+[[redirects]]
+  from = "/en/case-studies/"
+  to = ""
+
+[[redirects]]
+  from = "/en/projecten/household-dynamics-food-security/"
+  to = "/en/stories/food-security"
+
+[[redirects]]
+  from = "/en/projecten/flourishing-community-index/"
+  to = "/en/stories/the-flourishing-community-index"
+
+[[redirects]]
+  from = "/en/projecten/resilience-why-people-choose-to-live-the-msimbazi-valley-despite-that-is-increasingly-unsuitable-to-live/"
+  to = "/en/stories/climate-change-resilience"
+
+[[redirects]]
+  from = "/en/projecten/girls-education-niger/"
+  to = "/en/stories/girls-education-niger"
+
+[[redirects]]
+  from = "/en/projecten/travel-log-sensemaker-research-in-benin/"
+  to = "/en/stories/sensemaker-research-benin"
+
+[[redirects]]
+  from = "/en/projecten/personen/davevanmourik/"
+  to = "/en/about-us"
+
+[[redirects]]
+  from = "/en/projecten/personen/gijswimdehaas/"
+  to = "/en/about-us"
+
+[[redirects]]
+  from = "/en/diensten/sensemaker-services/"
+  to = "/en/info/stories-behind-statistics"
+
+[[redirects]]
+  from = "/en/diensten/data-visualization-and-analysis/"
+  to = "/en/info/stories-behind-statistics"
+
+[[redirects]]
+  from = "/en/diensten/machine-text-analytics/"
+  to = "/en/info/stories-behind-statistics"
+
+[[redirects]]
+  from = "/en/diensten/sensemaking-concepts/"
+  to = "/en/info/stories-behind-statistics"
+
+[[redirects]]
+  from = "/the-pattern-basis-human-intelligence/"
+  to = "/en/info/our-approach"
+
+[[redirects]]
+  from = "/stories-behind-statistics/"
+  to = "/en/info/stories-behind-statistics"
+
+[[redirects]]
+  from = "/abductive-reasoning-and-ambiguity/"
+  to = "/en/info/our-approach"
+
+[[redirects]]
+  from = "/what-is-sensemaker/"
+  to = "/en/info/our-approach"
