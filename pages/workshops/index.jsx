@@ -7,7 +7,7 @@ import { cmsDataService } from '@/services/cmsDataService';
 import { BlocksRender } from '@/components/blocks/BlocksRender';
 import { WorkshopsTemplate } from '../../templates/workshops/WorkshopsTemplate';
 
-const WorkshopsPage = ({ preview }) => {
+const WorkshopsPage = ({ preview, uid }) => {
   const { loading, error, data } = useQuery(WORKSHOP_PAGE_QUERY);
 
   if (error) return <p>Error...</p>;
@@ -15,7 +15,7 @@ const WorkshopsPage = ({ preview }) => {
 
   return (
     <WorkshopsTemplate
-      data={data?.allWorkshopss?.edges?.[0].node}
+      data={data?.allWorkshopss?.edges?.[0]?.node}
       workshops={data?.allWorkshops?.edges}
     />
   );
