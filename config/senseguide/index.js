@@ -1,3 +1,5 @@
+const ROUTES = require('./routes');
+
 const config = {
   meta: {
     title: 'Senseguide',
@@ -41,7 +43,28 @@ const config = {
     },
   },
   beforeFilesRewrites: null,
-  afterFilesRewrites: null,
+  afterFilesRewrites: [
+    {
+      source: `/en/${ROUTES.ABOUT_US.en}`,
+      destination: `/${ROUTES.ABOUT_US.nl}`,
+      locale: false,
+    },
+    {
+      source: `/en/${ROUTES.STORIES.en}`,
+      destination: `/${ROUTES.STORIES.nl}`,
+      locale: false,
+    },
+    {
+      source: `/en/${ROUTES.STORIES.en}/:slug*`,
+      destination: `/${ROUTES.STORIES.nl}/:slug*`,
+      locale: false,
+    },
+    {
+      source: `/en/${ROUTES.AUDIENCES.en}/:slug*`,
+      destination: `/${ROUTES.AUDIENCES.nl}/:slug*`,
+      locale: false,
+    },
+  ],
 };
 
 module.exports = config;

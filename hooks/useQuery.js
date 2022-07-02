@@ -4,13 +4,13 @@ import { cmsDataService } from '../services/cmsDataService';
 
 export const useQuery = (query, ...rest) => {
   const router = useRouter();
-  const site = cmsDataService.getSiteId(router.locale);
+  const lang = cmsDataService.getSiteId(router.locale);
 
   const data = useApolloQuery(query, {
     ...rest?.[0],
     variables: {
       ...rest?.[0]?.variables,
-      site,
+      lang,
     },
   });
 

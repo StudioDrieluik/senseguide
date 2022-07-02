@@ -9,8 +9,11 @@ import { BlockWrapper } from '@/components/blocks/BlockWrapper.styles';
 import { TestimonialsSlider } from '@/components/TestimonialsSlider/TestimonialsSlider';
 import { BlockStorySlider } from '@/components/blocks/BlockStorySlider/BlockStorySlider';
 import LogoGrid from '../../components/LogoGrid/LogoGrid';
+import ROUTES from '../../config/senseguide/routes';
+import { useRouter } from 'next/router';
 
 export const HomeTemplate = ({ data }) => {
+  const router = useRouter();
   const meta = {
     seoTitle: 'Home',
   };
@@ -26,6 +29,8 @@ export const HomeTemplate = ({ data }) => {
     hero_links,
     hero_title,
   };
+
+  const storiesUrl = ROUTES.STORIES[router.locale];
 
   return (
     <Layout>
@@ -50,7 +55,7 @@ export const HomeTemplate = ({ data }) => {
             logos={data.clients_logos}
             title={data.clients_title?.[0]?.text}
             ctaTitle="Onze projecten"
-            ctaURL="/verhalen"
+            ctaURL={`/${storiesUrl}/?type=project`}
           />
         )}
 

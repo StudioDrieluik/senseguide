@@ -7,6 +7,19 @@ export const SERVICES_PAGE_QUERY = gql`
         node {
           title
           intro
+          services {
+            service {
+              ... on Dienst {
+                title
+                image
+                intro
+                _meta {
+                  uid
+                  type
+                }
+              }
+            }
+          }
         }
       }
     }

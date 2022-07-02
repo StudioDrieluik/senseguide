@@ -8,6 +8,7 @@ import { BlockQuote } from './BlockQuote/BlockQuote';
 import { BlockStorySlider } from './BlockStorySlider/BlockStorySlider';
 import { BlockTitleTextCta } from './BlockTitleTextCta/BlockTitleTextCta';
 import { BlockVideo } from './BlockVideo/BlockVideo';
+import { BlockEmbed } from './BlockEmbed/BlockEmbed';
 
 const renderBlock = (block, index) => {
   switch (block.type) {
@@ -17,6 +18,8 @@ const renderBlock = (block, index) => {
       return <BlockQuote block={block.primary} key={index} />;
     case 'video':
       return <BlockVideo block={block.primary} key={index} />;
+    case 'embed':
+      return <BlockEmbed block={block.primary} key={index} />;
     case 'accordion':
       return <Accordion block={block.primary} fields={block.fields} key={index} />;
     case 'images':

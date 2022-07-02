@@ -1,11 +1,6 @@
 const nextTranslate = require('next-translate');
-
 const config = require(`./config/index.js`);
-
-// eslint-disable-next-line import/no-extraneous-dependencies
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.SETTINGS === 'accept',
-});
+const withPrismicSitemap = require('@reecem/prismic-sitemap');
 
 const nextConfig = () => {
   const settings = process.env.SETTINGS || '<not declared>';
@@ -19,8 +14,92 @@ const nextConfig = () => {
     `🙋 Hey, I'm Lucy! I'm getting ready to run ${config.meta.title} for the ${settings} environment, Hang tight.. 🙋`
   );
 
+  // The Prismic API endpoint
+  const API_ENDPOINT = `https://senseguide.cdn.prismic.io/api/v2`;
+
+  // The hostname of the website, for example it would be https://example.com
+  const SITE_URL = 'https://www.senseguide.nl';
+
+  // this is the link resolver for the documents that are fetched.
+  const linkResolver = doc => {
+    switch (doc.type) {
+      // single pages
+      case 'homepage':
+        return `/`;
+
+      case 'voor_wie':
+        return `voor-wie`;
+
+      case 'over_ons':
+        return `over-ons`;
+
+      case 'stories':
+        return `verhalen`;
+
+      // dynamic pages
+      case 'contact':
+      case 'diensten':
+      case 'workshops':
+        return `${doc.type}`;
+
+      case 'audience':
+        return `voor-wie/${doc.uid}`;
+
+      case 'story':
+        return `verhalen/${doc.uid}`;
+
+      case 'dienst':
+        return `dienst/${doc.uid}`;
+
+      case 'info_page':
+        return `info/${doc.uid}`;
+
+      case 'workshop':
+        return `workshop/${doc.uid}`;
+
+      default:
+        throw new Error(`Unknown doc.type: "${doc.type}"`);
+    }
+  };
+
+  const sitemap = {
+    linkResolver,
+    apiEndpoint: API_ENDPOINT,
+    hostname: SITE_URL,
+    accessToken: process.env.PRISMIC_API_TOKEN,
+    defaultEntryOption: { priority: 0.7 },
+    pagination: {
+      pageSize: 99,
+    },
+    optionsMapPerDocumentType: {
+      story: document => ({
+        lastmod: document.last_publication_date,
+        changefreq: 'weekly',
+        priority: 0.8,
+      }),
+      info: { changefreq: 'monthly', priority: 0.6 },
+      stories: { changefreq: 'monthly', priority: 0.9 },
+      homepage: { priority: 1 },
+    },
+    documentTypes: [
+      'homepage',
+      'contact',
+      'diensten',
+      'workshops',
+      'audience',
+      'stories',
+      'story',
+      'dienst',
+      'info_page',
+      'workshop',
+      'voor_wie',
+      'over_ons',
+    ],
+  };
+
   return {
     env,
+    sitemap,
     eslint: {
       ignoreDuringBuilds: true,
     },
@@ -43,4 +122,4 @@ const nextConfig = () => {
   };
 };
 
-module.exports = nextTranslate(withBundleAnalyzer(nextConfig()));
+module.exports = nextTranslate(withPrismicSitemap(nextConfig()));

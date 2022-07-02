@@ -39,12 +39,12 @@ export const cmsDataService = {
 
     const data = await Promise.all(
       queries.map(async ({ query, variables }) => {
-        const site = this.getSiteId(ctx.locale);
+        const lang = this.getSiteId(ctx.locale);
         const { data } = await apolloClient.query({
           query,
           variables: {
             ...variables,
-            site,
+            lang,
           },
           context: { headers },
         });
@@ -52,7 +52,7 @@ export const cmsDataService = {
         if ('entry' in data && !data.entry && variables.id) {
           const { id } = variables;
 
-          const response = await getRedirectUrl({ id, site });
+          const response = await getRedirectUrl({ id, lang });
 
           if (response && response.url) {
             return { redirect: { permanent: true, destination: response.url } };

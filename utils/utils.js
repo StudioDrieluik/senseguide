@@ -1,11 +1,15 @@
+import { useRouter } from 'next/router';
+import ROUTES from '../config/senseguide/routes';
+
 export const getUrlFromMeta = meta => {
   if (!meta?.uid) return;
+  const { locale } = useRouter();
 
   switch (meta.type) {
     case 'story':
-      return `/verhalen/${meta.uid}`;
+      return `/${ROUTES.STORIES[locale]}/${meta.uid}`;
     case 'audience':
-      return `/voor-wie/${meta.uid}`;
+      return `/${ROUTES.AUDIENCES[locale]}/${meta.uid}`;
     case 'dienst':
       return `/diensten/${meta.uid}`;
     case 'info_page':

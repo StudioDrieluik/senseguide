@@ -22,6 +22,13 @@ export const BLOCKS = type =>
         author
       }
     }
+    ... on ${type}BodyEmbed {
+      type
+      primary {
+        embed_title
+        embed
+      }
+    }
     ... on ${type}BodyVideo {
       type
       primary {

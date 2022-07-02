@@ -5,23 +5,27 @@ import { cmsDataService } from '@/services/cmsDataService';
 import { useState } from 'react';
 import { StoriesTemplate } from '../../templates/stories/StoriesTemplate';
 
-const StoriesPage = ({  }) => {
+const StoriesPage = ({}) => {
   const { loading, error, data } = useQuery(STORIES_PAGE_QUERY);
 
   if (error) return <p>Error...</p>;
   if (!data && loading) return <p>Loading</p>;
 
-  return <StoriesTemplate stories={data?.allStorys?.edges} />;
+  return (
+    <StoriesTemplate
+      title={data?.allStoriess?.edges?.[0]?.node?.title?.[0]?.text}
+      stories={data?.allStorys?.edges}
+    />
+  );
 };
 
 export async function getStaticProps(ctx) {
   // build queries
   const queries = [
     {
-      query: STORIES_PAGE_QUERY
+      query: STORIES_PAGE_QUERY,
     },
   ];
-
 
   // wait for page data
   const pageProps = await cmsDataService.getPageProps({ ctx, queries });

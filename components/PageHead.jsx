@@ -9,9 +9,11 @@ export const PageHead = ({ meta }) => {
     defaultMetaDescription,
     ogImage,
     url,
-    defaultTitleSuffix,
+    defaultTitleSuffix = 'Senseguide',
   } = meta;
-  const metaTitle = seoTitle || title + (defaultTitleSuffix ? ` | ${defaultTitleSuffix}` : '');
+  const metaTitle =
+    seoTitle + ` | ` + defaultTitleSuffix ||
+    title + (defaultTitleSuffix ? ` | ${defaultTitleSuffix}` : '');
   const metaDescription = seoDescription || defaultMetaDescription;
   let seoRobotsContent = 'index, follow';
 

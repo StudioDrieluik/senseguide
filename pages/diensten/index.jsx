@@ -10,9 +10,7 @@ const ServicesPage = () => {
   if (error) return <p>Error...</p>;
   if (!data && loading) return <p>Loading</p>;
 
-  return (
-    <ServicesTemplate data={data?.allDienstens?.edges?.[0]?.node} services={data?.allDiensts?.edges} />
-  );
+  return <ServicesTemplate data={data?.allDienstens?.edges?.[0]?.node} />;
 };
 
 export async function getStaticProps(ctx) {

@@ -19,7 +19,7 @@ export const ServicesTemplate = ({ data, services }) => {
       <Hero {...heroContent} />
 
       <Container medium>
-        {services.map(({ node: group }) => (
+        {data?.services?.map(({ service: group }) => (
           <Story key={group._meta.uid} data={group} />
         ))}
       </Container>

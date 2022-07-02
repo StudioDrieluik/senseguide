@@ -9,7 +9,7 @@ import { useRouter, query } from 'next/router';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-export const StoriesTemplate = ({ stories }) => {
+export const StoriesTemplate = ({ title, stories }) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [filteredStories, setFilteredStories] = useState(stories);
   const [isLoading, setIsLoading] = useState(false);
@@ -67,7 +67,7 @@ export const StoriesTemplate = ({ stories }) => {
   return (
     <Layout>
       <PageHead meta={meta} />
-      <Hero title="Senseguide verhalen" />
+      <Hero title={title} />
 
       <Container>
         <Wrapper>

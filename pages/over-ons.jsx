@@ -3,6 +3,7 @@ import { useQuery } from '@/hooks/useQuery';
 import { ABOUT_US_QUERY } from '@/queries/singles/ABOUT_US_QUERY';
 import { cmsDataService } from '@/services/cmsDataService';
 import { ContentpageTemplate } from '@/templates/contentpage/ContentpageTemplate';
+import { ROUTES } from '../config/senseguide/routes';
 
 const OverOnsPage = ({ uid }) => {
   const { loading, error, data } = useQuery(ABOUT_US_QUERY, {
@@ -16,13 +17,12 @@ const OverOnsPage = ({ uid }) => {
 };
 
 export async function getStaticProps(ctx) {
+  const uid = ROUTES.ABOUT_US[ctx.locale];
   // build queries
   const queries = [
     {
       query: ABOUT_US_QUERY,
-      variables: {
-        uid: 'over-ons',
-      },
+      variables: { uid },
     },
   ];
 
