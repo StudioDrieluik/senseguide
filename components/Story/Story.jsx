@@ -15,6 +15,8 @@ import {
 const Story = ({ data, compact }) => {
   const href = getUrlFromMeta(data?._meta);
 
+  if (!data) return null;
+
   return (
     <Wrapper compact={compact}>
       <ImageWrapper compact={compact}>

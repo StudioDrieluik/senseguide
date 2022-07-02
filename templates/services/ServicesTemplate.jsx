@@ -5,9 +5,12 @@ import { Container } from '../../components/Container/Container.styles';
 import { Hero } from '../../components/Hero/Hero';
 import Story from '../../components/Story/Story';
 
-export const ServicesTemplate = ({ data, services }) => {
+export const ServicesTemplate = ({ data }) => {
   const { title, image, intro } = data;
   const heroContent = { title, image, intro };
+
+  console.log(data);
+  // return null;
 
   const meta = {
     seoTitle: 'Diensten',
@@ -20,7 +23,7 @@ export const ServicesTemplate = ({ data, services }) => {
 
       <Container medium>
         {data?.services?.map(({ service: group }) => (
-          <Story key={group._meta.uid} data={group} />
+          <Story key={group?._meta.uid} data={group} />
         ))}
       </Container>
     </Layout>

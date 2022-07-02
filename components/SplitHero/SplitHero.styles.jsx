@@ -114,7 +114,7 @@ export const Content = styled.div`
     margin: 0 0 8rem;
 
     @media (${({ theme }) => theme.respondTo.desktop}) {
-      margin: 0 0 14rem;
+      margin: 0 0 10rem;
     }
   }
 `;
