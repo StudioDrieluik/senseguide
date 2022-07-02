@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
   }
 
   @media (${({ theme }) => theme.respondTo.desktop}) {
-    height: 90vh;
+    min-height: 90vh;
     flex-direction: row;
     margin-bottom: 16rem;
   }
@@ -84,8 +84,8 @@ export const Content = styled.div`
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 
     @media (${({ theme }) => theme.respondTo.desktop}) {
-      margin-top: 2.4rem;
-      padding-bottom: 2.4rem;
+      margin-top: 1.8rem;
+      padding-bottom: 1.8rem;
       border: 0;
     }
 
