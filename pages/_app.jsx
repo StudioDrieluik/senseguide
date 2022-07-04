@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import App from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import { ApolloProvider } from '@apollo/client';
@@ -10,27 +10,29 @@ import 'lazysizes';
 import 'lazysizes/plugins/attrchange/ls.attrchange';
 import 'lazysizes/plugins/blur-up/ls.blur-up';
 import StickyCta from '../components/StickyCta/StickyCta';
+import { useRouter } from 'next/router';
+import ReactGA from 'react-ga';
 
 const MyApp = ({ Component, pageProps }) => {
   const apolloClient = useApollo(pageProps);
+  const router = useRouter();
+  ReactGA.initialize(process.env.ga);
+
+  useEffect(() => {
+    const handleRouteChange = url => {
+      ReactGA.pageview(window.location.pathname + window.location.search);
+    };
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+    router.events.on('hashChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+      router.events.off('hashChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <>
-      {process.env.gtm && (
-        <Script
-          id="gtmScript"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-                  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                  })(window,document,'script','dataLayer', '${process.env.gtm}')
-                `,
-          }}
-        />
-      )}
       <ApolloProvider client={apolloClient}>
         <ThemeProvider theme={theme}>
           <RecoilRoot>
