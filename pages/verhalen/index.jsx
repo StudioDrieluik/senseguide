@@ -13,6 +13,7 @@ const StoriesPage = ({}) => {
 
   return (
     <StoriesTemplate
+      data={data}
       title={data?.allStoriess?.edges?.[0]?.node?.title?.[0]?.text}
       stories={data?.allStorys?.edges}
     />

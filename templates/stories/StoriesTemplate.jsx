@@ -9,16 +9,16 @@ import { useRouter, query } from 'next/router';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-export const StoriesTemplate = ({ title, stories }) => {
+export const StoriesTemplate = ({ data, title, stories }) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [filteredStories, setFilteredStories] = useState(stories);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
   const meta = {
-    seoTitle: data.seo_title?.[0]?.text || title,
-    seoDescription: data.seo_description?.[0]?.text || `${intro?.[0]?.text}`,
-    ogImage: image?.url,
+    seoTitle: data?.seo_title?.[0]?.text || title,
+    seoDescription: data?.seo_description?.[0]?.text,
+    ogImage: data?.image?.url,
   };
 
   const categories = [
