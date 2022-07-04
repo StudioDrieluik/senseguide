@@ -9,11 +9,10 @@ export const ServicesTemplate = ({ data }) => {
   const { title, image, intro } = data;
   const heroContent = { title, image, intro };
 
-  console.log(data);
-  // return null;
-
   const meta = {
-    seoTitle: 'Diensten',
+    seoTitle: data.seo_title?.[0]?.text || `${title?.[0].text}`,
+    seoDescription: data.seo_description?.[0]?.text || `${intro?.[0]?.text}`,
+    ogImage: image?.url,
   };
 
   return (

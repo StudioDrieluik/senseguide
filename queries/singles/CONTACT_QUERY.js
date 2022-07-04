@@ -6,6 +6,8 @@ export const CONTACT_QUERY = gql`
       edges {
         node {
           title
+          seo_title
+          seo_description
           text
           intro
           _meta {

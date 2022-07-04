@@ -7,6 +7,8 @@ export const STORY_QUERY = gql`
       edges {
         node {
           title
+          seo_title
+          seo_description
           image
           intro
           _meta {

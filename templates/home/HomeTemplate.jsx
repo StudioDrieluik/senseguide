@@ -18,8 +18,9 @@ export const HomeTemplate = ({ data }) => {
   const { intro_cta_link, intro_cta_title, intro_image, intro_title, intro_text } = data;
 
   const meta = {
-    seoTitle: 'Home',
-    ogImage: hero_image.url,
+    seoTitle: data.seo_title?.[0]?.text || `Senseguide | ${hero_title?.[0].text}`,
+    seoDescription: data.seo_description?.[0]?.text || `${intro_title?.[0].text}`,
+    ogImage: hero_image?.url,
   };
 
   const heroContent = {

@@ -25,9 +25,11 @@ export const PageHead = ({ meta }) => {
     <Head>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <title>{metaTitle}</title>
-      <meta name="description" content={metaDescription} />
+      {metaDescription !== 'undefined' && <meta name="description" content={metaDescription} />}
       <meta property="og:title" content={metaTitle} />
-      <meta property="og:description" content={metaDescription} />
+      {metaDescription !== 'undefined' && (
+        <meta property="og:description" content={metaDescription} />
+      )}
       {ogImage && <meta property="og:image" content={ogImage} />}
       <link rel="canonical" href={url} />
       <meta name="robots" content={seoRobotsContent} />

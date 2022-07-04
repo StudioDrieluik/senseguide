@@ -10,7 +10,8 @@ export const WhoTemplate = ({ data, audience }) => {
   const heroContent = { title, image, intro };
 
   const meta = {
-    seoTitle: 'Voor wie',
+    seoTitle: data.seo_title?.[0]?.text || title,
+    seoDescription: data.seo_description?.[0]?.text || intro,
   };
 
   return (

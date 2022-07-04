@@ -13,7 +13,8 @@ export const ContactTemplate = ({ data }) => {
   const heroContent = { title, intro };
 
   const meta = {
-    seoTitle: `${title?.[0].text}`,
+    seoTitle: data.seo_title?.[0]?.text || `${title?.[0].text}`,
+    seoDescription: data.seo_description?.[0]?.text || `${intro?.[0].text}`,
   };
 
   return (

@@ -6,6 +6,8 @@ export const WHO_PAGE_QUERY = gql`
       edges {
         node {
           title
+          seo_title
+          seo_description
           intro
         }
       }

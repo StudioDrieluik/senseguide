@@ -14,8 +14,11 @@ export const StoriesTemplate = ({ title, stories }) => {
   const [filteredStories, setFilteredStories] = useState(stories);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+
   const meta = {
-    seoTitle: 'Verhalen',
+    seoTitle: data.seo_title?.[0]?.text || title,
+    seoDescription: data.seo_description?.[0]?.text || `${intro?.[0]?.text}`,
+    ogImage: image?.url,
   };
 
   const categories = [
