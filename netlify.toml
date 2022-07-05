@@ -126,7 +126,7 @@ package = '@netlify/plugin-sitemap'
 
 [[redirects]]
   from = "/sensemaker-narratief-onderzoek/"
-  to = "/narratief-onderzoek-sensemaking"
+  to = "/info/narratief-onderzoek-sensemaking"
 
 [[redirects]]
   from = "/sensemaker-360-feedback/"
@@ -163,10 +163,6 @@ package = '@netlify/plugin-sitemap'
 [[redirects]]
   from = "/sensemaking-workshops/"
   to = "/workshops/"
-
-[[redirects]]
-  from = "/diensten/"
-  to = "/diensten"
 
 [[redirects]]
   from = "/diensten/datavisualisatie/"
