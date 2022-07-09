@@ -22,6 +22,7 @@ export const SplitHero = ({
           height="1100"
           quality={70}
           style={{ height: '100%' }}
+          priority
         />
       </div>
       <Content>
