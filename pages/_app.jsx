@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import App from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import { ApolloProvider } from '@apollo/client';
@@ -36,7 +37,9 @@ const MyApp = ({ Component, pageProps }) => {
       <ApolloProvider client={apolloClient}>
         <ThemeProvider theme={theme}>
           <RecoilRoot>
-            <Component {...pageProps} />
+            <AnimatePresence initial={false}>
+              <Component {...pageProps} />
+            </AnimatePresence>
             <StickyCta />
             <style jsx>
               {`

@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
 
   img {
     object-fit: cover;
+    height: 100%;
   }
 
   @media (${({ theme }) => theme.respondTo.tablet}) {
@@ -25,6 +26,11 @@ export const Wrapper = styled.div`
     position: relative;
     width: 100%;
     height: 50vh;
+
+    > span {
+      height: 100% !important;
+      width: 100% !important;
+    }
 
     @media (${({ theme }) => theme.respondTo.desktop}) {
       height: auto;
