@@ -25,16 +25,28 @@ const nextConfig = () => {
     switch (doc.type) {
       // single pages
       case 'homepage':
-        return `/`;
+        if (doc.lang === 'en-gb') {
+          return `en`;
+        } else if (doc.lang === 'nl-nl') {
+          return `/`;
+        }
 
       case 'voor_wie':
-        return `voor-wie`;
+        if (doc.lang === 'en-gb') {
+          return `en/for-who`;
+        } else if (doc.lang === 'nl-nl') {
+          return `voor-wie`;
+        }
 
       case 'over_ons':
         return `over-ons`;
 
       case 'stories':
-        return `verhalen`;
+        if (doc.lang === 'en-gb') {
+          return `en/stories`;
+        } else if (doc.lang === 'nl-nl') {
+          return `verhalen`;
+        }
 
       // dynamic pages
       case 'contact':
@@ -43,16 +55,28 @@ const nextConfig = () => {
         return `${doc.type}`;
 
       case 'audience':
-        return `voor-wie/${doc.uid}`;
+        if (doc.lang === 'en-gb') {
+          return `en/for-who/${doc.uid}`;
+        } else if (doc.lang === 'nl-nl') {
+          return `voor-wie/${doc.uid}`;
+        }
 
       case 'story':
-        return `verhalen/${doc.uid}`;
+        if (doc.lang === 'en-gb') {
+          return `en/stories/${doc.uid}`;
+        } else if (doc.lang === 'nl-nl') {
+          return `verhalen/${doc.uid}`;
+        }
 
       case 'dienst':
         return `dienst/${doc.uid}`;
 
       case 'info_page':
-        return `info/${doc.uid}`;
+        if (doc.lang === 'en-gb') {
+          return `en/info/${doc.uid}`;
+        } else if (doc.lang === 'nl-nl') {
+          return `info/${doc.uid}`;
+        }
 
       case 'workshop':
         return `workshop/${doc.uid}`;
