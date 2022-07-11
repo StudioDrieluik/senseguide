@@ -49,14 +49,8 @@ export const cmsDataService = {
           context: { headers },
         });
 
-        if ('entry' in data && !data.entry && variables.id) {
-          const { id } = variables;
-
-          const response = await getRedirectUrl({ id, lang });
-
-          if (response && response.url) {
-            return { redirect: { permanent: true, destination: response.url } };
-          }
+        const entry = data[Object.keys(data)?.[0]];
+        if ('edges' in entry && entry?.edges?.length === 0) {
           return { notFound: true };
         }
 
@@ -68,6 +62,10 @@ export const cmsDataService = {
       })
     );
 
+    if ('notFound' in data[0]) {
+      return data[0];
+    }
+
     return addApolloState(apolloClient, {
       props: {
         initialApolloState: apolloClient.cache.extract(),
@@ -75,7 +73,5 @@ export const cmsDataService = {
         ...queries[0].variables,
       },
     });
-
-    return data[0];
   },
 };

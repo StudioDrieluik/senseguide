@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { ContentWrapper, Hexagon, ImageContainer, ImageWrapper, LittleHexagon, Wrapper } from './Hero.styles';
+import {
+  ContentWrapper,
+  Hexagon,
+  ImageContainer,
+  ImageWrapper,
+  LittleHexagon,
+  Wrapper,
+} from './Hero.styles';
 import { Breadcrumbs } from '../Breadcrumbs/Breadcrumbs';
 import { useRouter } from 'next/router';
 
-export const Hero = ({ title, image, intro, isWorkshop }) => {
+export const Hero = ({ title, image, intro, isWorkshop, withBreadcrumbs = true }) => {
   const router = useRouter();
   const [hasParent, setHasParent] = useState(false);
 
@@ -22,7 +29,7 @@ export const Hero = ({ title, image, intro, isWorkshop }) => {
   return (
     <Wrapper image={image} workshop={isWorkshop}>
       <ContentWrapper>
-        {hasParent && <Breadcrumbs />}
+        {hasParent && withBreadcrumbs && <Breadcrumbs />}
         {title && (title?.[0].text ? <h1>{title[0].text}</h1> : <h1>{title}</h1>)}
         {intro?.[0] && !isWorkshop && <p>{intro[0].text}</p>}
         <Hexagon

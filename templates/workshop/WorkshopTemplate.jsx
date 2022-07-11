@@ -57,7 +57,7 @@ export const WorkshopTemplate = ({ data }) => {
               )}
             </ul>
             {/* @TODO: Aanmelden */}
-            <Button href="#" variant="secondary">
+            <Button href="mailto:contact@senseguide.nl" variant="secondary">
               Aanmelden
             </Button>
           </Meta>

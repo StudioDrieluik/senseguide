@@ -1,14 +1,25 @@
+import { Layout } from '@/layouts/default';
 import { PageHead } from '@/components/PageHead';
+import styled from 'styled-components';
+import { Hero } from '../components/Hero/Hero';
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const Page404 = () => (
-  <div>
+  <Layout>
     <PageHead
       meta={{
-        title: 'Page not found',
+        seoTitle: 'Pagina niet gevonden',
       }}
     />
-    <h1>404</h1>
-  </div>
+    <Wrapper>
+      <Hero withBreadcrumbs={false} title="Pagina niet gevonden" />
+    </Wrapper>
+  </Layout>
 );
 
 export default Page404;
