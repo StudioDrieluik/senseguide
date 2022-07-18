@@ -13,6 +13,11 @@ const translations = {
     logoGrid: 'Our projects',
     storySlider: 'Senseguide stories'
   },
+  categories: {
+    projects: 'Projecten',
+    views: 'Zienswijzen',
+    news: 'Nieuws',
+  },
   stories: {
     filterTitle: 'Filter op',
     all: 'Alles',

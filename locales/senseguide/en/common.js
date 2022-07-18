@@ -13,9 +13,14 @@ const translations = {
     logoGrid: 'Our projects',
     storySlider: 'Senseguide stories'
   },
+  categories: {
+    projects: 'Projects',
+    views: 'Views',
+    news: 'News',
+  },
   stories: {
-    filterTitle: 'Filter op',
-    all: 'Alles',
+    filterTitle: 'Filter',
+    all: 'All',
   },
   workshop: {
     c2a: 'View workshop',

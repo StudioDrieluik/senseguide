@@ -106,6 +106,7 @@ export const Dots = styled.div`
   gap: 0.8rem;
 
   .dot {
+    flex-shrink: 0;
     width: 1.2rem;
     height: 1.2rem;
     background: var(--color-gray-300);

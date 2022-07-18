@@ -1,3 +1,4 @@
+import useTranslation from 'next-translate/useTranslation';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -14,6 +15,7 @@ import {
 
 const Story = ({ data, compact }) => {
   const href = getUrlFromMeta(data?._meta);
+  const { t } = useTranslation('common');
 
   if (!data) return null;
 
@@ -40,7 +42,7 @@ const Story = ({ data, compact }) => {
           {data?.tags?.[0]?.tag &&
             data.tags.map(({ tag }, index) => <Tag key={index}>{tag?.[0].text}</Tag>)}
           {data?.category && <Tag>{data.category}</Tag>}
-          {data?.category === 'Nieuws' && <time dateTime={data?.date}>{data?.date}</time>}
+          {data?.category === t('categories.news') && <time dateTime={data?.date}>{data?.date}</time>}
         </TagList>
         {data.intro?.[0] && <p>{data.intro[0].text}</p>}
       </ContentWrapper>

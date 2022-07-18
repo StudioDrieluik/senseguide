@@ -5,7 +5,6 @@ import { ImageSlider } from '../../ImageSlider.jsx/ImageSlider';
 
 export const BlockImage = ({ block, images }) => {
   const { image_slider_sizing: width, title1: title } = block;
-  console.log(title)
 
   if (images.length <= 2 && width === 'Half-width') {
     return (

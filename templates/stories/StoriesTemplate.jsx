@@ -8,6 +8,7 @@ import { Content, Filter, Wrapper } from './StoriesTemplate.styles';
 import { useRouter, query } from 'next/router';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import useTranslation from 'next-translate/useTranslation';
 
 export const StoriesTemplate = ({ data, title, stories }) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -25,15 +26,15 @@ export const StoriesTemplate = ({ data, title, stories }) => {
   const categories = [
     {
       category: 'Project',
-      title: 'Projecten',
+      title: t('categories.projects'),
     },
     {
       category: 'Zienswijze',
-      title: 'Zienswijzen',
+      title: t('categories.views'),
     },
     {
       category: 'Nieuws',
-      title: 'Nieuws',
+      title: t('categories.news'),
     },
   ];
 
@@ -59,6 +60,9 @@ export const StoriesTemplate = ({ data, title, stories }) => {
   }, [selectedCategory]);
 
   const handleClick = category => {
+    if (category === selectedCategory) {
+      return;
+    }
     setIsLoading(true);
     setSelectedCategory(category);
     if (category !== null) {
@@ -76,7 +80,7 @@ export const StoriesTemplate = ({ data, title, stories }) => {
       <Container>
         <Wrapper>
           <Filter className="sticky">
-            <h3>{t('stories.fitlerTitle')}</h3>
+            <h3>{t('stories.filterTitle')}</h3>
             <ul aria-controls="filter-stories">
               <li>
                 <button
