@@ -4,10 +4,6 @@ const translations = {
   agency: 'Client name',
   menu: [
     {
-      title: 'Services',
-      href: `/services`,
-    },
-    {
       title: 'For who',
       href: `/for-who`,
     },
@@ -18,10 +14,6 @@ const translations = {
     {
       title: 'Projects',
       href: `/stories?type=project`,
-    },
-    {
-      title: 'Workshops',
-      href: `/workshops`,
     },
     {
       title: 'About us',
