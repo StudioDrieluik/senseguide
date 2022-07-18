@@ -1,17 +1,39 @@
 const translations = {
   agency: 'Client name',
-  menu: {
-    home: { title: 'Home', href: '/' },
-    services: 'Diensten',
-    who: 'Voor wie',
-    stories: 'Verhalen',
-    projects: 'Projecten',
-    about: 'Over ons',
-    close: 'Sluit',
-  },
+  menu: [
+    {
+      title: 'Diensten',
+      href: `/diensten`,
+    },
+    {
+      title: 'Voor wie',
+      href: `/voor-wie`,
+    },
+    {
+      title: 'Verhalen',
+      href: `/verhalen`,
+    },
+    {
+      title: 'Projecten',
+      href: `/verhalen?type=project`,
+    },
+    {
+      title: 'Workshops',
+      href: `/workshops`,
+    },
+    {
+      title: 'Over ons',
+      href: `/over-ons`,
+    },
+    {
+      title: 'Contact',
+      href: `/contact`,
+    },
+  ],
+  close: 'Sluit',
   home: {
-    logoGrid: 'Our projects',
-    storySlider: 'Senseguide stories'
+    logoGrid: 'Onze projecten',
+    storySlider: 'Senseguide verhalen',
   },
   categories: {
     projects: 'Projecten',

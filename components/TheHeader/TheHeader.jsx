@@ -14,8 +14,8 @@ export const TheHeader = () => {
   const { t } = useTranslation('common');
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const router = useRouter();
-  const scrollUp = "scroll-up";
-  const scrollDown = "scroll-down";
+  const scrollUp = 'scroll-up';
+  const scrollDown = 'scroll-down';
   const withWhiteLogo = pagesWithWhiteLogo.includes(router.pathname);
   let lastScroll = 0;
   let variant;
@@ -57,7 +57,7 @@ export const TheHeader = () => {
       logo.classList.add('in-color');
     }
     lastScroll = currentScroll;
-  })
+  });
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown, false);
@@ -88,14 +88,14 @@ export const TheHeader = () => {
         <Link href="/contact">
           <a>Contact</a>
         </Link>
-        <LanguageSwitch></LanguageSwitch>
+        <LanguageSwitch />
         <Hamburger
           initial={false}
           animate={menuIsOpen ? 'open' : 'closed'}
           onClick={() => setMenuIsOpen(!menuIsOpen)}
         >
           <MenuToggle />
-          {menuIsOpen ? t('menu.close') : 'Menu'}
+          {menuIsOpen ? t('close') : 'Menu'}
         </Hamburger>
       </Menu>
       <MenuOverlay menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />

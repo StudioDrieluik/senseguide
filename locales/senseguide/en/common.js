@@ -1,21 +1,45 @@
+const ROUTES = require('../../../config/senseguide/routes');
+
 const translations = {
   agency: 'Client name',
-  menu: {
-    home: { title: 'Home', href: '/' },
-    services: 'Services',
-    who: 'For who',
-    stories: 'Stories',
-    projects: 'Projects',
-    about: 'About us',
-    close: 'Sluit',
-  },
+  menu: [
+    {
+      title: 'Services',
+      href: `/services`,
+    },
+    {
+      title: 'For who',
+      href: `/for-who`,
+    },
+    {
+      title: 'Stories',
+      href: `/stories`,
+    },
+    {
+      title: 'Projects',
+      href: `/stories?type=project`,
+    },
+    {
+      title: 'Workshops',
+      href: `/workshops`,
+    },
+    {
+      title: 'About us',
+      href: `/about-us`,
+    },
+    {
+      title: 'Contact',
+      href: `/contact`,
+    },
+  ],
+  close: 'Close',
   home: {
     logoGrid: 'Our projects',
-    storySlider: 'Senseguide stories'
+    storySlider: 'Senseguide stories',
   },
   categories: {
     projects: 'Projects',
-    views: 'Views',
+    views: 'Insights',
     news: 'News',
   },
   stories: {
@@ -44,8 +68,8 @@ const translations = {
   teamMemberBlock: {
     button: 'Send an email',
   },
-  stickyCta: 'Neem contact op',
-  readmore: 'Lees verder',
+  stickyCta: 'Contact us',
+  readmore: 'Read more',
   terms: 'Terms and Conditions',
 };
 

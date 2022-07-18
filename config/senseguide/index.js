@@ -50,6 +50,11 @@ const config = {
       locale: false,
     },
     {
+      source: `/en/${ROUTES.SERVICES.en}`,
+      destination: `/${ROUTES.SERVICES.nl}`,
+      locale: false,
+    },
+    {
       source: `/en/${ROUTES.STORIES.en}`,
       destination: `/${ROUTES.STORIES.nl}`,
       locale: false,
