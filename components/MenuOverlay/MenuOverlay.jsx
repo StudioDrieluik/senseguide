@@ -2,8 +2,11 @@ import React from 'react';
 import Link from 'next/link';
 import { LanguageWrapper, Menu, MenuItem, MenuList, PageDarkOverlay, Wrapper } from './MenuOverlay.styles';
 import LanguageSwitch from '../LanguageSwitch/LanguageSwitch';
+import useTranslation from 'next-translate/useTranslation';
 
 export const MenuOverlay = ({ menuIsOpen, setMenuIsOpen }) => {
+  const { t } = useTranslation('common');
+
   const variants = {
     open: {
       transition: { staggerChildren: 0.07, delayChildren: 0.2 }
@@ -42,12 +45,12 @@ export const MenuOverlay = ({ menuIsOpen, setMenuIsOpen }) => {
             animate={menuIsOpen ? "open" : "closed"}
             variants={variants}
           >
-            <MenuItem onClick={() => setMenuIsOpen(!menuIsOpen)} variants={items}><Link href="/diensten"><a>Diensten</a></Link></MenuItem>
-            <MenuItem onClick={() => setMenuIsOpen(!menuIsOpen)} variants={items}><Link href="/voor-wie"><a>Voor wie</a></Link></MenuItem>
-            <MenuItem onClick={() => setMenuIsOpen(!menuIsOpen)} variants={items}><Link href="/verhalen"><a>Verhalen</a></Link></MenuItem>
-            <MenuItem onClick={() => setMenuIsOpen(!menuIsOpen)} variants={items}><Link href="/verhalen?type=project"><a>Projecten</a></Link></MenuItem>
+            <MenuItem onClick={() => setMenuIsOpen(!menuIsOpen)} variants={items}><Link href="/diensten"><a>{t('menu.services')}</a></Link></MenuItem>
+            <MenuItem onClick={() => setMenuIsOpen(!menuIsOpen)} variants={items}><Link href="/voor-wie"><a>{t('menu.who')}</a></Link></MenuItem>
+            <MenuItem onClick={() => setMenuIsOpen(!menuIsOpen)} variants={items}><Link href="/verhalen"><a>{t('menu.stories')}</a></Link></MenuItem>
+            <MenuItem onClick={() => setMenuIsOpen(!menuIsOpen)} variants={items}><Link href="/verhalen?type=project"><a>{t('menu.projects')}</a></Link></MenuItem>
             <MenuItem onClick={() => setMenuIsOpen(!menuIsOpen)} variants={items}><Link href="/workshops"><a>Workshops</a></Link></MenuItem>
-            <MenuItem onClick={() => setMenuIsOpen(!menuIsOpen)} variants={items}><Link href="/over-ons"><a>Over ons</a></Link></MenuItem>
+            <MenuItem onClick={() => setMenuIsOpen(!menuIsOpen)} variants={items}><Link href="/over-ons"><a>{t('menu.about')}</a></Link></MenuItem>
             <MenuItem onClick={() => setMenuIsOpen(!menuIsOpen)} variants={items}><Link href="/contact"><a>Contact</a></Link></MenuItem>
           </MenuList>
         </Menu>

@@ -1,8 +1,10 @@
+import useTranslation from 'next-translate/useTranslation';
 import React, { useCallback, useEffect, useState } from 'react';
 import ContactFormOverlay from '../ContactFormOverlay/ContactFormOverlay';
 import { Wrapper } from './StickyCta.styles';
 
 const StickyCta = () => {
+  const { t } = useTranslation('common');
   const [hasAnimated, setHasAnimated] = useState(false);
   const [overlay, setOverlay] = useState(false);
 
@@ -36,7 +38,7 @@ const StickyCta = () => {
         onAnimationComplete={() => setHasAnimated(true)}
         onClick={() => setOverlay(true)}
       >
-        Neem contact op
+        {t('stickyCta')}
       </Wrapper>
       <ContactFormOverlay overlay={overlay} setOverlay={setOverlay}></ContactFormOverlay>
     </>

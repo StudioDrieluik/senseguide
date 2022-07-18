@@ -14,6 +14,7 @@ export const StoriesTemplate = ({ data, title, stories }) => {
   const [filteredStories, setFilteredStories] = useState(stories);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+  const { t } = useTranslation('common');
 
   const meta = {
     seoTitle: data?.seo_title?.[0]?.text || title,
@@ -75,7 +76,7 @@ export const StoriesTemplate = ({ data, title, stories }) => {
       <Container>
         <Wrapper>
           <Filter className="sticky">
-            <h3>Filter op</h3>
+            <h3>{t('stories.fitlerTitle')}</h3>
             <ul aria-controls="filter-stories">
               <li>
                 <button
@@ -83,7 +84,7 @@ export const StoriesTemplate = ({ data, title, stories }) => {
                   aria-current={selectedCategory === null ? true : false}
                   data-filter="*"
                 >
-                  Alles
+                  {t('stories.all')}
                 </button>
               </li>
               {categories.map(({ category, title }, i) => (

@@ -1,3 +1,4 @@
+import useTranslation from 'next-translate/useTranslation';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useCallback, useEffect, useState } from 'react';
@@ -10,6 +11,7 @@ import { Menu, Wrapper, Hamburger } from './TheHeader.styles';
 const pagesWithWhiteLogo = ['/'];
 
 export const TheHeader = () => {
+  const { t } = useTranslation('common');
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const router = useRouter();
   const scrollUp = "scroll-up";
@@ -93,7 +95,7 @@ export const TheHeader = () => {
           onClick={() => setMenuIsOpen(!menuIsOpen)}
         >
           <MenuToggle />
-          {menuIsOpen ? 'Sluit' : 'Menu'}
+          {menuIsOpen ? t('menu.close') : 'Menu'}
         </Hamburger>
       </Menu>
       <MenuOverlay menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />

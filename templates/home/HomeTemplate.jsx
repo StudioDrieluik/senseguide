@@ -10,10 +10,11 @@ import { TestimonialsSlider } from '@/components/TestimonialsSlider/Testimonials
 import { BlockStorySlider } from '@/components/blocks/BlockStorySlider/BlockStorySlider';
 import LogoGrid from '../../components/LogoGrid/LogoGrid';
 import ROUTES from '../../config/senseguide/routes';
-import { useRouter } from 'next/router';
+import useTranslation from 'next-translate/useTranslation';
+import { Router } from 'next/router';
 
 export const HomeTemplate = ({ data }) => {
-  const router = useRouter();
+  const { t } = useTranslation('common');
   const { hero_cta_link_url, hero_cta_title, hero_image, hero_links, hero_title } = data;
   const { intro_cta_link, intro_cta_title, intro_image, intro_title, intro_text } = data;
 
@@ -31,7 +32,7 @@ export const HomeTemplate = ({ data }) => {
     hero_title,
   };
 
-  const storiesUrl = ROUTES.STORIES[router.locale];
+  const storiesUrl = ROUTES.STORIES[Router.locale];
 
   return (
     <Layout>
@@ -55,12 +56,12 @@ export const HomeTemplate = ({ data }) => {
           <LogoGrid
             logos={data.clients_logos}
             title={data.clients_title?.[0]?.text}
-            ctaTitle="Onze projecten"
+            ctaTitle={t('home.logoGrid')}
             ctaURL={`/${storiesUrl}/?type=project`}
           />
         )}
 
-        <BlockStorySlider title="Senseguide verhalen" slides={data.stories} />
+        <BlockStorySlider title={t('home.storySlider')} slides={data.stories} />
       </BlockWrapper>
     </Layout>
   );

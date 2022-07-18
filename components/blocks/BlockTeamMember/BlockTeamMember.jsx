@@ -4,8 +4,10 @@ import { htmlSerializer } from '@/utils/htmlSerializer';
 import { Container } from '../../Container/Container.styles';
 import Button from '../../Button/Button';
 import { ButtonGroup, ContentWrapper, ImageContainer, Wrapper } from '../BlockImageText/BlockImageText.styles';
+import useTranslation from 'next-translate/useTranslation';
 
 export const BlockTeamMember = ({ block }) => {
+  const { t } = useTranslation('common');
   const alignment = block.position_image;
   const {
     first_name,
@@ -37,7 +39,7 @@ export const BlockTeamMember = ({ block }) => {
               )}
               {email_address && (
                 <Button variant="primary" href={`mailto:${email_address?.[0]?.text}`}>
-                  Stuur een e-mail
+                  {t('teamMemberBlock.button')}
                 </Button>
               )}
             </ButtonGroup>
