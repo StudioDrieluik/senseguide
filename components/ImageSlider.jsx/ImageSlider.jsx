@@ -59,21 +59,24 @@ export const ImageSlider = ({ width, title, images }) => {
       {title?.[0]?.text && <h3>{title?.[0]?.text}</h3>}
       <SliderContainer>
         <div ref={sliderRef} className={`keen-slider ${isCompact ? 'compact' : 'large'}`}>
-          {images.map(({ image_slider_image: image, description }, index) => (
-            <Slide
-              className={`keen-slider__slide ${currentSlide === index ? 'active' : ''} ${
-                fadeOutLastSlide && index === images.length - 1 ? 'last' : ''
-              }`}
-              key={index}
-            >
-              <ImageWrapper>
-                <ImageContainer>
-                  <Image src={image.url} layout="fill" />
-                </ImageContainer>
-              </ImageWrapper>
-              {description?.[0].text && <span>{description?.[0].text}</span>}
-            </Slide>
-          ))}
+          {images.map(({ image_slider_image: image, description }, index) => {
+            if (!image?.url) return;
+            return (
+              <Slide
+                className={`keen-slider__slide ${currentSlide === index ? 'active' : ''} ${
+                  fadeOutLastSlide && index === images.length - 1 ? 'last' : ''
+                }`}
+                key={index}
+              >
+                <ImageWrapper>
+                  <ImageContainer>
+                    <Image src={image.url} layout="fill" />
+                  </ImageContainer>
+                </ImageWrapper>
+                {description?.[0].text && <span>{description?.[0].text}</span>}
+              </Slide>
+            );
+          })}
         </div>
       </SliderContainer>
       {loaded && instanceRef.current && (
