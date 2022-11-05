@@ -16,7 +16,8 @@ import { useRouter } from 'next/router';
 export const HomeTemplate = ({ data }) => {
   const { t } = useTranslation('common');
   const router = useRouter();
-  const { hero_cta_link_url, hero_cta_title, hero_image, hero_links, hero_title } = data;
+  const { hero_cta_link_url, hero_cta_title, hero_image, hero_links, hero_title, hero_subtitle } =
+    data;
   const { intro_cta_link, intro_cta_title, intro_image, intro_title, intro_text } = data;
 
   const meta = {
@@ -31,6 +32,7 @@ export const HomeTemplate = ({ data }) => {
     hero_image,
     hero_links,
     hero_title,
+    hero_subtitle,
   };
 
   const storiesUrl = ROUTES.STORIES[router.locale];

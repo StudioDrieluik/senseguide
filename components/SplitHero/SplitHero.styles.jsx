@@ -51,7 +51,15 @@ export const Wrapper = styled.div`
 export const Content = styled.div`
   h1 {
     font-size: var(--font-size-xxxl);
-    margin: 0 0 4rem;
+    margin: 0 0 2.4rem;
+  }
+
+  h2 {
+    font-size: var(--font-size-lg);
+    margin: 0 0 6rem;
+    @media (${({ theme }) => theme.respondTo.desktop}) {
+      font-size: var(--font-size-xl);
+    }
   }
 
   h3 {

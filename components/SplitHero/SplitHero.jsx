@@ -11,6 +11,7 @@ export const SplitHero = ({
   hero_image,
   hero_links,
   hero_title,
+  hero_subtitle,
 }) => {
   const heroCtaLink = getUrlFromMeta(hero_cta_link_url?._meta);
   return (
@@ -27,6 +28,7 @@ export const SplitHero = ({
       </div>
       <Content>
         {hero_title?.[0] && <h1>{hero_title[0].text}</h1>}
+        {hero_subtitle?.[0] && <h2>{hero_subtitle[0].text}</h2>}
         <ul>
           {hero_links.map(link => {
             const title = link.title[0].text;

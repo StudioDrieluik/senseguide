@@ -11,6 +11,7 @@ export const HOME_PAGE_QUERY = gql`
             id
           }
           hero_title
+          hero_subtitle
           hero_image
           hero_links {
             title
