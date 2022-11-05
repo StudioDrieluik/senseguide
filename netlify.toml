@@ -294,7 +294,7 @@ package = '@netlify/plugin-sitemap'
 
 [[redirects]]
   from = "/en/case-studies/"
-  to = ""
+  to = "/en"
 
 [[redirects]]
   from = "/en/projecten/household-dynamics-food-security/"
