@@ -43,6 +43,17 @@ export default class MyDocument extends Document {
           <link rel="manifest" href="/manifest.json" crossOrigin="use-credentials" />
         </Head>
         <body>
+          {process.env.gtm && (
+            <noscript>
+              <iframe
+                title="tag-manager"
+                src={`https://www.googletagmanager.com/ns.html?id=${process.env.gtm}`}
+                height="0"
+                width="0"
+                style={{ display: 'none', visibility: 'hidden' }}
+              />
+            </noscript>
+          )}
           <Main />
           <NextScript />
         </body>
