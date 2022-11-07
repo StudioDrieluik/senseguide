@@ -32,14 +32,12 @@ const config = {
     local: {
       siteUrl: 'http://localhost:8080',
       graphqlUri: 'https://senseguide.cdn.prismic.io/graphql',
-      ga: 'UA-87729317-1',
       gtm: 'G-P4H29ZYJ77',
       seoAllowIndexing: true,
     },
     production: {
       siteUrl: 'https://www.senseguide.nl',
       graphqlUri: 'https://senseguide.cdn.prismic.io/graphql',
-      ga: 'UA-87729317-1',
       gtm: 'G-P4H29ZYJ77',
       seoAllowIndexing: true,
     },
