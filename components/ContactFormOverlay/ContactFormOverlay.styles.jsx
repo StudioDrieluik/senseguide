@@ -74,6 +74,7 @@ export const ContentWrapper = styled(motion.div)`
   border-radius: var(--border-radius);
   z-index: var(--z-contactform-overlay-wrapper);
   overflow: auto;
+  max-height: 100%;
 
   @media (${({ theme }) => theme.respondTo.tablet}) {
     height: auto;
