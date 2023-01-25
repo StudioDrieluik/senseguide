@@ -14,6 +14,7 @@ import {
   TextArea,
 } from './ContactForm.styles';
 import { useRouter } from 'next/router';
+import { trackingDataService } from '../../services/trackingDataService';
 
 export default function ContactForm({ introText, overlay }) {
   const { locale } = useRouter();
@@ -38,6 +39,11 @@ export default function ContactForm({ introText, overlay }) {
           console.log('Form successfully submitted');
           setSuccess(true);
           setIsLoadig(false);
+          const dataLayer = {
+            event: 'contactFormModalSubmittedSuccessfully',
+            value: true,
+          };
+          trackingDataService.pushDataLayer({ dataLayer });
         }, 1000);
       })
       .catch(error => {
