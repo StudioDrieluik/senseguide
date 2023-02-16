@@ -133,10 +133,6 @@ package = '@netlify/plugin-sitemap'
   to = "/verhalen/narratief-360-graden-feedback"
 
 [[redirects]]
-  from = "/contact/"
-  to = "/contact"
-
-[[redirects]]
   from = "/verandermanagement-waarom-verzamelen-verhalen-sleutel-tot-succes-is/"
   to = "/voor-wie//verhalen/grip-op-verandermanagement-met-verhalen"
 
