@@ -89,7 +89,8 @@ export default function ContactForm({ introText, overlay }) {
       </FormField>
       <p className="hidden">
         <label>
-          Please don’t fill this out if you’re human: <input name="bot-field" />
+          Please don’t fill this out if you’re human:
+          <input name="bot-field" />
         </label>
       </p>
       <SubmitButton type="submit" disabled={isLoading}>
