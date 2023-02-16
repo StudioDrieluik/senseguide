@@ -123,6 +123,16 @@ export const BLOCKS = type =>
               uid
             }
           }
+          ... on Info_page {
+            title
+            intro
+            image
+            _meta {
+              type
+              id
+              uid
+            }
+          }
         }
         highlighted_item_background_color
         link_title
