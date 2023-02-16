@@ -19,7 +19,6 @@ export const ContentpageTemplate = ({ data }) => {
     <Layout>
       <PageHead meta={meta} />
       <Hero {...heroContent} />
-
       {/* @TODO: Slices */}
       <BlockWrapper>{data.body && <BlocksRender blocks={data.body} />}</BlockWrapper>
     </Layout>
