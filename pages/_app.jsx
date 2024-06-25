@@ -1,4 +1,5 @@
 import React from 'react';
+import 'styles/app.css';
 import { AnimatePresence } from 'framer-motion';
 import App from 'next/app';
 import { ThemeProvider } from 'styled-components';

@@ -11,6 +11,7 @@ export const HOME_PAGE_QUERY = gql`
             id
           }
           hero_title
+          hero_text
           hero_subtitle
           hero_image
           hero_links {
@@ -19,6 +20,10 @@ export const HOME_PAGE_QUERY = gql`
               ${TYPE_META()}
             }
           }
+          hero_button_cta_title
+          hero_button_cta_link {
+            ${TYPE_META()}
+          }
           hero_cta_title
           hero_cta_link_url {
             ${TYPE_META()}
@@ -26,6 +31,12 @@ export const HOME_PAGE_QUERY = gql`
           intro_image
           intro_title
           intro_text
+          intro_links {
+            title
+            link {
+              ${TYPE_META()}
+            }
+          }
           intro_cta_title
           intro_cta_link {
             ${TYPE_META()}

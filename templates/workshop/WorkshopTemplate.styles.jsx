@@ -28,7 +28,6 @@ export const ContentBlocks = styled.div`
     max-width: 84rem;
   }
 
-
   * {
     padding: 0;
     margin-left: 0;
@@ -50,8 +49,8 @@ export const ContentBlocks = styled.div`
     margin-left: 1.6rem;
   }
 
-   // Component spacing
-   > * + * {
+  // Component spacing
+  > * + * {
     margin-top: 4rem;
   }
 
@@ -66,7 +65,7 @@ export const ContentBlocks = styled.div`
       margin-top: 8rem;
     }
   }
-`
+`;
 
 export const Intro = styled.p`
   margin-bottom: 2.4rem;
@@ -118,14 +117,14 @@ export const Meta = styled.div`
     li {
       width: calc(50% - 1.6rem);
     }
-
   }
 
   @media (${({ theme }) => theme.respondTo.desktop}) {
     width: 37rem;
     order: 1;
     margin-top: 0;
-
+    position: sticky;
+    top: 110px;
     ul {
       display: block;
     }
@@ -138,6 +137,5 @@ export const Meta = styled.div`
     span {
       font-size: 2.2rem;
     }
-
   }
-`
+`;
