@@ -25,7 +25,7 @@ export const TextImageCta = ({ title, text, links, image, ctaTitle, ctaLink }) =
               return (
                 <div key={title} className="relative group">
                   <Link href={href}>
-                    <a className="leading-tight !no-underline bg-white rounded-[0.8rem] min-h-[3.5lh] py-[1.5rem] h-full text-center items-center flex justify-center px-[1.5rem] hover:bg-[--color-primary-300] hover:!text-white !duration-200 !transition-all">
+                    <a className="leading-tight text-[1.5rem] md:text-[1.8rem] !no-underline bg-white rounded-[0.8rem] min-h-[3.5lh] py-[1.5rem] h-full text-center items-center flex justify-center px-[1.5rem] hover:bg-[--color-primary-300] hover:!text-white !duration-200 !transition-all">
                       {title}
                     </a>
                   </Link>
