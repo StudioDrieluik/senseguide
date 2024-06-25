@@ -25,12 +25,12 @@ export const SplitHero = ({
   return (
     <Wrapper>
       <div>
-        <Image
+        <img
           src={hero_image.url}
           width="700"
           height="1100"
           quality={70}
-          style={{ height: '100%' }}
+          style={{ height: '100%', position: 'absolute !important', width: '100%' }}
           priority
         />
       </div>

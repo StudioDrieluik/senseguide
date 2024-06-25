@@ -18,6 +18,7 @@ export const Wrapper = styled.div`
 
   @media (${({ theme }) => theme.respondTo.desktop}) {
     min-height: 75vh;
+    max-height: 1000px;
     flex-direction: row;
     margin-bottom: 10rem;
   }
