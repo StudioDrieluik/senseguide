@@ -49,7 +49,9 @@ export const SplitHero = ({
           )}
           {heroCtaLink && (
             <Link href={heroCtaLink}>
-              <a className="underline text-[1.8rem]">Of {hero_cta_title?.[0]?.text}</a>
+              <a className="underline text-[1.6rem] md:text-[1.8rem]">
+                {hero_cta_title?.[0]?.text}
+              </a>
             </Link>
           )}
         </div>
