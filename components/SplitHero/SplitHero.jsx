@@ -21,6 +21,7 @@ export const SplitHero = ({
 }) => {
   const heroButtonCtaLink = getUrlFromMeta(hero_button_cta_link?._meta);
   const heroCtaLink = getUrlFromMeta(hero_cta_link_url?._meta);
+
   return (
     <Wrapper>
       <div>
