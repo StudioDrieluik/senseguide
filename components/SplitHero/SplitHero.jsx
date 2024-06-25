@@ -42,12 +42,16 @@ export const SplitHero = ({
         </div>
 
         <div className="flex flex-col md:flex-row md:items-center gap-[1rem] md:gap-[2.4rem] mt-[2.4rem] md:mt-[4.8rem]">
-          <Button variant={'secondary-arrow-white'} href={heroButtonCtaLink}>
-            {hero_button_cta_title?.[0]?.text}
-          </Button>
-          <Link href={heroCtaLink}>
-            <a className="underline text-[1.8rem]">Of {hero_cta_title?.[0]?.text}</a>
-          </Link>
+          {heroButtonCtaLink && (
+            <Button variant={'secondary-arrow-white'} href={heroButtonCtaLink}>
+              {hero_button_cta_title?.[0]?.text}
+            </Button>
+          )}
+          {heroCtaLink && (
+            <Link href={heroCtaLink}>
+              <a className="underline text-[1.8rem]">Of {hero_cta_title?.[0]?.text}</a>
+            </Link>
+          )}
         </div>
       </Content>
     </Wrapper>

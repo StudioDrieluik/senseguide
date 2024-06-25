@@ -16,9 +16,11 @@ export const TextImageCta = ({ title, text, links, image, ctaTitle, ctaLink }) =
         <RichText render={text} htmlSerializer={htmlSerializer} />
         <div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-[1rem] md:mt-[2.4rem] mb-[4.8rem]">
-            {links.map(link => {
+            {links?.map(link => {
               const title = link.title[0].text;
               const href = getUrlFromMeta(link?.link?._meta);
+
+              if (!href) return null;
 
               return (
                 <div key={title} className="relative group">
