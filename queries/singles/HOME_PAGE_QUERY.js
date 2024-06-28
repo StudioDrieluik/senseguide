@@ -41,6 +41,12 @@ export const HOME_PAGE_QUERY = gql`
           intro_cta_link {
             ${TYPE_META()}
           }
+          download_block_title
+          download_block_text
+          download_block_link_title
+          download_block_link {
+            ${TYPE_META()}
+          }
           testimonials {
             ... on HomepageTestimonials {
               testimonial {

@@ -14,6 +14,7 @@ import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router';
 import { getUrlFromMeta } from '../../utils/utils';
 import Link from 'next/link';
+import DownloadCard from '../../components/DownloadCard/DownloadCard';
 
 export const HomeTemplate = ({ data }) => {
   const { t } = useTranslation('common');
@@ -72,6 +73,15 @@ export const HomeTemplate = ({ data }) => {
             image={intro_image}
             ctaTitle={intro_cta_title?.[0]?.text}
             ctaLink={intro_cta_link}
+          />
+        </Container>
+
+        <Container>
+          <DownloadCard
+            title={data.download_block_title?.[0]?.text}
+            text={data.download_block_text}
+            link={data.download_block_link?.[0]?.text}
+            linkTitle={data.download_block_link_title}
           />
         </Container>
 
