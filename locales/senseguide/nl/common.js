@@ -52,6 +52,10 @@ const translations = {
     price: 'Prijs',
     signUp: 'Aanmelden',
   },
+  downloadForm: {
+    success: 'Gelukt! De download begint binnen enkele seconden',
+    error: 'Oeps, er is iets fout gegaan. Probeer het later opnieuw.',
+  },
   contactForm: {
     title: 'Contactformulier',
     intro: 'Vul onderstaand formulier in en we nemen zo spoedig mogelijk contact op. Of bel ons op',

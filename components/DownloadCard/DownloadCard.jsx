@@ -2,6 +2,7 @@ import React from 'react';
 import { RichText } from 'prismic-reactjs';
 import { htmlSerializer } from '@/utils/htmlSerializer';
 import DownloadForm from './DownloadForm';
+import { getUrlFromMeta } from '../../utils/utils';
 
 const DownloadCard = ({ title, text, linkTitle, link }) => {
   return (
@@ -10,7 +11,7 @@ const DownloadCard = ({ title, text, linkTitle, link }) => {
         <h2 className="text-[24px] md:text-[32px] mb-[1.6rem]">{title}</h2>
         {text && <RichText render={text} htmlSerializer={htmlSerializer} />}
         <div className="mt-[4rem]">
-          <DownloadForm />
+          <DownloadForm linkTitle={linkTitle?.[0]?.text} downloadLink={link?.url} />
         </div>
       </div>
     </div>

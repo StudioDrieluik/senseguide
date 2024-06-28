@@ -46,6 +46,10 @@ const translations = {
     price: 'Price',
     signUp: 'Aanmelden',
   },
+  downloadForm: {
+    success: 'Success! Your download will start within a few seconds',
+    error: 'Sorry, something went wrong. Try again later.',
+  },
   contactForm: {
     title: 'Contactform',
     intro: 'Fill in the form below and we will contact you as soon as possible. Or give us a call',

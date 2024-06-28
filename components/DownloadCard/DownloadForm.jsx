@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import Loader from '../Loader/Loader';
 import { Input, Message, SubmitButton } from '../ContactForm/ContactForm.styles';
 
-export default function DownloadForm() {
+export default function DownloadForm({ linkTitle, downloadLink }) {
   const ref = useRef();
   const { t } = useTranslation('common');
   const [isLoading, setIsLoadig] = useState(false);
@@ -28,6 +28,11 @@ export default function DownloadForm() {
           setSuccess(true);
           setIsLoadig(false);
         }, 1000);
+        setTimeout(() => {
+          if (downloadLink) {
+            window.location = downloadLink;
+          }
+        }, 5000);
       })
       .catch(error => {
         setError(true);
@@ -64,7 +69,7 @@ export default function DownloadForm() {
         </p>
         <SubmitButton type="submit" disabled={isLoading} className="!rounded-[4px] ">
           <Loader isLoading={isLoading} />
-          {t('contactForm.button')}
+          {linkTitle}
         </SubmitButton>
       </form>
       <div>
@@ -82,8 +87,8 @@ export default function DownloadForm() {
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"></path>
             </svg>
-            {success && t('contactForm.success')}
-            {error && t('contactForm.error')}
+            {success && t('downloadForm.success')}
+            {error && t('downloadForm.error')}
           </Message>
         )}
       </div>

@@ -80,7 +80,7 @@ export const HomeTemplate = ({ data }) => {
           <DownloadCard
             title={data.download_block_title?.[0]?.text}
             text={data.download_block_text}
-            link={data.download_block_link?.[0]?.text}
+            link={data.download_block_link}
             linkTitle={data.download_block_link_title}
           />
         </Container>
