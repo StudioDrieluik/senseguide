@@ -4,64 +4,57 @@ import Link from 'next/link';
 import ArrowLink from '../ArrowLink/ArrowLink';
 import { getUrlFromMeta } from '../../utils/utils';
 import { Wrapper, Content } from './SplitHero.styles';
+import Button from '../Button/Button';
+import { RichText } from 'prismic-reactjs';
+import { htmlSerializer } from '@/utils/htmlSerializer';
 
 export const SplitHero = ({
+  hero_button_cta_title,
+  hero_button_cta_link,
   hero_cta_link_url,
   hero_cta_title,
   hero_image,
+  hero_text,
   hero_links,
   hero_title,
   hero_subtitle,
 }) => {
+  const heroButtonCtaLink = getUrlFromMeta(hero_button_cta_link?._meta);
   const heroCtaLink = getUrlFromMeta(hero_cta_link_url?._meta);
+
   return (
     <Wrapper>
       <div>
-        <Image
+        <img
           src={hero_image.url}
           width="700"
           height="1100"
           quality={70}
-          style={{ height: '100%' }}
+          style={{ height: '100%', position: 'absolute !important', width: '100%' }}
           priority
         />
       </div>
       <Content>
-        {hero_title?.[0] && <h1>{hero_title[0].text}</h1>}
-        {hero_subtitle?.[0] && <h2>{hero_subtitle[0].text}</h2>}
-        <ul>
-          {hero_links.map(link => {
-            const title = link.title[0].text;
-            const href = getUrlFromMeta(link?.hero_link?._meta);
+        {hero_title?.[0] && <h1 className="">{hero_title[0].text}</h1>}
+        {hero_subtitle?.[0] && <h2 className="text-pretty">{hero_subtitle[0].text}</h2>}
+        <div className="text-[1.8rem] md:text-[2rem]">
+          <RichText render={hero_text} htmlSerializer={htmlSerializer} />
+        </div>
 
-            return (
-              <li key={title}>
-                <Link href={href}>
-                  <a>
-                    <h3>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <g fill="none" fillRule="evenodd">
-                          <path d="M0 0h24v24H0z" />
-                          <path
-                            d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59a.996.996 0 0 0 0-1.41l-6.58-6.6a.996.996 0 1 0-1.41 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1Z"
-                            fill="currentColor"
-                            fillRule="nonzero"
-                          />
-                        </g>
-                      </svg>
-                      {title}
-                    </h3>
-                  </a>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-        {heroCtaLink && hero_cta_title && (
-          <ArrowLink large white href={heroCtaLink}>
-            {hero_cta_title?.[0]?.text}
-          </ArrowLink>
-        )}
+        <div className="flex flex-col md:flex-row md:items-center gap-[1rem] md:gap-[2.4rem] mt-[2.4rem] md:mt-[4.8rem]">
+          {heroButtonCtaLink && (
+            <Button variant={'secondary-arrow-white'} href={heroButtonCtaLink}>
+              {hero_button_cta_title?.[0]?.text}
+            </Button>
+          )}
+          {heroCtaLink && (
+            <Link href={heroCtaLink}>
+              <a className="underline text-[1.6rem] md:text-[1.8rem]">
+                {hero_cta_title?.[0]?.text}
+              </a>
+            </Link>
+          )}
+        </div>
       </Content>
     </Wrapper>
   );

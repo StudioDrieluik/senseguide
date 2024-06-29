@@ -17,9 +17,10 @@ export const Wrapper = styled.div`
   }
 
   @media (${({ theme }) => theme.respondTo.desktop}) {
-    min-height: 90vh;
+    min-height: 75vh;
+    max-height: 1000px;
     flex-direction: row;
-    margin-bottom: 16rem;
+    margin-bottom: 10rem;
   }
 
   > *:first-child {
@@ -50,15 +51,25 @@ export const Wrapper = styled.div`
 
 export const Content = styled.div`
   h1 {
-    font-size: var(--font-size-xxxl);
+    font-size: 3.75rem;
     margin: 0 0 2.4rem;
+
+    @media (${({ theme }) => theme.respondTo.desktop}) {
+      font-size: 4.5rem;
+    }
+    @media (${({ theme }) => theme.respondTo.desktopXL}) {
+      font-size: 5.5rem;
+    }
+    @media (${({ theme }) => theme.respondTo.desktopXXL}) {
+      font-size: 6.5rem;
+    }
   }
 
   h2 {
-    font-size: var(--font-size-lg);
-    margin: 0 0 6rem;
+    font-size: 2.25rem;
+    margin: 0 0 2.4rem;
     @media (${({ theme }) => theme.respondTo.desktop}) {
-      font-size: var(--font-size-xl);
+      font-size: 2.8rem;
     }
   }
 

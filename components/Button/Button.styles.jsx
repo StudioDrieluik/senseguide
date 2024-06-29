@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Link = styled.div`
   flex-shrink: 0;
 
-  a[type="button"] {
+  a[type='button'] {
     display: inline-block;
     padding: 1.2rem 2.4rem;
     color: var(--color-secondary-300);
@@ -79,7 +79,14 @@ export const Link = styled.div`
       background: var(--color-primary-500);
     }
   }
+  &.is-secondary-arrow-white a {
+    background: white;
+    border-color: white;
+    color: var(--color-text-dark);
+
+    &:hover {
+      color: var(--color-text-dark);
+      background: whitesmoke;
+    }
+  }
 `;
-
-
-

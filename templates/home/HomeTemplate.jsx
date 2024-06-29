@@ -12,13 +12,32 @@ import LogoGrid from '../../components/LogoGrid/LogoGrid';
 import ROUTES from '../../config/senseguide/routes';
 import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router';
+import { getUrlFromMeta } from '../../utils/utils';
+import Link from 'next/link';
+import DownloadCard from '../../components/DownloadCard/DownloadCard';
 
 export const HomeTemplate = ({ data }) => {
   const { t } = useTranslation('common');
   const router = useRouter();
-  const { hero_cta_link_url, hero_cta_title, hero_image, hero_links, hero_title, hero_subtitle } =
-    data;
-  const { intro_cta_link, intro_cta_title, intro_image, intro_title, intro_text } = data;
+  const {
+    hero_cta_link_url,
+    hero_cta_title,
+    hero_image,
+    hero_links,
+    hero_title,
+    hero_subtitle,
+    hero_button_cta_title,
+    hero_button_cta_link,
+  } = data;
+  const {
+    intro_cta_link,
+    intro_cta_title,
+    intro_image,
+    intro_title,
+    hero_text,
+    intro_text,
+    intro_links,
+  } = data;
 
   const meta = {
     seoTitle: data.seo_title?.[0]?.text || `Senseguide | ${hero_title?.[0].text}`,
@@ -27,10 +46,13 @@ export const HomeTemplate = ({ data }) => {
   };
 
   const heroContent = {
+    hero_button_cta_title,
+    hero_button_cta_link,
     hero_cta_link_url,
     hero_cta_title,
     hero_image,
     hero_links,
+    hero_text,
     hero_title,
     hero_subtitle,
   };
@@ -47,9 +69,19 @@ export const HomeTemplate = ({ data }) => {
           <TextImageCta
             title={intro_title?.[0]?.text}
             text={intro_text}
+            links={intro_links}
             image={intro_image}
             ctaTitle={intro_cta_title?.[0]?.text}
             ctaLink={intro_cta_link}
+          />
+        </Container>
+
+        <Container>
+          <DownloadCard
+            title={data.download_block_title?.[0]?.text}
+            text={data.download_block_text}
+            link={data.download_block_link}
+            linkTitle={data.download_block_link_title}
           />
         </Container>
 

@@ -28,6 +28,35 @@ export const Wrapper = styled.div`
 export const Content = styled.div`
   flex: 1 0 55%;
   max-width: 70rem;
+
+  h3 {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 0;
+    font-size: 2.2rem;
+    font-weight: normal;
+    text-decoration: underline 0.1em rgba(255, 255, 255, 0);
+    transition: var(--transition);
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    @media (${({ theme }) => theme.respondTo.desktop}) {
+      font-size: 2rem;
+      transform: translateX(-3.6rem);
+
+      svg {
+        width: 2.4rem;
+        height: 2.4rem;
+        opacity: 0;
+        transform: translateX(-2rem);
+        transition: var(--transition);
+      }
+    }
+  }
 `;
 
 export const ImageWrapper = styled.div`
