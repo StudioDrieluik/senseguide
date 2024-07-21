@@ -69,7 +69,7 @@ const nextConfig = () => {
         }
 
       case 'dienst':
-        return `dienst/${doc.uid}`;
+        return `diensten/${doc.uid}`;
 
       case 'info_page':
         if (doc.lang === 'en-gb') {
@@ -79,7 +79,7 @@ const nextConfig = () => {
         }
 
       case 'workshop':
-        return `workshop/${doc.uid}`;
+        return `workshops/${doc.uid}`;
 
       default:
         throw new Error(`Unknown doc.type: "${doc.type}"`);
