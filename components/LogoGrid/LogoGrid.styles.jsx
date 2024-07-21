@@ -33,13 +33,14 @@ export const LogosWrapper = styled.div`
   flex: 1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 
   @media (${({ theme }) => theme.respondTo.tablet}) {
     grid-template-columns: repeat(auto-fill, minmax(18rem, 0.5fr));
   }
 
   @media (${({ theme }) => theme.respondTo.desktopXL}) {
-    margin-top: 6.4rem;
+    /* margin-top: 6.4rem; */
   }
 
   div {
@@ -47,6 +48,8 @@ export const LogosWrapper = styled.div`
     justify-content: center;
     align-items: center;
     padding: 1.6rem;
+    border-radius: 0.8rem;
+    background: white;
 
     @media (${({ theme }) => theme.respondTo.tablet}) {
       padding: 2rem;
