@@ -3,7 +3,7 @@ import React from 'react';
 
 const CardCustomer = ({ logo, text, title, subtitle }) => {
   return (
-    <div className="group grid-item hover:bg-white outline outline-1 outline-gray-200 transition-colors duration-200 p-[1.5rem] md:p-[2.4rem]">
+    <div className="group grid-item md:hover:bg-white outline outline-1 outline-gray-200 transition-colors duration-200 p-[1.5rem] md:p-[2.4rem]">
       <Link href={'/'}>
         <a className="md:aspect-square flex items-start flex-col justify-between h-full">
           <img
@@ -23,7 +23,11 @@ const CardCustomer = ({ logo, text, title, subtitle }) => {
                 <p className="m-0 text-[1.6rem] md:text-[1.8rem] text-black">{subtitle}</p>
               </div>
               <div className="rounded-full aspect-square w-16 flex border border-solid border-black/10 p-2 shrink-0 group-hover:bg-[--color-primary-200] group-hover:text-white transition-all duration-200">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  className="w-full h-auto"
+                >
                   <g fill="none" fillRule="evenodd">
                     <path d="M0 0h24v24H0z" />
                     <path
