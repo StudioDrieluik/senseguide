@@ -22,7 +22,6 @@ const KlantenPage = ({ uid }) => {
   if (!data && loading) return <p>Loading</p>;
 
   const content = data?.allKlantens?.edges?.[0].node;
-  console.log(content);
 
   const grid1Items = content.grid_1;
   const grid2Items = content.grid_2;
