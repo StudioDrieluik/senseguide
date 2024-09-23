@@ -22,7 +22,6 @@ const nextConfig = () => {
 
   // this is the link resolver for the documents that are fetched.
   const linkResolver = doc => {
-    console.log(doc.type);
     switch (doc.type) {
       // single pages
       case 'homepage':
