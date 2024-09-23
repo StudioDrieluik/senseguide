@@ -1,18 +1,18 @@
 import Link from 'next/link';
 import React from 'react';
 
-const CardCustomer = ({ logo, text, title, subtitle }) => {
+const CardCustomer = ({ logo, text, title, subtitle, link }) => {
   return (
-    <div className="group grid-item md:hover:bg-white outline outline-1 outline-gray-200 transition-colors duration-200 p-[1.5rem] md:p-[2.4rem]">
-      <Link href={'/'}>
-        <a className="md:aspect-square flex items-start flex-col justify-between h-full">
+    <div className="md:aspect-square group grid-item md:hover:bg-white outline outline-1 outline-gray-200 transition-colors duration-200">
+      <Link href={link}>
+        <a className="flex items-start flex-col justify-between h-full p-[2rem] sm:p-[1.5rem] md:p-[2.4rem]">
           <img
             src={logo}
             alt="Logo"
-            className="mb-8 md:mb-4 h-[6rem] md:h-[10rem] w-auto object-contain max-w-[150px] md:max-w-[200px]"
+            className="mb-8 md:mb-6 h-[6rem] xl:h-[7rem] 2xl:h-[10rem] w-auto object-contain max-w-[150px] md:max-w-[200px]"
           />
           <div>
-            <p className="text-[1.8rem] md:text-[2.2rem] mb-[3.2rem] text-black leading-snug line-clamp-5">
+            <p className="text-[1.8rem] md:text-[2rem] xl:text-[2.2rem] mb-[3.2rem] text-black leading-snug lg:line-clamp-4 xl:line-clamp-5">
               {text}
             </p>
             <div className="flex justify-between items-center">

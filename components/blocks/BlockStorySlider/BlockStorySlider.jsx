@@ -10,12 +10,15 @@ import {
   SliderNavigation,
 } from './BlockStorySlider.styles';
 import { Container } from '../../Container/Container.styles';
+import ArrowLink from '../../ArrowLink/ArrowLink';
 import Link from 'next/link';
 import { getUrlFromMeta } from '../../../utils/utils';
+import useTranslation from 'next-translate/useTranslation';
 
 export const BlockStorySlider = ({ title, slides }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
+  const { t } = useTranslation('common');
   const [sliderRef, instanceRef] = useKeenSlider({
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel);
@@ -58,8 +61,11 @@ export const BlockStorySlider = ({ title, slides }) => {
   return (
     <div>
       {title && (
-        <Container>
-          <h2>{title}</h2>
+        <Container className="flex flex-col md:flex-row justify-between md:items-center">
+          <h2 className="mb-3 md:mb-[2.4rem]">{title}</h2>
+          <ArrowLink className="mb-12 md:m-0" href={t('menu.storySliderCtaLink')}>
+            {t('home.storySliderCta')}
+          </ArrowLink>
         </Container>
       )}
       <SliderContainer>

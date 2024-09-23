@@ -13,7 +13,7 @@ const translations = {
     },
     {
       title: 'Projects',
-      href: `/stories?type=project`,
+      href: `/projects`,
     },
     {
       title: 'About us',
@@ -28,6 +28,8 @@ const translations = {
   home: {
     logoGrid: 'Our projects',
     storySlider: 'Senseguide stories',
+    storySliderCta: 'See all stories',
+    storySliderCtaLink: '/stories',
   },
   categories: {
     projects: 'Projects',

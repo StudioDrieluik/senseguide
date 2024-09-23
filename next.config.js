@@ -22,6 +22,7 @@ const nextConfig = () => {
 
   // this is the link resolver for the documents that are fetched.
   const linkResolver = doc => {
+    console.log(doc.type);
     switch (doc.type) {
       // single pages
       case 'homepage':
@@ -46,6 +47,13 @@ const nextConfig = () => {
           return `en/stories`;
         } else if (doc.lang === 'nl-nl') {
           return `verhalen`;
+        }
+
+      case 'klanten':
+        if (doc.lang === 'en-gb') {
+          return `en/projects`;
+        } else if (doc.lang === 'nl-nl') {
+          return `projecten`;
         }
 
       // dynamic pages
@@ -132,7 +140,7 @@ const nextConfig = () => {
       styledComponents: true,
     },
     images: {
-      domains: ['images.prismic.io', 'picsum.photos'],
+      domains: ['images.prismic.io', 'picsum.photos', 'prismic-io.s3.amazonaws.com'],
     },
 
     async rewrites() {
