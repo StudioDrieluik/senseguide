@@ -62,7 +62,7 @@ export const BlockStorySlider = ({ title, slides }) => {
     <div>
       {title && (
         <Container className="flex flex-col md:flex-row justify-between md:items-center">
-          <h2 className="mb-3 md:mb-[2.4rem]">{title}</h2>
+          <h2 className="mb-3 md:mb-[2.4rem]">{title} </h2>
           <ArrowLink className="mb-12 md:m-0" href={t('menu.storySliderCtaLink')}>
             {t('home.storySliderCta')}
           </ArrowLink>
