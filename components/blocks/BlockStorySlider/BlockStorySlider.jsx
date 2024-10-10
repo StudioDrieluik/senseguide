@@ -19,6 +19,7 @@ export const BlockStorySlider = ({ title, slides }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const { t } = useTranslation('common');
+
   const [sliderRef, instanceRef] = useKeenSlider({
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel);
