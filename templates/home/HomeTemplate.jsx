@@ -57,7 +57,7 @@ export const HomeTemplate = ({ data }) => {
     hero_subtitle,
   };
 
-  const storiesUrl = ROUTES.STORIES[router.locale];
+  const projectsUrl = ROUTES.PROJECTS[router.locale];
 
   return (
     <Layout>
@@ -92,7 +92,7 @@ export const HomeTemplate = ({ data }) => {
             logos={data.clients_logos}
             title={data.clients_title?.[0]?.text}
             ctaTitle={t('home.logoGrid')}
-            ctaURL={`/${storiesUrl}/?type=project`}
+            ctaURL={`/${projectsUrl}`}
           />
         )}
 
