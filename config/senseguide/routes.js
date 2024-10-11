@@ -27,6 +27,10 @@ const ROUTES = {
     nl: 'contact',
     en: 'contact',
   },
+  PROJECTS: {
+    nl: 'projecten',
+    en: 'projects',
+  },
 };
 
 module.exports = ROUTES;

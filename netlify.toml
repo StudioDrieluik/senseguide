@@ -149,10 +149,6 @@ package = '@netlify/plugin-sitemap'
   to = "/voor-wie/lerende-organisatie"
 
 [[redirects]]
-  from = "/projecten/"
-  to = "/verhalen"
-
-[[redirects]]
   from = "/narratief-verkennen-en-verantwoorden/"
   to = "/voor-wie/sociaal-domein"
 

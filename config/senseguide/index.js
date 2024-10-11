@@ -60,6 +60,11 @@ const config = {
       locale: false,
     },
     {
+      source: `/en/${ROUTES.PROJECTS.en}`,
+      destination: `/${ROUTES.PROJECTS.nl}`,
+      locale: false,
+    },
+    {
       source: `/en/${ROUTES.STORIES.en}/:slug*`,
       destination: `/${ROUTES.STORIES.nl}/:slug*`,
       locale: false,

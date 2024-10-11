@@ -15,7 +15,7 @@ const translations = {
     },
     {
       title: 'Projecten',
-      href: `/verhalen?type=project`,
+      href: `/projecten`,
     },
     {
       title: 'Workshops',
@@ -34,6 +34,8 @@ const translations = {
   home: {
     logoGrid: 'Onze projecten',
     storySlider: 'Senseguide verhalen',
+    storySliderCta: 'Bekijk alle verhalen',
+    storySliderCtaLink: '/verhalen',
   },
   categories: {
     projects: 'Projecten',
@@ -71,7 +73,7 @@ const translations = {
     button: 'Stuur een e-mail',
   },
   stickyCta: 'Neem contact op',
-  readmore: 'Read more',
+  readmore: 'Lees meer',
   terms: 'Algemene voorwaarden',
 };
 

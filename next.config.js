@@ -48,6 +48,13 @@ const nextConfig = () => {
           return `verhalen`;
         }
 
+      case 'klanten':
+        if (doc.lang === 'en-gb') {
+          return `en/projects`;
+        } else if (doc.lang === 'nl-nl') {
+          return `projecten`;
+        }
+
       // dynamic pages
       case 'contact':
       case 'diensten':
@@ -132,7 +139,7 @@ const nextConfig = () => {
       styledComponents: true,
     },
     images: {
-      domains: ['images.prismic.io', 'picsum.photos'],
+      domains: ['images.prismic.io', 'picsum.photos', 'prismic-io.s3.amazonaws.com'],
     },
 
     async rewrites() {

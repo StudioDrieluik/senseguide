@@ -1,2 +1,18 @@
 @tailwind components;
 @tailwind utilities;
+
+.grid-wrapper {
+  --gap: 3px;
+  --line-offset: calc(var(--gap) / 2);
+  --line-thickness: 2px;
+  --line-color: #e8e8e8;
+
+  overflow: hidden;
+}
+
+.grid-item {
+  position: relative;
+}
+.grid-item > div {
+  transition: scale 0.25s ease;
+}
