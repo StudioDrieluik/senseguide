@@ -23,8 +23,8 @@ const KlantenPage = ({ uid }) => {
 
   const content = data?.allKlantens?.edges?.[0].node;
 
-  const grid1Items = content.grid_1;
-  const grid2Items = content.grid_2;
+  const grid1Items = content.grid_2.slice(0, 9);
+  const grid2Items = content.grid_2.slice(9);
 
   return (
     <Layout>
@@ -49,7 +49,7 @@ const KlantenPage = ({ uid }) => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-12 mt-20">
-            {grid1Items.map(item => {
+            {grid1Items?.map(item => {
               if (!item.text[0].text) return;
 
               return (
@@ -57,6 +57,7 @@ const KlantenPage = ({ uid }) => {
                   key={item?.title?.[0]?.text}
                   logo={item?.logo?.url}
                   text={item?.text?.[0]?.text}
+                  title={item?.title?.[0]?.text}
                   subtitle={item?.subtitle?.[0]?.text}
                   link={getUrlFromMeta(item?.link?._meta)}
                 />
@@ -87,8 +88,8 @@ const KlantenPage = ({ uid }) => {
             </div>
           )}
 
-          <div className="grid grid-cols-1 md:grid-cols-3 mb-12 mt-20">
-            {grid2Items.map(item => {
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-12 mt-20">
+            {grid2Items?.map(item => {
               if (!item.text[0].text) return;
 
               return (
