@@ -22,9 +22,10 @@ const KlantenPage = ({ uid }) => {
   if (!data && loading) return <p>Loading</p>;
 
   const content = data?.allKlantens?.edges?.[0].node;
+  const reversedGrid1Items = content.grid_2.reverse();
 
-  const grid1Items = content.grid_2.slice(0, 9);
-  const grid2Items = content.grid_2.slice(9);
+  const grid1Items = reversedGrid1Items.slice(0, 9);
+  const grid2Items = reversedGrid1Items.slice(9);
 
   return (
     <Layout>
